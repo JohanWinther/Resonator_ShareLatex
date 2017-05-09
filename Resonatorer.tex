@@ -148,9 +148,7 @@ Vid en mätning av en resonator mäts ett tillräckligt stort frekvensområde ru
     \langle n \rangle &=\frac{2Q^2_l}{\hbar \omega^2_r Q_c}P_{in}.
 \end{align}
 
-Mätdatan från resonatorn normeras med avseende på alla omgivningens faktorer med hjälp av ett skript så att den motsvarar en cirkel i det komplexa planet som i \figref{fig:ex_cmplx}. Sedan utförs en algebraisk anpassning enligt appendix \ref{sec:algebraisk}. \citeauthor{Probst2015} \cite{Probst2015} berättar att en algebraisk anpassning konvergerar snabbare än en iterativ process och kräver dessutom inget startvärde. Denna metod är även bättre än andra metoder vid brusiga signaler.
-
-Normeringen och anpassningen till cirkeln utförs med en implementering av algoritmerna i Python som är tillgänglig på \url{https://github.com/sebastianprobst/resonator_tools} \cite{Probst2015}.
+Mätdatan från resonatorn normeras med avseende på alla omgivningens faktorer med hjälp av ett skript så att den motsvarar en cirkel i det komplexa planet som i \figref{fig:ex_cmplx}. Sedan utförs en algebraisk anpassning enligt appendix \ref{sec:algebraisk}. \citeauthor{Probst2015} \cite{Probst2015} berättar att en algebraisk anpassning konvergerar snabbare än en iterativ process och kräver dessutom inget startvärde. Denna metod är även bättre än andra metoder vid brusiga signaler. Normeringen och anpassningen till cirkeln utförs med en implementering av algoritmerna i Python\footnote{Källkoden är tillgänglig på \url{https://github.com/sebastianprobst/resonator_tools}.} av \citeauthor{Probst2015}.
 
 \section{Exempel på anpassningar till en resonator}
 
