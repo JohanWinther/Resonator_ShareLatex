@@ -1,0 +1,43 @@
+% CREATED BY DAVID FRISK, 2016
+\documentclass[../../main.tex]{subfiles}
+ 
+\begin{document}
+\chapter{Numerisk anpassning av en cirkel}
+\label{sec:algebraisk}
+Följande appendix beskriver en numerisk anpassning till en cirkel enligt \cite[kap. 4.2]{Chernov2005}.
+
+En cirkel kan parametriseras med följande ekvation och tvång:
+\begin{align}
+    A(x^2+y^2)+Bx+Cy+D&=0\\
+    B^2+C^2-4AD&=1
+\end{align}
+
+Med definitionen $z=(x^2+y^2)$ vill vi minimera följande funktion:
+\begin{equation}
+    F(A,B,C,D)=\sum_{i=1}^n \qty(Az_i+Bx_i+Cy_i+D)^2
+\end{equation}
+där index $i$ står för varje mätpunkt. Denna kan skrivas på matrisform $F=\mathbf{A}^TM\mathbf{A}$ med $\mathbf{A}=(A,B,C,D)^T$.
+Även tvånget kan skrivas på matrisform $\mathbf{A}^TP\mathbf{A}=1$ där
+\begin{equation*}
+    P=\begin{pmatrix}
+    0 & 0 & 0 &-2\\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0\\
+   -2 & 0 & 0 & 0
+   \end{pmatrix}.
+\end{equation*}
+
+$F$ kan nu minimeras med en Lagrange multiplikator för att ta hänsyn till tvånget
+\begin{equation}
+    \mathcal{L}(\mathbf{A},\lambda)=\mathbf{A}^TM\mathbf{A}-\lambda(\mathbf{A}^TP\mathbf{A}-1)
+    \label{eq:lagrangian}
+\end{equation}
+och egenvektorn $\mathbf{A}^*$ till det $\lambda$ som minimerar \eqref{eq:lagrangian} beräknas med standardiserade numeriska metoder.
+
+Cirkelns position och diameter kan nu utläsas ur $\mathbf{A}^*$ med följande relationer:
+\begin{align}
+    x_c&=-\frac{B}{2A}\\
+    y_c&=-\frac{C}{2A}\\
+    r_0&=\frac{\sqrt{B^2+C^2-4AD}}{2|A|}=\frac{1}{2|A|}.
+\end{align}
+\end{document}

@@ -1,0 +1,69 @@
+% This file was created by matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor3}{rgb}{0.92900,0.69400,0.12500}%
+%
+\begin{tikzpicture}[%
+trim axis left, trim axis right
+]
+
+\begin{axis}[%
+width=0.951\figurewidth,
+height=\figureheight,
+at={(0\figurewidth,0\figureheight)},
+scale only axis,
+xmin=0,
+xmax=50,
+xlabel style={font=\color{white!15!black}},
+xlabel={Frekvens (GHz)},
+ymin=0,
+ymax=3.5,
+ylabel style={font=\color{white!15!black}},
+ylabel={Dampning (dB/cm)},
+axis background/.style={fill=white},
+axis x line*=bottom,
+axis y line*=left,
+xmajorgrids,
+ymajorgrids,
+legend style={legend cell align=left, align=left, draw=white!15!black},
+legend pos=north west,
+]
+\addplot [color=mycolor1]
+  table[row sep=crcr]{%
+0	0\\
+0.502512562814069	0.00997106996053532\\
+2.51256281407035	0.0441879480138851\\
+8.04020100502512	0.134931305412422\\
+19.8492462311558	0.325750233789243\\
+42.2110552763819	0.684122225169162\\
+50	0.8085518301611\\
+};
+\addlegendentry{d=0.01}
+
+\addplot [color=mycolor2]
+  table[row sep=crcr]{%
+0	0\\
+0.502512562814069	0.0178927302910452\\
+2.51256281407035	0.0837960105598015\\
+8.04020100502512	0.261676848290357\\
+19.8492462311558	0.638653006923548\\
+42.2110552763819	1.34953538690809\\
+50	1.59674949440443\\
+};
+\addlegendentry{d=0.02}
+
+\addplot [color=mycolor3]
+  table[row sep=crcr]{%
+0	0\\
+0.502512562814069	0.0337431399461252\\
+2.51256281407035	0.163047155023705\\
+8.04020100502512	0.515279510169691\\
+19.8492462311558	1.26473345395425\\
+42.2110552763819	2.68094566274216\\
+50	3.17383639265069\\
+};
+\addlegendentry{d=0.04}
+
+\end{axis}
+\end{tikzpicture}%

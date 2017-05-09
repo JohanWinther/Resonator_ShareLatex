@@ -1,0 +1,53 @@
+% This file was created by matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+%
+\begin{tikzpicture}[%
+trim axis left, trim axis right
+]
+
+\begin{axis}[%
+width=\figurewidth,
+height=\figureheight,
+at={(0\figurewidth,0\figureheight)},
+scale only axis,
+xmin=-85,
+xmax=-45,
+xlabel style={font=\color{white!15!black}},
+xlabel={Ineffekt (dBm)},
+ymin=0,
+ymax=250,
+ylabel style={font=\color{white!15!black}},
+ylabel={\# medelvärdesbildningar},
+axis background/.style={fill=white},
+axis x line*=bottom,
+axis y line*=left
+]
+\addplot [color=mycolor1, forget plot]
+  table[row sep=crcr]{%
+-83	240\\
+-73	130\\
+-63	35\\
+-53	20\\
+-48	15\\
+};
+\addplot [color=mycolor1, draw=none, mark=square, mark options={solid, mycolor1}, forget plot]
+  table[row sep=crcr]{%
+-83	240\\
+-80.5	212.5\\
+-78	185\\
+-75.5	157.5\\
+-73	130\\
+-70.5	106.25\\
+-68	82.5\\
+-65.5	58.75\\
+-63	35\\
+-60.5	31.25\\
+-58	27.5\\
+-55.5	23.75\\
+-53	20\\
+-50.5	17.5\\
+-48	15\\
+};
+\end{axis}
+\end{tikzpicture}%

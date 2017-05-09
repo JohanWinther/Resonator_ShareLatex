@@ -1,0 +1,281 @@
+% CREATED BY DAVID FRISK, 2016
+\documentclass[main.tex]{subfiles}
+ 
+\begin{document}
+
+\chapter{Supraledande resonatorer}
+I följande avsnitt presenteras de supraledande resonatorernas uppbyggnad, teori och matematiska modell. Slutligen beskriver vi förlustmekanismerna i resonatorerna.
+
+\section{Resonatorernas uppbyggnad}
+
+\begin{figure}
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.9\linewidth]{figure/chipsubstrat.pdf}
+  %\caption{Genomskärning av en ko-planär vågledare på ett chipsubstrat av kisel (streckad). Ledaren med bredd W är gjord av aluminium (gul) och är separerad från ett jordplan av två gap med bredd S.}
+  %\label{fig:chipgenom}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.9\linewidth]{figure/chipsubstrat2.pdf}
+  %\caption{}
+  %\label{fig:chipovan}
+\end{subfigure}
+\caption{Genomskärning av en ko-planär vågledare (vänster) på ett chipsubstrat av kisel (streckad). Ledaren med bredd W är gjord av aluminium (gul) och är separerad från ett jordplan av två gap med bredd S. Till höger, en kvartsvågsresonator från ovan. Ena änden är kortsluten och den andra är öppen. Figurerna är från \cite[fig. 2.1]{Boehme2016}.}
+\label{fig:chipsubstrat}
+\end{figure}
+
+Den typ av resonatorer som användes i projektet är supraledande kvartvågsresonatorer som tillverkades av vår Dr. Jonathan Burnett. De består av en ko-planär vågledare på ett chipsubstrat av kisel, med en mittledare av aluminium separerad från ett jordplan \cite{Boehme2016} vilket kan ses i figur \ref{fig:chipsubstrat}. Själva resonatorerna är kortslutna i ena änden och öppna i den andra och behöver i allmänhet inte vara helt raka. I \figref{fig:chip} visas ett antal resonatorer som är etsade på ett chipp. Vi kan se en matarledning som går längsmed chippet och resonatorerna hängandes bredvid. Ett mikrovågsfält kopplas in i resonatorna via en kapacitiv koppling till denna matarledning.
+
+Resonatorerna tillverkas med resonansfrekvenser inom \unit[4-8]{GHz} vilket motsvarar en ungefärlig längd av \unit[1-2]{cm}. På samma chipp brukar resonatorerna skapas med olika resonansfrekvenser för att kunna adressera dem separat. Vi kan visualisera detta med en mätning av amplitudspektrumet (\figref{fig:ex_wide}) för chippet, där resonatorerna manifesterar sig som smala gropar i amplituden. Uppställningen för en sådan mätning förklaras i avsnitt \ref{sec:matuppstallning}.
+
+\tikzfig{matningar/wide_resonator_example}{Amplitudspektrum i bandet \unit[3-8]{GHz} för ett chipp med 9 resonatorer som är markerade i figuren.}{fig:ex_wide}{0.8\columnwidth}{10em}
+
+Med denna allmänna mätuppställning undersöker vi även fasspektrumet som tillsammans med amplitudspektrumet ger resonatorernas inbördes transmissionsegenskaper och således låter oss beräkna resonansfrekvenserna och Q-värderna. Dessa två egenskaper karakteriserar resonatorerna och förklaras mer ingående i avsnitt \ref{sec:res_teori}.
+
+\section{Mätuppställning i en kryostat}
+\label{sec:matuppstallning}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{figure/kretsar/cryo.pdf}
+    \caption{Allmänt kretsschema för en transmissionsmätning på ett resonatorchipp.
+    En mätsignal från en VNA dämpas vid varje temperatursteg och filtreras innan den når provlådan (botten). Innehållet i provlådan byts ut med switchar beroende på vilket chipp som ska mätas. Sedan förstärks signalen på väg tillbaka till analysatorn. Figuren är från \cite[fig. 3.7]{Boehme2016} (\copyright Thijs Boehme, med tillåtelse).}
+    \label{fig:matuppstallning}
+\end{figure}
+
+Mätuppställningen för resonatorn visas schematiskt i \figref{fig:matuppstallning}. Hela kretsen befinner sig i en kryostat med flera nivåer för att göra temperaturgradienterna små mellan stegen. Det gör det lättare att bibehålla de låga temperaturerna.
+
+En nätverksanalysator (VNA av modell Agilent E8364b) användes för att mäta S-parametern $S_{21}$ i frekvensbandet \unit[4-8]{GHz} vilket är resonatorernas frekvensområde.
+Analysatorn skickar ett mikrovågsfält in i kretsen som först dämpas genom varje temperatursteg, med en total dämpning av ungefär \unit[67]{dB} vid \unit[10]{mK}. I varje steg sker också en termisk kortslutning av ledaren genom en termisk koppling till jord. Detta för att ledaren inte ska vara rumstemperatur nere i kryostaten och skicka in termiskt brus. Innan signalen når provlådan, som befinner sig i botten av kretsschemat, filtreras den effektivt med ett bandpassfilter i intervallet \unit[4-8]{GHz}. Signalen tar sig genom provlådan som består av ett chipp med resonatorer och fortsätter sedan till en cirkulator. Cirkulatorn hindrar termiska signaler från att propagera ner i kretsen från analysatorns ingångsport, men låter signaler från chippet propagera upp till porten. Innan signalen når analysatorn fitreras den igen och förstärks med \unit[35-40]{dB} vid \unit[4]{K}.
+
+I uppställningen är flera provlådor parallellt kopplade och lådan som mäts kan väljas vid behov. Det är för ineffektivt att byta låda mellan varje mätning eftersom det tar flera dagar att kyla ner kryostaten.
+
+Mätdatan består av amplitud- och fasdata över frekvens och anpassas till en teoretisk modell från vilket resonatorernas karakteristik kan bestämmas.
+
+\section{Teoretisk modell för resonatorernas transmissionskoefficient}
+\label{sec:res_teori}
+
+\begin{figure}
+\centering
+\ctikzset{bipoles/thickness=1}
+\begin{circuitikz}[line width=1pt,scale=0.7]
+\input{figure/kretsar/ekviv_krets.tikz}
+\end{circuitikz}
+\caption{Kretsmodell av en hängande kvartsvågsresonator. Den är kapacitivt kopplad till matarledningen och består av en parallellkopplad induktans och kapacitans. De dissipativa förlusterna modelleras som en resistans.}
+\label{fig:ekviv_krets}
+\end{figure}
+En resonatorer definieras av dess resonansfrekvens $f_r$ och kvalitetsfaktor $Q$ \cite[s. 3]{Boehme2016} så vi är naturligt intresserade av att mäta dessa för att kunna evaluera eventuella förbättringar i resonatorerna. Kvalitetsfaktorn (eller Q-värde) är ett mått på resonatorns förmåga att lagra energi per cykel och den totala kvalitetsfaktorn $Q_l$ brukar delas upp i två delar \cite{Probst2015}: intern kvalitetsfaktor $Q_i$ och kopplad kvalitetsfaktor $Q_c$ och förhåller sig enligt 
+\begin{equation}
+\frac{1}{Q_l}=\frac{1}{Q_i}+\text{Re}\qty(\frac{1}{Q_c}).
+\end{equation}
+Detta förklaras mer ingående i avsnitt \ref{sec:losses}.
+
+För att erhålla en modell för resonatorerna utifrån sagda parametrar krävs en ekvivalent kretsmodell. Eftersom resonatorerna är vågledare kan de modelleras med induktanser, kapacitanser och resistanser \cite[s. 437]{cheng}. En härledning av en allmän transmissionsledning finns i appendix \ref{app:trans}. Vi betraktar den ekvivalenta kretsmodellen för en hängande resonator \cite{Boehme2016} i \figref{fig:ekviv_krets}. Anledningen att resonatorerna är hängande är för att en reflektionsmätning behöver göras för att kunna bestämma interna kvalitetsfaktorn \cite{Probst2015}. När resonatorerna är hängande mäter vi reflektionen av resonatorn genom att mäta transmissionen mellan port 1 och port 2 (i \figref{fig:ekviv_krets}). Denna geometri gör även att flera resonatorer kan hängas från samma matarledning och mätas individuellt.
+
+Transmissionen i kretsen beskrivs av den komplexa transmissionskoefficienten $S_{21}$ som härleds av \citeauthor{Boehme2016} \cite[s. 38]{Boehme2016}:
+\begin{equation}
+    S_{21}(f)=1-\frac{Q_l/Q_c}{1+2iQ_l\qty(f/f_r-1)}.
+\label{eq:S21_ideal}
+\end{equation}
+
+Det går att visualisera $S_{21}$ med en graf av magnituden och fasen över frekvensen för en ideal resonator vilket visas i \figref{fig:ex_magphs}. Det är värt att notera hur magnituden av transmissionen har ett minimum vid resonansfrekvensen. Det förklaras av att fältet kopplar till resonatorn. Vi kan även observera en fasvändning vid resonansfrekvensen.
+
+Det går även att visualisera $S_{21}$ i det komplexa planet där samma resonator representeras av en cirkel (se \figref{fig:ex_cmplx}). Här parametriserar frekvensen real- och imaginärdelen av $S_{21}$. Resonansfrekvensen motsvaras av punkten där cirkeln skär x-axeln och $f=\pm\infty$ motsvaras av punkten $(1,0i)$. Cirkelns diameter kommer att förhålla sig enligt $d=Q_l/|Q_c|$ och med hjälp av en anpassning till cirkeln kan resten av parametrarna även bestämmas. Att anpassa till cirkeln ger bättre noggrannhet för parametrarna i \ref{eq:S21_ideal} och fungerar bättre för lågt signal-brusförhållande \cite{Probst2015}.
+
+Det finns två arbetsområden för en resonator: där den är underkopplad ($Q_i<Q_c$) respektive överkopplad ($Q_i>Q_c$) \cite{Boehme2016}. Dessa två visas i graferna i figur \ref{fig:ex_magphs} och \ref{fig:ex_cmplx}. När $Q_i=Q_c$ är resonatorn kritisk kopplad och detta är gränsen mellan de två områdena. Underkoppling innebär att resonatorn har stora interna förluster och fältet eller fotonerna ''försvinner'' till dissipativa förluster innan de hinner lämna resonatorn genom den kapacitiva kopplingen. I motsats innebär överkoppling att fotonerna i större grad hinner lämna resonatorn innan de försvinner. Det önskvärda området vi vill jobba med är det överkopplade eftersom vi vill undersöka ett dominerande $Q_i$.
+
+\begin{figure}[H]
+     \begin{subfigure}[b]{0.48\textwidth}
+          \centering
+          \setlength\figurewidth{0.75\linewidth}
+          \setlength\figureheight{\figurewidth}
+          \input{figure/grafer/ex_mag.tikz}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.48\textwidth}
+          \centering
+          \setlength\figurewidth{0.75\linewidth}
+          \setlength\figureheight{\figurewidth}
+          \input{figure/grafer/ex_phs.tikz}
+     \end{subfigure}
+   \caption{Magnitud och fas över frekvens för de olika kopplingsområdena. Vid resonansfrekvensen sjunker magnituden och en fasvändning sker. Figurerna är baserade på \cite[fig. 2.4(a-c)]{Boehme2016}.}
+    \label{fig:ex_magphs}
+ \end{figure}
+ 
+\begin{figure}[H]
+  \centering
+  \setlength\figurewidth{14em}
+  \setlength\figureheight{\figurewidth}
+  \input{figure/grafer/ex_cmplx.tikz}
+  \caption{$S_{21}$ manifesteras sig som en cirkel i det komplexa planet. Cirkelns diameter är proportionell mot förhållandet mellan $Q_i$ och $Q_c$. Figuren är baserad på \cite[fig. 2.4d]{Boehme2016}.}
+  \label{fig:ex_cmplx}
+\end{figure}
+
+\section{Andra anpassningsfaktorer för icke-ideala förhållanden}
+\label{sec:omgivning}
+För att kunna anpassa en modell till mätdata kan inte endast den ideala resonatormodellen användas. Följande avsnitt baseras på \cite{Boehme2016,Probst2015} och listar de faktorer som härrör ur omgivningens påverkan på resonatorerna vid fysiska mätningar. Vi presenterar de matematiska modellerna och hur de påverkar $S_{21}$. För en visuell representation av alla faktorer hänvisar vi till \cite[fig. 3]{Probst2015}. I efterföljande avsnitt presenterar vi den slutgiltiga modellen som tar hänsyn till alla faktorer och som används i den numeriska modellanpassningen.
+
+I fysiska komponenter är det svårt att få en exakt impedansmatchning mellan port 1 och port 2 i \figref{fig:ekviv_krets}. Denna missanpassning kan modelleras genom att använda en komplex kopplingsfaktor:
+\begin{equation}
+    Q_c=|Q_c|e^{-i\phi}.
+\end{equation}
+Den kan även orsakas av induktiva kopplingar till vågledaren som antas försumbara. Missanpassningen manifesterar sig som en asymmetri i resonatorns amplitud- och fasdiagram eller en rotation och skalning av resonanscirkeln runt punkten $(1,0i)$ i det komplexa planet.
+
+Amplitudbakgrunden är dämpningen som mätkretsen har utan själva resonatorerna. Den uppkommer på grund av komponenterna och är antingen konstant eller frekvensberoende.
+Idealt behöver mätningar subtraheras av amplitudbakgrunden för att kunna normeras. Detta kräver en mätning på endast bakgrunden, vilket måste utföras på en identisk kopia av chippet utan resonatorerna. Resonatorerna är dock integrerade i chippet vilket gör det svårt att realisera i verkligheten. I stället räcker det med att göra en första ordningens approximation av bakgrundsamplituden:
+\begin{equation}
+    S'_{21} = A\qty(1+\alpha\qty(\frac{f}{f_r}-1))S_{21} \approx A S_{21}.
+\end{equation}
+Om resonatorernas frekvensområden är små jämfört med frekvensberoendet hos komponenterna, vilka de är i vårt projekt, kan amplitudbakgrunden approximeras med en konstant.
+
+Elektrisk längd innebär längden av en ledare i termer av den fasförskjutning som uppstår för en transmitterad signal \cite{Schmitt2002} och kan modelleras som en frekvensoberoende och -beroende term enligt:
+\begin{equation}
+    S'_{21} = e^{i\alpha}e^{-2\pi i\tau f}S_{21}.
+\end{equation}
+I det komplexa planet kommer den frekvensberoende delen att ''sträcka ut'' signalen runt origo, medan den frekvensoberoende delen introducerar en rotation runt origo.
+
+\section{Algebraisk anpassning av mätdata till fullständig modell av $S_{21}$}
+Den fullständiga modellen för $S_{21}$ med hänsyn till alla faktorer i avsnitt \ref{sec:omgivning} är följande \cite{Probst2015}:
+\begin{equation}
+    S_{21}(f)=\underbrace{A e^{i\alpha}e^{-2\pi i f\tau}}_\text{omgivning}\underbrace{\qty[1-\frac{Q_l/(\overbrace{|Q_c|e^{-i\phi}}^{Q_c})}{1+2iQ_l\qty(f/f_r-1)}]}_\text{resonator}.
+\label{eq:S21}
+\end{equation}
+
+Vid en mätning av en resonator mäts ett tillräckligt stort frekvensområde runt resonansfrekvensen för att kunna göra en anpassning av cirkeln i det komplexa planet. Vanligtvis brukar mätningar ske vid flera effektnivåer där de lägre effekterna har mer brus och endast enstaka fotoner befinner sig i resonatorn. För att få ett korrekt värde på $Q_i$ används, istället för ineffekt, den absorberade effekten eller det motsvarande genomsnittliga antalet fotoner (i resonatorn) \cite{Boehme2016}:
+\begin{align}
+    P_r&=\frac{2Q_l}{Q_cQ_i}P_{in}
+    &
+    \langle n \rangle &=\frac{2Q^2_l}{\hbar \omega^2_r Q_c}P_{in}.
+\end{align}
+
+Mätdatan från resonatorn normeras med avseende på alla omgivningens faktorer med hjälp av ett skript så att den motsvarar en cirkel i det komplexa planet som i \figref{fig:ex_cmplx}. Sedan utförs en algebraisk anpassning enligt appendix \ref{sec:algebraisk}. \citeauthor{Probst2015} \cite{Probst2015} berättar att en algebraisk anpassning konvergerar snabbare än en iterativ process och kräver dessutom inget startvärde. Denna metod är även bättre än andra metoder vid brusiga signaler.
+
+Normeringen och anpassningen till cirkeln utförs med en implementering av algoritmerna i Python som är tillgänglig på \url{https://github.com/sebastianprobst/resonator_tools} \cite{Probst2015}.
+
+\section{Exempel på anpassningar till en resonator}
+
+I \figref{fig:ex_res40} ser vi amplitud- och fasspektrum på en resonator vid en ineffekt från analysatorn \unit[-40]{dBm} (motsvarar ungefär \unit[-107]{dBm} in i resonatorn). På motsvarande sätt kan vi se bruset i \figref{fig:ex_res90} med en ineffekt på \unit[-90]{dBm}.
+
+Ett exempel på en normering syns bäst i det komplexa planet (se \figref{fig:ex_cmplx_resonator}). Här ser vi den onormerade 
+
+
+\begin{figure}[H]
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centerfloat
+        \setlength\figurewidth{0.9\linewidth}
+        \setlength\figureheight{20em}
+        \input{figure/matningar/high_pwr_mag_phs_freq.tikz}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centerfloat
+        \setlength\figurewidth{0.9\linewidth}
+        \setlength\figureheight{20em}
+        \input{figure/matningar/low_pwr_mag_phs_freq.tikz}
+    \end{subfigure}
+    \caption{Resonatorn i det komplexa planet vid en ineffekt på \unit[-80]{dBm}.}
+    \label{fig:ex_magphs_resonator}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{subfigure}[t]{0.6\textwidth}
+        \centerfloat
+        \setlength\figurewidth{0.9\linewidth}
+        \setlength\figureheight{13em}
+        \input{figure/matningar/low_pwr_complex.tikz}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.6\textwidth}
+        \centerfloat
+        \setlength\figurewidth{0.9\linewidth}
+        \setlength\figureheight{13em}
+        \input{figure/matningar/low_pwr_complex_norm.tikz}
+    \end{subfigure}
+    \caption{Resonatorn i det komplexa planet vid en ineffekt på \unit[-80]{dBm}.}
+    \label{fig:ex_cmplx_resonator}
+\end{figure}
+
+\section{Modellens begränsning vid höga effekter}
+Vid ineffekter över \unit[-70]{dBm} uppvisar resonatorerna ett beteende (så kallat ''duffing'' \cite{tholen2007}) som inte kan förklaras med vår modell. Detta kan vi se om vi försöker anpassa mätdata till vår modell. \Figref{fig:ex_res_drift} visar $Q_i$ och resonansfrekvens med avseende på ineffekt och kan tydlig se hur resonansfrekvensen driver iväg över \unit[-70]{dBm}. Vi begränsar oss till att använda \ref{eq:S21} och endast undersöka samt presentera resultaten fram till detta olinjära område.
+
+\tikzfig{grafer/resonator_drift}{Intern kvalitetsfaktor $Q_i$ (övre) och resonansfrekvens (undre) för olika ineffekter i resonatorn. Vid effekter över \unit[-70]{dBm} driftar resonansfrekvensen iväg.}{fig:ex_res_drift}{0.8\columnwidth}{14em}
+
+\section{Förlustmekanismer}
+\label{sec:losses}
+Den interna Q-faktorn hos resonatorerna reduceras av flera olika förlustmekanismer och är omvänt proportionell mot förlustfaktorn $\delta$ som kan ses som summan av flera olika förlusttermer\cite{Boehme2016,Goetz2016}, till exempel som:
+
+\begin{equation}
+    \label{ekv:Qtot}
+    \frac{1}{Q_{tot}}=\delta_{qp}+\delta_{TLS}+\delta_{mag}+...
+\end{equation}
+\noindent
+
+Där $\delta_{qp}$ är temperaturberoende förluster som uppkommer av av kvasipartiklar i systemet, $\delta_{TLS}$ uppkommer av kvantmekaniska två-nivå-system, $\delta_{mag}$ uppkommer av magnetiska fält. 
+
+Dessa förluster har under åren reducerats och vilken av dem som är begränsande varierar med tiden.
+
+\subsection{Magnetiska förluster}
+\label{sek:mag}
+Magnetfält kommer i stor grad trängas ur supraledaren som ett resultat av meissnereffekten men det kan vara möjligt för magnetfält att skapa virvlar i ojämnheter i resonatorns supraledande delar. Det magnetiska flödet från dessa virvlar gör att virvelns kärna slutar vara supraledande. Detta ger upphov till extra kvasipartiklar i ledaren och därmed ökade förluster. Detta problem och en lösning till det diskuteras i \cite{Chiaro2016}. De magnetiska förlusterna reduceras av uppställningen genom att skärma resonatorerna med supraledande material och ytterligare genom att skapa ett hålmönster i resonatorns jordplan i vilka de magnetiska virvlarna kan skapas förlustfritt\cite{Chiaro2016}. Det magnetiska flödet fastnar i hålen och orsakar därmed inga förluster\cite{Chiaro2016} eftersom det inte finns några supraledande kärnor i dessa.
+
+\subsection{TLS-förluster}
+
+\label{sec:tls}
+Hålen i \ref{sek:mag} reducerar $\delta_{mag}$ men kan dock introducera nya platser för dielektriska ytförluster och en ökning av $\delta_{TLS}$ genom flera skarpa kanter och ett blottat substrat\cite{Chiaro2016}. $\delta_{TLS}$ är dielektriska ytförluster som uppkommer av kvantfysikaliska två-nivå-system (TLS). I början av 2010-talet ansågs förluster från TLSer vara begränsande för supraledande resonatorers Q-faktorer vid effekter motsvarande enstaka fotoner\cite{Siddiqi2011} och detsamma gäller än idag för mer moderna resonatorer\cite{Boehme2016}\cite{Goetz2016}. Genom att förbättra tillverkningsmetoderna och designen för resonatorerna och genom att med omtanke välja rätt material har dessa förlusters inverkan minskat under åren\cite{Oliver2013}. Till exempel kan $\delta_{TLS}$ genom att välja tillräckligt stort avstånd mellan de tidigare nämna flödesfångande hålen i resonatorn\cite{Chiaro2016}.
+
+TLS-förluster är effektberoende och kommer av att TLSer kopplar till resonatorns elektriska fält och sedan exciteras och deexciteras\cite{Boehme2016,Goetz2016}. 
+
+Effektberoendet kommer av att det krävs en viss energi för att excitera en viss mängd TLSer. TLSer har störst påverkan vid låga effekter eftersom en större andel av ineffekten går förlorad. Vid högre effekter mättas tillslut TLSerna och $\delta_{TLS}$ planar ut. Förlusterna är även temperaturberoende, då termisk energi kan excitera dem. $\delta_{TLS}$ kan modelleras som
+\begin{equation}
+    \delta_{TLS}=\frac{F\delta_{TLS}^0\tanh{(\hbar\omega_r/2k_BT)}}{(1+(N/N_c)^2)^\beta}
+    \label{ekv:TLS}
+\end{equation}
+Där $\delta_{TLS}^0$ är förlusterna vid mycket låg temperatur och mycket låg effekt, $F$ är en designparameter, $\omega_r$ är resonansvinkelfrekvensen, $N$ är antal fotoner som lagras i resonatorn och $N_c$ är det kritiska antal fotoner för vilket en TLS blir mättad. \ref{ekv:TLS} är tagen från\cite{pappas2011two} med viss modifikation. $\beta$ används som en anpassningsparamter som grovt brukar anses ligga kring 0,2\cite{faoro2012} för våra tillämpningar. Från \ref{ekv:TLS} fås att det inte går att eliminera TLS-förluster helt ens vid godtyckligt låga temperaturer\cite{Boehme2016}.
+
+\subsection{Kvasipartiklar och sönderslagning av Cooperpar}
+För att ha förståelse för hur $\delta_{qp}$ kan påverkas krävs viss kännedom om Cooperpar och supraledning.
+
+Cooperpar är ett par av elektroner, eller andra fermioner, som är sammanbundna vid låga temperaturer. Cooper visade att en godtyckligt liten attraktion mellan elektroner i en metall kan ge upphov till att ett sådant par kan ha lägre energi än fermienergin. Detta beror på elektron-fonon interaktion, vilket orsakar supraledning.
+
+I en klassisk beskrivning av Cooperpar i en metall så beter sig en elektron vanligtvis som en fri partikel. Eftersom elektroner alla har negativ laddning så repellerar de varandra men attraherar de positiva jonerna i metallens gitter. Jongittret blir då aningen skevt och jonerna blir aningen förflyttade mot elektronerna och densiteten av positiv laddning ökar för gittret. Detta överskott av positiv energi attraherar i sin tur fler elektroner. 
+
+Vid långa avstånd (hur långa?) kan denna attraktion övervinna elektronernas bortstötning (som beror av  deras negativa laddning).
+
+Energin för bindningen är dock väldigt låg, på ungefär en ordning $10^{-3}$ eV.\cite{placeholder} Detta innebär att energi, så som termisk energi, lätt kan bryta upp paren. Vilket är anledningen till att Cooperpar (och således supraledning) enbart återfinns vid mycket låga temperaturer. Ett ämne som kan bli supraledande blir det först när det når en temperatur under sin \emph{kritiska temperatur}. För Aluminium är den kritiska temperaturen \unit[1,2]{K}. HÄR KANSKE VI VILL SKRIVA LITE OM BANDGAPET FÖR ALUMINIUM FÖR ATT KUNNA KOPPLA BÄTTRE TILL DELEN OM QUASIPARTIKELFÖRLUSTER:
+
+%För en komplett mängd av tillstånd för ett två-elektron system, som har periodiska randvillkor och befinner sig i en kub med enhetsvolym. Då tar vi produktfunktionen för planvågor 
+
+%$$\phi(\textbf{k}_1,\textbf{k}_2;\textbf{r}_1,\textbf{r}_2)=\exp[i(\textbf{k}_1\cdot \textbf{r}_1+\textbf{k}_2\cdot \textbf{r}_2)]$$
+
+%Vi antar att elektronerna har motsatta spin. 
+
+%\fastaboken
+%\cite{calvo2008}
+
+Även när de supraledande resonatorerna är nedkylda till en temperatur under den kritiska temperaturen för ledaren finns det kvar kvasipartiklar i systemet som upplever resistans vilket leder till att förlusttermen $\delta_{qp}$ ökar och således till att Q-värdet minskar. Mängden kvasipartiklar minskar sedan när temperaturen minskar ytterligare, till en viss gräns är nådd\cite{Barends2011}. Detta är anledningen till varför resonatorerna ofta kyls ner till tiotals millikelvin. Vid dessa temperaturer har ljus och infraröd strålning från omgivningen stor påverkan på Q-värdet hos resonatorn\cite{Barends2011}.
+
+Ytterligare dielektriska förluster uppkommer när högfrekventa fotoner slår sönder cooperpar som då delar upp sig i individuella kvasipartiklar. Vilka frekvenser som krävs för detta fås från följande ekvation som beskriver mängden kvasipartiklar, $N_{qp}$.
+\begin{equation}
+\label{ekv_qp}
+    \frac{\delta N_{qp}}{\delta t}=\frac{P}{\Delta}+G-RN_{qp}^2
+\end{equation}
+där $\Delta$ är ledningsmaterialets bandgap, $P$ är absorberad effekt som uppfyller $P=hf>2\Delta$, $G$ är termen som korresponderar mot kvasipartikelproduktion till följd av termiska fononer och $R$ är en materialkonstant kopplad till återskapandet av Cooperpar\cite{Barends2011}. Aluminium, som ingår i resonatorerna som det här projektet berör, har en bandgapsfrekvens på \unit[88]{GHz} varpå \ref{ekv:qp} ger att de fotoner med en frekvens på $f\gtrsim$\unit[180]{GHz} kan öka mängden kvasipartiklar.
+De högfrekventa fotonerna kan bli ett problem även vid uppställningar med bra bandpassfilter eftersom dessa börjar släppa igenom allt mer signal vid frekvenser en bra bit över filtrets bandpass\cite{santavicca2008}. För ett \unit[4-8]{GHz} bandpassfilter börjar fotoner släppas igenom igen när de har frekvenser på över ca \unit[20]{GHz}.
+
+\subsection{Modell för förlustmekanismer}
+För att kunna karakterisera förlusterna i våra resonatorer och för att vi är intresserade av hur $Q_i$ beror på antal fotoner i resonatorn utgår vi från en modell då alla förluster utom de effektberoende TLS-förlusterna sammanslås till en $\delta_{other}$.
+
+\begin{equation*}
+    \frac{1}{Q_i}=\delta_{TLS}+\delta_{other}
+\end{equation*}
+\noindent
+
+Från \ref{ekv:TLS} fås den totala modellen som sedan används till att göra kurvanpassningar för våra resultat.
+
+\begin{equation}
+    \label{ekv:TLSmodel}
+    \frac{1}{Q_i}=\frac{F\delta_{TLS}^0\tanh{(\hbar\omega_r/2k_BT)}}{(1+(N/N_c)^2)^\beta}+\frac{1}{Q_{other}}
+\end{equation}
+
+Anpassningsparametrarna är $A=F\delta_{TLS}^0$, $N_c$ och $\delta_{other}=\frac{1}{Q_{other}}$
+
+
+\end{document}

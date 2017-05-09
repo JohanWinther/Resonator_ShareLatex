@@ -1,0 +1,77 @@
+% CREATED BY DAVID FRISK, 2016
+
+% IMPORT SETTINGS
+\documentclass[10pt,a4paper]{report}
+\input{include/settings/Settings}
+
+\begin{document} 
+
+% COVER PAGE, TITLE PAGE AND IMPRINT PAGE
+\pagenumbering{roman}			% Roman numbering (starting with i (one)) until first main chapter
+\subfile{include/frontmatter/Titlepage}
+
+% ABSTRACT
+\newpage
+\subfile{include/frontmatter/Abstract}
+
+% ACKNOWLEDGEMENTS
+\newpage
+\subfile{include/frontmatter/Acknowledgements}
+
+
+% TABLE OF CONTENTS
+\newpage
+\tableofcontents
+
+% OTHER FRONTMATTER figur/tabell avsnitt
+% List of figures (add to table of contents)
+%\cleardoublepage
+%\addcontentsline{toc}{chapter}{\listfigurename} 
+%\listoffigures
+% List of tables (add to table of contents)
+%\cleardoublepage
+%\addcontentsline{toc}{chapter}{\listtablename}  
+%\listoftables
+
+
+% START OF MAIN DOCUMENT
+%\cleardoublepage
+\setcounter{page}{1}
+\pagenumbering{arabic}			% Arabic numbering starting from 1 (one)
+\setlength{\parskip}{0.5em plus 1em}
+
+% INTRODUCTION
+\subfile{Introduktion}
+
+% Resonatorer
+\subfile{Resonatorer}
+
+% Filter
+\subfile{Filter}
+
+% Experiment
+\subfile{Experiment}
+
+% RESULTS
+\subfile{Resultat}
+
+% Diskussion
+\subfile{Diskussion}
+
+% REFERENCES / BIBLIOGRAPHY
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
+\nocite{*}
+% APPENDICES
+\cleardoublepage
+\appendix
+\setcounter{page}{1}
+\pagenumbering{Roman}			% Capitalized roman numbering starting from I (one)
+
+%\subfile{include/backmatter/Appendix_trans}
+%\subfile{include/backmatter/Appendix_cirkel}
+
+%\subfile{include/backmatter/Appendix_3}
+
+\end{document}

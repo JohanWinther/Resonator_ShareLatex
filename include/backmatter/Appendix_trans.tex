@@ -1,0 +1,45 @@
+% CREATED BY DAVID FRISK, 2016
+\documentclass[../../main.tex]{subfiles}
+ 
+\begin{document}
+
+\chapter{Allmänna transmissionsledningar}
+\label{app:trans}
+En generell transmissionsledning kan karakteriseras av de fyra olika parametrarna $R, L, G$ och $C$. Där $R$ är resistans per längdenhet i \unit{$\Omega$/m}, $L$ induktans per längdenhet i \unit{H/m}, $G$ konduktans per längdenhet i \unit{S/m} och $C$ kapacitans per längdenhet i \unit{F/m}. Dessa distribuerade parmetrar kan representeras med den ekvivalent kretsen för en allmän transmissionsledning av längd $\Delta z$ som visas i \figref{fig:transmission_eqv}\autocite{cheng}.
+
+
+\begin{figure}[H]
+\centering
+\ctikzset{bipoles/thickness=1}
+\begin{circuitikz}
+\input{figure/kretsar/transmission_eqv.tikz}[line width=1pt,scale=0.75]
+\end{circuitikz}
+\caption{Ekvivalent kretsschema för allmän transmissionsledning av längd $\Delta z$.}
+\label{fig:transmission_eqv}
+\end{figure}
+
+
+
+Från den ekvivalenta kretsen i \figref{fig:transmission_eqv} kan vi med hjälp av Kirchoffs strömlag applicerad i nod A samt spänningslag över $R$ och $L$ relatera spänningen till strömmen och vice versa. Om vi sedan låter $\Delta z\rightarrow 0$ får vi de generella transmissionsledningsekvationerna
+
+% Behöver fixa ekvivalenspilen
+\begin{equation}
+    \centering
+    \begin{split}    
+        -\dv{V(z)}{z}&=(R+j\omega L)I(z)\\ -\dv{I(z)}{z}&=(G+j\omega C)V(z)
+    \end{split}
+    \quad\Leftrightarrow\quad
+    \begin{split}
+        \dv{^2V(z)}{z^2}&=\gamma^2V(z)\\     \dv{^2I(z)}{z^2}&=\gamma^2I(z)
+    \end{split}
+\end{equation}
+
+% Borde vara en punkt här någonstans?
+
+Där $\gamma$ är propagationskonstanten för transmissionsledningen och ges av
+\begin{equation*}
+    \gamma=\alpha +j\beta = \sqrt{(R+j\omega L)(G+j\omega C)} \hspace{2em} (\unit{m^{-1}})
+\end{equation*}
+där $\alpha$ är en dämpningskonstant med enhet \unit{Np/m} och $\beta$ en faskonstant med enhet \unit{rad/m}.
+
+\end{document}

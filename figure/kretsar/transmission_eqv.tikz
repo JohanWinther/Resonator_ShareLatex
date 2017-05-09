@@ -1,0 +1,28 @@
+\draw (0,0)
+node[anchor=east](in+){+}  
+to[short,o-] (1,0)
+to[R=$R\Delta z$] (3,0)
+to[L=$L\Delta z$,-*] (5,0)
+node[anchor=south]{A} 
+to[short,-o] (8,0)
+node[anchor=west](out+){+} ;
+
+\draw (5,0)
+to[short] (5,-1)
+to[short] (4,-1)
+to[R,l_=$G\Delta z$] (4,-3)
+to[short] (5,-3)
+to[short] (5,-4);
+\draw (5,-1)
+to[short] (6,-1)
+to[C,l=$C\Delta z$] (6,-3)
+to[short] (5,-3);
+
+\draw (0,-4)
+node[anchor=east](in-){-} 
+to[short,o-o] (8,-4)
+node[anchor=west](out-){-} ;
+
+\draw[draw=none](in+)--(in-)node[midway,anchor=east]{$V(z)$};
+\draw[draw=none](out+)--(out-)node[midway,anchor=west]{$V(z+\Delta z)$};
+

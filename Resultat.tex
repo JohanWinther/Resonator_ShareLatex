@@ -1,0 +1,70 @@
+% CREATED BY DAVID FRISK, 2016
+\documentclass[main.tex]{subfiles}
+ 
+\begin{document}
+
+\chapter{Resultat}
+\label{ch:results}
+I följande avsnitt presenteras först mätningarna av $S_{21}$ för ett antal resonatorer
+
+\section{Jämförelse av intern kvalitetsfaktor utan och med filter}
+%I \figref{fig:qi_pwr} visas $Q_i$ över antalet genomsnittliga fotoner i 
+%\tikzfig{matningar/AlSi-C_5.732_GHz_Qi_photons}{resonator $f_r = \unit[5.732]{GHz} $. Legend saknas}{fig:qi_pwr}{\textwidth}{20em}
+Jämförelse av $Q_i$ med och utan filter görs genom att plotta $Q_i$ mot genomsnittliga antalet fotoner i resonatorn. I det här avsnittet presenteras ett urval sådana figurer. Övriga mätningar finns i appendix \ref{app:data}.
+
+Samtliga figurer innehåller en kurvanpassning utifrån modellen \ref{ekv:TLSmodel} och värdet på parametrarna är presenterade i figurtexterna.
+
+Mätningar på prov A visade blandade resultat. \Figref{fig:A4.953} visar exempel på en resonator där Q-värdet förändrades väldigt lite efter våra filter hade kopplats på. \Figref{fig:A5.006} och \figref{fig:A5.689} visar resonatorer vilkas Q-värde har förbättras respektive försämrats över hela effektintervallet. Samtliga av dessa mätningar från prov A passade väl med anpassningen till TLS-modellen \ref{ekv:TLSmodel}.
+
+
+\begin{figure}[H]
+  \centering
+  \setlength\figurewidth{0.8\textwidth}
+  \setlength\figureheight{15em}
+  \input{figure/matningar/AlSi-A_4.953_GHz.tikz}
+  \caption{AlSi-A\_4.953\_GHz, Intern Q-faktor för resonator med och utan filter vid olika antal fotoner i resonatorn. Mätningarna är gjorda vid resonansfrekvensen \unit[4,953]{GHz}. Anpassning till \ref{ekv:TLSmodel} gav $Q_{\text{annat}}^{\text{filter}}=2,342\cdot10^6$, $Q_{\text{annat}}^{\text{utan}}=2,394\cdot10^6$.} 
+  \label{fig:A4.953}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \setlength\figurewidth{0.8\textwidth}
+  \setlength\figureheight{15em}
+  \input{figure/matningar/AlSi-A_5.006_GHz.tikz}
+  \caption{AlSi-A\_5.006\_GHz Intern Q-faktor för resonator med och utan filter vid olika antal fotoner i resonatorn. Mätningarna är gjorda vid resonansfrekvensen \unit[4,953]{GHz}. Anpassning till \ref{ekv:TLSmodel} gav $Q_{\text{annat}}^{\text{filter}}=1,873\cdot10^5$, $Q_{\text{annat}}^{\text{utan}}=1,802\cdot10^5$.}
+  \label{fig:A5.006}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \setlength\figurewidth{0.8\textwidth}
+  \setlength\figureheight{15em}
+  \input{figure/matningar/AlSi-A_5.689_GHz.tikz}
+  \caption{AlSi-A\_5.689\_GHz Intern Q-faktor för resonator med och utan filter vid olika antal fotoner i resonatorn. Mätningarna är gjorda vid resonansfrekvensen \unit[4,953]{GHz}. Anpassning till \ref{ekv:TLSmodel} gav  $Q_{\text{annat}}^{\text{filter}}=2,556\cdot10^5$, $Q_{\text{annat}}^{\text{utan}}=3,403\cdot10^5$.}
+  \label{fig:A5.689}
+\end{figure}
+
+
+För prov C skedde inga försämringar till följd av filtrena. \figref{fig:C6.436} visar ett exempel på en resonator från prov C där filtrena gav upphov till en liten men konsekvent förbättring av $Q_i$
+
+\begin{figure}[H]
+  \centering
+  \setlength\figurewidth{0.8\textwidth}
+  \setlength\figureheight{15em}
+  \input{figure/matningar/AlSi-C_6.436_GHz.tikz}
+  \caption{AlSi-C\_6.436\_GHz Intern Q-faktor för resonator med och utan filter vid olika antal fotoner i resonatorn. Mätningarna är gjorda vid resonansfrekvensen \unit[4,953]{GHz}. Anpassning till \ref{ekv:TLSmodel} gav $Q_{\text{annat}}^{\text{filter}}=8,727\cdot10^6$, $Q_{\text{annat}}^{\text{utan}}=1,565\cdot10^6$.}
+  \label{fig:C6.436}
+\end{figure}
+
+De flesta graferna från mätningarna på d-provet hade ett utseende som liknar det hos \figref{fig:d6.025}, alltså ett någorlunda oförändrat Q-värde under ett visst antal fotoner och en ökande förbättring efter det.
+
+\begin{figure}[H]
+  \centering
+  \setlength\figurewidth{0.8\textwidth}
+  \setlength\figureheight{15em}
+  \input{figure/matningar/AlSi-d_6.025_GHz.tikz}
+  \caption{AlSi-d\_6.025\_GHz Intern Q-faktor för resonator med och utan filter vid olika antal fotoner i resonatorn. Mätningarna är gjorda vid resonansfrekvensen \unit[6,025]{GHz}. Anpassning till \ref{ekv:TLSmodel} gav $Q_{\text{annat}}^{\text{filter}}=1,036\cdot10^7$, $Q_{\text{annat}}^{\text{utan}}=2,229\cdot10^7$.}
+  \label{fig:d6.025}
+\end{figure}
+
+\end{document}

@@ -1,0 +1,9 @@
+\draw (0,0)rectangle (3,-1);
+\draw (1.5,-0.5) circle (0.35);
+\draw (0.7,-0.5) circle (0.15);
+\draw (2.3,-0.5) circle (0.15);
+
+\draw (4,-1)rectangle (7,4);
+\draw[dashed] (5.15,-1) -- (5.15,4);
+\draw[dashed] (5.85,-1) -- (5.85,4);
+
