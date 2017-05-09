@@ -21,7 +21,8 @@ ylabel={$\text{$|$S}_{\text{21}}\text{$|$}$},
 axis background/.style={fill=white},
 xticklabel style={/pgf/number format/fixed,
                   /pgf/number format/precision=4},
-clip mode=individual
+clip mode=individual,
+try min ticks=5
 ]
 \addplot [color=mycolor1, draw=none, mark size=2.0pt, mark=o, mark options={solid, mycolor1}, forget plot]
   table[row sep=crcr]{%
@@ -756,7 +757,7 @@ width=\figurewidth,
 height=0.417\figureheight,
 at={(0\figurewidth,0\figureheight)},
 scale only axis,
-xmin=5.153,
+xmin=5.1525,
 xmax=5.1545,
 xlabel style={font=\color{white!15!black}},
 xlabel={Frekvens (GHz)},
