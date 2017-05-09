@@ -151,10 +151,10 @@ Vid en mätning av en resonator mäts ett tillräckligt stort frekvensområde ru
 Mätdatan från resonatorn normeras med avseende på alla omgivningens faktorer med hjälp av ett skript så att den motsvarar en cirkel i det komplexa planet som i \figref{fig:ex_cmplx}. Sedan utförs en algebraisk anpassning enligt appendix \ref{sec:algebraisk}. \citeauthor{Probst2015} \cite{Probst2015} berättar att en algebraisk anpassning konvergerar snabbare än en iterativ process och kräver dessutom inget startvärde. Denna metod är även bättre än andra metoder vid brusiga signaler. Normeringen och anpassningen till cirkeln utförs med en implementering av algoritmerna i Python\footnote{Källkoden är tillgänglig på \url{https://github.com/sebastianprobst/resonator_tools}.} av \citeauthor{Probst2015}.
 
 \section{Exempel på anpassningar till en resonator}
-
-I \figref{fig:ex_res40} ser vi amplitud- och fasspektrum på en resonator vid en ineffekt från analysatorn \unit[-40]{dBm} (motsvarar ungefär \unit[-107]{dBm} in i resonatorn). På motsvarande sätt kan vi se bruset i \figref{fig:ex_res90} med en ineffekt på \unit[-90]{dBm}.
-
-Ett exempel på en normering syns bäst i det komplexa planet (se \figref{fig:ex_cmplx_resonator}). Här ser vi den onormerade 
+I \figref{fig:ex_magphs_resonator} presenterar vi en anpassning till en resonator med $f_r=\unit[5.15]{GHz}$.
+Vi utför anpassningen separat för varje effektmätning och i figuren kan vi observera skillnaden i signal-brusförhållande mellan låg (\unit[-90]{dBm}) och hög  (\unit[-40]{dBm}) ineffekt (från analysatorn).
+Notera hur anpassningen är robust även vid en brusig signal. Samma resonator vid ineffekt \unit[-80]{dBm} presenteras i det komplexa planet i \figref{fig:ex_cmplx_resonator} där den ena är normerad med avssende på omgivningen. 
+Om vi jämför amplitud- och fasspektrumet med visualiseringen i det komplexa planet ser vi att det inte nödvändigtvis behöver finnas många mätpunkter runt resonansfrekvensen för att cirkeln ska kunna anpassas.
 
 
 \begin{figure}[H]
@@ -187,14 +187,14 @@ Ett exempel på en normering syns bäst i det komplexa planet (se \figref{fig:ex
         \setlength\figureheight{13em}
         \input{figure/matningar/low_pwr_complex_norm.tikz}
     \end{subfigure}
-    \caption{Mätdata och resonatorn i \figref{fig:ex_magphs_resonator} i det komplexa planet. Observera att anpassningen även fungerar med få datapunkter nära resonansfrekvensen, vilket inte är uppenbart från \figref{fig:ex_magphs_resonator}.}
+    \caption{Mätdata och resonatorn i \figref{fig:ex_magphs_resonator} i det komplexa planet. Till höger visas den normerade mätdatan. Notera hur anpassningen även fungerar med få datapunkter nära resonansfrekvensen, vilket inte är uppenbart från \figref{fig:ex_magphs_resonator}. }
     \label{fig:ex_cmplx_resonator}
 \end{figure}
 
 \section{Modellens begränsning vid höga effekter}
 Vid ineffekter över \unit[-70]{dBm} uppvisar resonatorerna ett beteende (så kallat ''duffing'' \cite{tholen2007}) som inte kan förklaras med vår modell. Detta kan vi se om vi försöker anpassa mätdata till vår modell. \Figref{fig:ex_res_drift} visar $Q_i$ och resonansfrekvens med avseende på ineffekt och kan tydlig se hur resonansfrekvensen driver iväg över \unit[-70]{dBm}. Vi begränsar oss till att använda \ref{eq:S21} och endast undersöka samt presentera resultaten fram till detta olinjära område.
 
-\tikzfig{grafer/resonator_drift}{Intern kvalitetsfaktor $Q_i$ (övre) och resonansfrekvens (undre) för olika ineffekter i resonatorn. Vid effekter över \unit[-70]{dBm} driftar resonansfrekvensen iväg.}{fig:ex_res_drift}{0.8\columnwidth}{14em}
+\tikzfig{grafer/resonator_drift}{Intern kvalitetsfaktor $Q_i$ (övre) och resonansfrekvens (undre) för olika ineffekter i resonatorn. Vid effekter över \unit[-70]{dBm} driftar resonansfrekvensen iväg. Observera att ineffekten i resonatorn hänvisar till signalens styrka efter mätupställingens dämpning på \unit[67]{dBm}.}{fig:ex_res_drift}{0.8\columnwidth}{14em}
 
 \section{Förlustmekanismer}
 \label{sec:losses}
