@@ -11,15 +11,14 @@ I följande kapitel presenteras teori, konstruktion och karakteristik hos de dis
 \section{Distribuerade lågpassfilter}
 Distribuerade filter skiljer sig ifrån vanliga elektriska filter bestående av olika diskreta kretselement främst genom att de distribuerade filternas egenskaper som kapacitans, induktans och resistans inte är samlade i en enda komponent. Istället är är dessa egenskaper distribuerade över transmissionsledningen som den elektromagnetiska vågen propagerar i. Genom att designa sin transmissionsledning med olika geometrier och material med olika elektriska egenskaper kan flera olika egenskaper erhållas\autocite{cheng}. 
 
-I detta projekt har vi konstruerat ett distribuerat lågpassfilter genom att i en koaxial geometri ersätta en del av det isolerande dielektrikum mellan centerledare och hölje med ett dielektrikum med frekvensberoende förluster för att på så sätt effektivt dämpa höga frekvenser.  
-
-
-\begin{wrapfigure}{r}{0.329\textwidth}
+\begin{wrapfigure}{r}{0.25\textwidth}
     \centering
-    \includegraphics[angle=-90,trim=1550 200 1650 200,clip,width=0.975\linewidth]{figure/Filterbilder/filterbox.jpg}
+    \includegraphics[angle=-90,trim=1550 300 1950 300,clip,width=0.975\linewidth]{figure/Filterbilder/filterbox.jpg}
     \caption{Maskinarbetat kopparblock för att konstruera att distribuerat lågpassfilter.}
     \label{fig:filterbox}
 \end{wrapfigure}
+I detta projekt har vi konstruerat ett distribuerat lågpassfilter genom att i en koaxial geometri ersätta en del av det isolerande dielektrikum mellan centerledare och hölje med ett dielektrikum med frekvensberoende förluster för att på så sätt effektivt dämpa höga frekvenser.  
+
 De distribuerade lågpassfilter som konstruerats i detta projekt består i huvudsak av tre olika delar: två cylindriska SMA kontakter med en delvis isolerad centerledare, Emerson \& Cuming Stycast 1266 och ett rektangulärt block av maskinarbetad koppar som visas i figur \ref{fig:filterbox}. Från kopparblockets kortsida har ett hål borrats genom hela blocket för att ge plats åt de två SMA kontakterna som ska föras in i kopparblockat från var sin sida och agera som filtrets centerledare. På de båda kortsidorna finns också två skruvhål borrade för att kunna fästa SMA kontakten vid kopparblocket. Från kopparblockets ovansida har ett titthål borrats för att kunna löda ihop de två SMA kontakterna samt för att kunna fylla hålrummet mellan den oisolerade centerledaren och kopparblocket med Stycast som är ett dielektrikum med förluster för att ge filtret en frekvensberoende dämpning som diskuteras i avsnitt \ref{sec:filterdesign}.
 
 \begin{comment}
@@ -74,7 +73,7 @@ Materialen och utrustning för att göra ett distribuerat lågpassfilter visas i
 \begin{figure}[h]
     \centering
     \begin{tikzpicture}
-        \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.75\textwidth]{figure/Filterbilder/filter_material.jpg}};
+        \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.65\textwidth]{figure/Filterbilder/filter_material.jpg}};
         \begin{scope}[x={(image.south east)},y={(image.north west)}]
             \node [anchor=west] (form) at (0.1,0.95) {\Large\textbf A};
             \node [anchor=west] (sked) at (0.35,0.935) {\Large\textbf B};
@@ -106,21 +105,22 @@ Första steget i att göra ett filter är att förbereda SMA kontakterna. Detta 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bild på SMA kontakt innan, under och efter den skalats
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%0.329
 \begin{figure}[h]
-    \begin{subfigure}{0.329\textwidth}
+    \centering
+    \begin{subfigure}{0.25\textwidth}
         \centering
         \includegraphics[angle=-90,trim=1450 100 1550 100,clip,width=0.97\linewidth]{figure/Filterbilder/f_sma_skalning.jpg} 
         \caption{}
         \label{fig:f_SMA_skalning}
     \end{subfigure}
-        \begin{subfigure}{0.329\textwidth}
+        \begin{subfigure}{0.25\textwidth}
         \centering
         \includegraphics[angle=-90,trim=1450 100 1550 100,clip,width=0.97\linewidth]{figure/Filterbilder/u_sma_skalning.jpg} 
         \caption{}
         \label{fig:u_SMA_skalning}
     \end{subfigure}
-        \begin{subfigure}{0.329\textwidth}
+        \begin{subfigure}{0.25\textwidth}
         \centering
         \includegraphics[angle=-90,trim=1300 100 1700 100,clip,width=0.97\linewidth]{figure/Filterbilder/e_sma_skalning.jpg} 
         \caption{}
@@ -143,20 +143,20 @@ För att löda ihop SMA kontakterna användes en lödkolv med en mejsel-spets f�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
-  
-    \begin{subfigure}{0.329\textwidth}
+    \centering
+    \begin{subfigure}{0.25\textwidth}
         \centering
         \includegraphics[angle=-90,trim=1200 100 1800 100,clip,width=0.97\linewidth]{figure/Filterbilder/prep_SMA.jpg} 
         \caption{}
         \label{fig:prep_SMA}
     \end{subfigure}
-    \begin{subfigure}{0.329\textwidth}
+    \begin{subfigure}{0.25\textwidth}
         \centering
         \includegraphics[angle=-90,trim=1000 100 2000 100,clip,width=0.97\linewidth]{figure/Filterbilder/filter_before_solder.jpg} 
         \caption{}
         \label{fig:before_solder}
     \end{subfigure}
-    \begin{subfigure}{0.329\textwidth}
+    \begin{subfigure}{0.25\textwidth}
         \centering
         \includegraphics[angle=-90,trim=1200 100 1800 100,clip,width=0.97\linewidth]{figure/Filterbilder/filter_post_solder.jpg} 
         \caption{}
@@ -171,14 +171,15 @@ För att löda ihop SMA kontakterna användes en lödkolv med en mejsel-spets f�
 % Måste få in i texten någonstans att förhållandet mellan de olika delarna ska vara A 100:28 B
 Efter att lött ihop SMA-kontakterna placerades filtret på en värmeplatta vid \unit[40]{$^\circ$C} för att underlätta när filtret senare ska fyllas med Stycast genom att sänka dess viskositet. Därefter blandades \unit[12,8]{g} Stycast genom att först väga upp \unit[10]{g} Stycast del A och \unit[2,8]{g} Stycast del B och sedan blanda ihop dessa till en homogen vätska i en metallform med hjälp av en plastsked. 
 
-Till ett filter går det åt ungefär \unit[$\approx 2$]{g} Stycast beroende på hur lång ledaren som ska kapslas in är. Det är dock nödvändigt att blanda åtminstone \unit[10]{g} för att försäkra sig om att att blandningen är homogen och att förhållandet mellan del A och del B är korrekt. 
-
-\begin{wrapfigure}{r}{0.329\textwidth}
+\begin{wrapfigure}{r}{0.25\textwidth}
     \centering
     \includegraphics[angle=-90,trim=1250 200 1950 200,clip,width=0.975\linewidth]{figure/Filterbilder/stycast_fill.jpg}
     \caption{Filter som fyllts med Stycast med en stor droppe stycast över titthålet.}
     \label{fig:stycast_filled}
 \end{wrapfigure}
+
+Till ett filter går det åt ungefär \unit[$\approx 2$]{g} Stycast beroende på hur lång ledaren som ska kapslas in är. Det är dock nödvändigt att blanda åtminstone \unit[10]{g} för att försäkra sig om att att blandningen är homogen och att förhållandet mellan del A och del B är korrekt. 
+
 Filtret fylldes sedan försiktigt med Stycast med hjälp av en pipett. Pipetten placerades mot kanten av titthålet och Stycast pressades ut långsamt för att förhindra att en bubbla över titthålet bildades, vilket skulle hindra luften i filtret från att kunna komma ut. 
 
 Efter att filtret var fullt placerades en stor droppe Stycast över titthålet som i \figref{fig:stycast_filled} så att ifall det fortfarande fanns lite luft kvar i filtret så skulle detta kunna komma ut och den extra Stycasten som placerades över titthålet skulle kunna fylla igen hålrummet. Filtret härdades sedan vid rumstemperatur i minst 16 timmar. Efter att filtret härdats kan överflödigt Stycast på filtrets ovansida slipas bort. Detta är dock inte nödvändigt för filtrets funktion.
@@ -203,25 +204,25 @@ I detta projekt har vi konstruerat filter av tre olika längder i tre uppsättni
     \end{tabular}
 \end{table}
 
-För att karakterisera samtliga filter användes en Agilent E8364B VNA. Filtrerna anslöts direkt till VNA:n med två SMA M-M adapter och därefter mättes $S_{21}$ i frekvensintervallet \unit[1-50]{GHz}. En liknande mätning utfördes även innan filtrerna fylldes med Stycast samt en mätning av $S_{21}$ utan filter för att kunna få en referens. Denna referens motsvarar således kablarnas och adapternas påverkan på $S_{21}$, vilket gör det möjligt att särskilja filtrets dämpning från andra dämpande effekter i uppkopplingen som skinneffekt och reflektioner på grund av impedansmissmatcher. 
+För att karakterisera samtliga filter användes en Agilent E8364B VNA. Filter anslöts direkt till VNA:n med två SMA M-M adapter och därefter mättes $S_{21}$ i frekvensintervallet \unit[1-50]{GHz}. Mätningen utfördes även innan filtrerna fylldes med Stycast. En mätning av $S_{21}$ utan filter togs också för att använda som referens. Denna referens motsvarar således kablarnas och adapternas påverkan på $S_{21}$, vilket gör det möjligt att särskilja filtrets dämpning från andra dämpande effekter i uppkopplingen.% som skinneffekt och reflektioner på grund av impedansmissmatcher. 
 
 I \figref{fig:filter_kar} visas den uppmätta $|S_{21}|$ för ett filter, innan och efter det fylldes med Stycast, från varje kategori samt en referens. För resterande filter se appendix \ref{}.
 
 \begin{figure}[H]
-    \begin{subfigure}[t]{0.5\textwidth}
+    \centerfloat
+    \begin{subfigure}[t]{0.329\textwidth}
         \centerfloat
         \setlength\figurewidth{0.8\linewidth}
         \setlength\figureheight{11em}
         \input{figure/grafer/Filters/Batch2_short.tikz}
     \end{subfigure}
-    \begin{subfigure}[t]{0.5\textwidth}
+    \begin{subfigure}[t]{0.329\textwidth}
         \centerfloat
         \setlength\figurewidth{0.8\linewidth}
         \setlength\figureheight{11em}
         \input{figure/grafer/Filters/Batch2_medium.tikz}
     \end{subfigure}
-
-    \begin{subfigure}[b]{0.5\textwidth}
+    \begin{subfigure}[t]{0.329\textwidth}
         \centering
         \setlength\figurewidth{0.8\linewidth}
         \setlength\figureheight{11em}
@@ -231,13 +232,13 @@ I \figref{fig:filter_kar} visas den uppmätta $|S_{21}|$ för ett filter, innan 
     \label{fig:filter_kar}
 \end{figure}
 
-Samtliga filter varav tre stycken som visas i \figref{fig:filter_kar} uppvisade en högre dämpning efter att de fyllts med Stycast jämfört med referensen. Dämpningen verkar vara proportionell mot frekvensen och skiljer sig vid \unit[50]{GHz} med \unit[$\approx-10$]{dB}. Det verkar därför rimligt att utifrån \figref{fig:filter_kar} samt teorin bakom våra filter som diskuterades i avsnitt \ref{sec:filterdesign} att dämpningen bör öka ytterligare vid högre frekvenser.
+Samtliga filter i \figref{fig:filter_kar} uppvisade en högre dämpning efter att de fyllts med Stycast jämfört med referensen. Dämpningen verkar vara proportionell mot frekvensen och skiljer sig vid \unit[50]{GHz} med \unit[$\approx-10$]{dB}. Det verkar därför rimligt att utifrån \figref{fig:filter_kar} samt teorin bakom våra filter som diskuterades i avsnitt \ref{sec:filterdesign} att dämpningen bör öka ytterligare vid högre frekvenser.
 
 
 Från \figref{fig:filter_kar} kan man inte definitivt avgöra att dämpningen ökar med längden hos filtret vilket bör vara fallet enligt den teori som diskuterades i avsnitt \ref{sec:filterdesign}. En tänkbar förklaring till detta kan vara att förlusttangenten $\delta_e$ inte är tillräckligt stor för att den frekvensberoende dämpningen ska bli tillräckligt tydlig för att synas över de fluktuationer som finns i $|S_{21}|$.% Särskilt för det korta och medellånga filtret i \figref{fig:filter_kar}.
 
 Dämpningen under \unit[10]{GHz} överstiger inte \unit[3]{dB} jämfört med referens Detta är viktigt då filter kommer att monteras på både in och utgång på provlådorna med resonatorer och en större dämpning på utgången kommer innebära ett sämre förhållande mellan signal och brus. I detta område är också $|S_{21}|$ relativt plan och jämn. Vår nollte ordningens approxiamation av bakgrundsamplituden blir därför inte orimlig på grund av filtrets inverkan.
 
-Från \figref{fig:filter_kar} kan vi se att både det korta och medellånga filtret uppvisar kraftiga spikar i $|S_{21}|$ efter \unit[$\approx 25$]{GHz} och även de långa filtret efter \unit[$\approx 40$]{GHz}. Detta beteendet är särskilt tydligt i $|S_{21}|$ för filter innan de fylldes med Stycast. Efter att filter fyllts med Stycast verkar detta beteende vara kraftigt reducerat. Dessa spikar är inte nödvändigtvis orsakade av impedansmissmatcher i våra filter på grund av lödning eller andra konstruktionsfel. Utan detta är snara ett resultat av de SMA M-M adapters som användes vid mätning av $|S_{21}|$ och SMA-kontakterna som användes i filtret bara att designade för upp till \unit[18]{GHz}. Detta är dock inte ett problem eftersom vi bara kräver en jämn dämpning i intervallet \unit[4-8]{GHz} där våra resonatorers resonansfrekvenser ligger.
+Från \figref{fig:filter_kar} kan vi se att både det korta och medellånga filtret uppvisar kraftiga spikar i $|S_{21}|$ efter \unit[$\approx 25$]{GHz} och även de långa filtret efter \unit[$\approx 40$]{GHz}. Detta beteendet är särskilt tydligt i $|S_{21}|$ för filter innan de fylldes med Stycast. Efter att filter fyllts med Stycast är detta beteende kraftigt reducerat. Dessa spikar är inte nödvändigtvis orsakade av impedansmissmatcher i våra filter på grund av lödning eller andra konstruktionsfel. Utan detta är snara ett resultat av de SMA M-M adapters som användes vid mätning av $|S_{21}|$ och SMA-kontakterna som användes i filtret bara att designade för upp till \unit[18]{GHz}. Detta är dock inte ett problem eftersom vi bara kräver en jämn dämpning i intervallet \unit[4-8]{GHz} där våra resonatorers resonansfrekvenser ligger.
 
 \end{document}

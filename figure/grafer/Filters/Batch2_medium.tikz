@@ -28,7 +28,7 @@ axis x line*=bottom,
 axis y line*=left,
 xmajorgrids,
 ymajorgrids,
-legend style={legend cell align=left, align=left, draw=white!15!black, legend pos = south west}
+legend style={legend cell align=left, align=left, draw=white!15!black, legend pos = south west,font=\footnotesize}
 ]
 \addplot [color=mycolor1]
   table[row sep=crcr]{%

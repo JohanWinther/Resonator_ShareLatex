@@ -22,85 +22,72 @@ Mätningar på prov A visade blandade resultat. \Figref{fig:A4.953} visar exempe
   \setlength\figurewidth{0.75\textwidth}
   \setlength\figureheight{12em}
   \input{figure/matningar/AlSi-d_5.732_GHz.tikz}
-  \caption{$Q_i$ vid olika antal fotoner i resonator för prov 2 med resonansfrekvens \unit[5,732]{GHz}. Figuren visar mätningar med och utan det medellånga filtret. Mätdatan är anpassad till TLS-modelen i \ref{ekv:TLSmodel}. Vid mindre än tio fotoner i resonatorn uppvisar resonatorn samma $Q_i$ med och utan filter. Vid mer än tio fotoner i resonatorn ökade $Q_i$ när filter användes. Ökning i $Q_i$ verkar bli större med antalet fotoner i resonatorn.}
+  \caption{$Q_i$ mot genomsnittligt antal fotoner i resonatorn $(f_r=\unit[5,732]{GHz})$ för prov 2. Figuren visar mätningar med och utan det medellånga filtret. Mätdatan är anpassad till TLS-modellen \eqref{ekv:TLSmodel}. Vid $\expval{n}<10^1$ uppvisar resonatorn samma $Q_i$ med och utan filter. För $\expval{n}>10^3$ finns en tydlig förbättring av $Q_i$ med filtret, som även ökar för större $\expval{n}$.}
+  \label{fig:Qi_n}
 \end{figure}
 
-%AlSi-A
+I tabell \ref{tab:Qi_A} presenteras $Q_i$ vid $\expval{n}=1$ och $\expval{n}=10^4$ för alla resonatorer, med och utan filter. Vi kan
+
 \begin{table}[h]
 \centering
-\caption{Tabellen visar resonansfrekvenserna och $Q_i$ vid låg ($\langle n\rangle=1$) och hög effekt($\langle n\rangle=10^4$), med och utan filter för de olika resonatorerna på provet med korta filter. Den procentuella förändringen efter filter visas också i de två fallen.}
+\caption{$Q_i$ vid låg ($\expval{n}=1$) och hög effekt ($\expval{n}=10^4$) för alla resonatorer, med och utan filter. Notera att majoriteten av resonatorerna i prov 1 och 2 har en positiv förbättring vid hög effekt, där alla förbättringar i prov 2 är över $10 \%$.}
 \label{tab:Qi_A}
-\begin{tabular}{rrrrrrr}
-\toprule
-$f_r$ (\unit{GHz}) & $Q_i^{låg}$ & $Q_i^{låg}$ filter &  \% & $Q_i^{hög}$ & $Q_i^{hög}$ filter &  \% \\
-\midrule
-4,953 & 494541 & 503112 & +2 & 1639071 & 1636143 & +0 \\
-5,006 & 137541 & 150901 & +10 & 176774 & 183369 & +4 \\
-5,218 & 473506 & 446376 & -6 & 1225300 & 1111122 & -9 \\
-5,689 & 233851 & 185870 & -21 & 325123 & 249776 & -23 \\
-5,959 & 320237 & 323121 & +1 & 547830 & 557199 & +2 \\
-6,251 & 232915 & 237031 & +2 & 368657 & 330500 & -10 \\
-6,946 & 100658 & 88755 & -12 & 113367 & 102477 & -10 \\
-7,351 & 182866 & 206010 & +13 & 240389 & 267209 & +11 \\
-7,624 & 432986 & 494658 & +14 & 1193896 & 1410628 & +18\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-% AlSi-C
-\begin{table}[h]
-\centering
-\caption{Tabellen visar resonansfrekvenserna och $Q_i$ vid låg ($\langle n\rangle=1$) och hög effekt($\langle n\rangle=10^4$), med och utan filter för de olika resonatorerna på provet med långa filter. Den procentuella förändringen efter filter visas också i de två fallen.}
-\label{fig:Qi_C}
-\begin{tabular}{rrrrrrr}
-\toprule
-$f_r$ (\unit{GHz}) & $Q_i^{låg}$ & $Q_i^{låg}$ filter &  \% & $Q_i^{hög}$ & $Q_i^{hög}$ filter & \% \\
-\midrule
-5,153 & 357991 & 365356 & +2 & 763255 & 781503 & +2 \\
-5,366 & 345178 & 349090 & +1 & 786969 & 793972 & +1 \\
-6,132 & 334621 & 329145 & -2 & 717688 & 719756 & +0 \\
-6,436 & 335975 & 377380 & +12 & 690086 & 760466 & +10 \\
-7,569 & 261340 & 274584 & +5 & 408291 & 437707 & +7 \\
-7,844 & 179143 & 207177 & +16 & 249860 & 295340 & +18\\
-\bottomrule
-\end{tabular}
-\end{table}
 
 
-% AlSi-d
-\begin{table}[h]
-\centering
-\caption{Tabellen visar resonansfrekvenserna och $Q_i$ vid låg ($\langle n\rangle=1$) och hög effekt($\langle n\rangle=10^4$), med och utan filter för de olika resonatorerna på provet med medellånga filter. Den procentuella förändringen efter filter visas också i de två fallen.}
-\label{tab:Qi_d}
-\begin{tabular}{rrrrrrr}
+\begin{tabular}{crrrrrrr}
 \toprule
-$f_r$ (\unit{GHz}) & $Q_i^{låg}$ & $Q_i^{låg}$ filter & \% & $Q_i^{hög}$ & $Q_i^{hög}$ filter & \% \\
-\midrule
-4,822 & 366937 & 391124 & +7 & 1838027 & 2443362 & +33 \\
-5,012 & 346153 & 368569 & +6 & 1602518 & 2052125 & +28 \\
-5,732 & 310297 & 358703 & +16 & 1567717 & 2281294 & +46 \\
-6,025 & 331339 & 303028 & -9 & 1519837 & 1763726 & +16 \\
-7,082 & 361850 & 296749 & -18 & 1167356 & 1295680 & +11 \\
-7,322 & 274503 & 228240 & -17 & 972577 & 521539 & -46 \\
+ & $f_r$ (\unit{GHz}) & låg $Q_i^{\text{utan}}$ & låg $Q_i^{\text{filter}}$ &  \% & hög $Q_i^{\text{utan}}$ & hög $Q_i^{\text{filter}}$ &  \% \\
+\cmidrule{2-8}
+
+\parbox[t]{2mm}{\multirow{6}{*}{\rotatebox[origin=c]{90}{Prov 1}}}
+& 5,153 & 357991 & 365356 & +2 & 763255 & 781503 & +2 \\
+ & 5,366 & 345178 & 349090 & +1 & 786969 & 793972 & +1 \\ 
+ & 6,132 & 334621 & 329145 & -2 & 717688 & 719756 & +0 \\ 
+ & 6,436 & 335975 & 377380 & +12 & 690086 & 760466 & +10 \\ 
+ & 7,569 & 261340 & 274584 & +5 & 408291 & 437707 & +7 \\
+ & 7,844 & 179143 & 207177 & +16 & 249860 & 295340 & +18\\
+
+\cmidrule{2-8}
+\parbox[t]{2mm}{\multirow{6}{*}{\rotatebox[origin=c]{90}{Prov 2}}}
+& 4,822 & 366937 & 391124 & +7 & 1838027 & 2443362 & +33 \\
+& 5,012 & 346153 & 368569 & +6 & 1602518 & 2052125 & +28 \\
+& 5,732 & 310297 & 358703 & +16 & 1567717 & 2281294 & +46 \\
+& 6,025 & 331339 & 303028 & -9 & 1519837 & 1763726 & +16 \\
+& 7,082 & 361850 & 296749 & -18 & 1167356 & 1295680 & +11 \\
+& 7,322 & 274503 & 228240 & -17 & 972577 & 521539 & -46 \\
+
+\cmidrule{2-8}
+\parbox[t]{2mm}{\multirow{9}{*}{\rotatebox[origin=c]{90}{Prov 3}}}
+& 4,953 & 494541 & 503112 & +2 & 1639071 & 1636143 & +0 \\
+& 5,006 & 137541 & 150901 & +10 & 176774 & 183369 & +4 \\
+& 5,218 & 473506 & 446376 & -6 & 1225300 & 1111122 & -9 \\
+& 5,689 & 233851 & 185870 & -21 & 325123 & 249776 & -23 \\
+& 5,959 & 320237 & 323121 & +1 & 547830 & 557199 & +2 \\
+& 6,251 & 232915 & 237031 & +2 & 368657 & 330500 & -10 \\
+& 6,946 & 100658 & 88755 & -12 & 113367 & 102477 & -10 \\
+& 7,351 & 182866 & 206010 & +13 & 240389 & 267209 & +11 \\
+& 7,624 & 432986 & 494658 & +14 & 1193896 & 1410628 & +18\\
 \bottomrule
 \end{tabular}
 \end{table}
 
 
-\begin{figure}
+\begin{figure}[h]
     \begin{subfigure}{0.5\textwidth}
     \centering
     \setlength\figurewidth{0.8\linewidth}
     \setlength\figureheight{11em}
     \input{figure/matningar/Q_other_AlSi_C.tikz}
-    \caption{C lång}
+    \caption{Prov 1}
+    \label{fig:Q_other_C}
     \end{subfigure}
     \begin{subfigure}{0.5\textwidth}
     \centering
     \setlength\figurewidth{0.8\linewidth}
     \setlength\figureheight{11em}
     \input{figure/matningar/Q_other_AlSi_d.tikz}
-    \caption{d medel}
+    \caption{Prov 2}
+    \label{fig:Q_other_d}
     \end{subfigure}
     \begin{center}
     \begin{subfigure}{0.75\textwidth}
@@ -108,63 +95,14 @@ $f_r$ (\unit{GHz}) & $Q_i^{låg}$ & $Q_i^{låg}$ filter & \% & $Q_i^{hög}$ & $Q
     \setlength\figurewidth{0.8\linewidth}
     \setlength\figureheight{11em}
     \input{figure/matningar/Q_other_AlSi_A.tikz}
-    \caption{A kort}
+    \caption{Prov 3}
+    \label{fig:Q_other_A}
     \end{subfigure}
     \end{center}
-    \caption{}
+    \caption{Anpassningsparameter $\frac{1}{Q_o}$ i TLS-modell \eqref{ekv:TLSmodel} anpassad till $Q_i$ mot $\expval{n}$ (exempel se \figref{fig:Qi_n}) för samtliga resonatorer på prov 1 \subref{fig:Q_other_C}, prov 2 \subref{fig:Q_other_d} och prov 3 \subref{fig:Q_other_A}. Till prov 1 användes det långa filtret, prov 2 det medellånga och prov 3 det korta. I prov 1 ser vi en minskning av förlusttermen $\frac{1}{Q_o}$ för fyra av sex resonatorer när filter användes, en resonator (\unit[$f_r=6,436$]{GHz}) var relativt oförändrad medan en resonator(\unit[$f_r=7,569$]{GHz}) uppvisade en ökning i $\frac{1}{Q_o}$ när filter användes. För prov 2 minskade $\frac{1}{Q_o}$ för fem av sex resonatorer med filter, dock uppvisade en resonator en kraftig ökning av $\frac{1}{Q_o}$. För prov 3 var filtrets effekt mer blandad. För samtliga resonatorer var förändringar i $\frac{1}{Q_o}$ relativt små. Bland resonatorerna på prov 3 syns inga större förbättringar samt försämringar när filter användes.}
     \label{fig:my_label}
 \end{figure}
 
 
-\iffalse
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-A_4.953_GHz.tikz}
-  \caption{AlSi-A\_4.953\_GHz, Intern Q-faktor för resonator med och utan filter vid olika antal fotoner i resonatorn. Mätningarna är gjorda vid resonansfrekvensen \unit[4,953]{GHz}. Anpassning till \ref{ekv:TLSmodel} gav $Q_{\text{annat}}^{\text{filter}}=2,342\cdot10^6$, $Q_{\text{annat}}^{\text{utan}}=2,394\cdot10^6$.} 
-  \label{fig:A4.953}
-\end{figure}
 
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-A_5.006_GHz.tikz}
-  \caption{AlSi-A\_5.006\_GHz Intern Q-faktor för resonator med och utan filter vid olika antal fotoner i resonatorn. Mätningarna är gjorda vid resonansfrekvensen \unit[4,953]{GHz}. Anpassning till \ref{ekv:TLSmodel} gav $Q_{\text{annat}}^{\text{filter}}=1,873\cdot10^5$, $Q_{\text{annat}}^{\text{utan}}=1,802\cdot10^5$.}
-  \label{fig:A5.006}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-A_5.689_GHz.tikz}
-  \caption{AlSi-A\_5.689\_GHz Intern Q-faktor för resonator med och utan filter vid olika antal fotoner i resonatorn. Mätningarna är gjorda vid resonansfrekvensen \unit[4,953]{GHz}. Anpassning till \ref{ekv:TLSmodel} gav  $Q_{\text{annat}}^{\text{filter}}=2,556\cdot10^5$, $Q_{\text{annat}}^{\text{utan}}=3,403\cdot10^5$.}
-  \label{fig:A5.689}
-\end{figure}
-
-
-För prov C skedde inga försämringar till följd av filtrena. \figref{fig:C6.436} visar ett exempel på en resonator från prov C där filtrena gav upphov till en liten men konsekvent förbättring av $Q_i$
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-C_6.436_GHz.tikz}
-  \caption{AlSi-C\_6.436\_GHz Intern Q-faktor för resonator med och utan filter vid olika antal fotoner i resonatorn. Mätningarna är gjorda vid resonansfrekvensen \unit[4,953]{GHz}. Anpassning till \ref{ekv:TLSmodel} gav $Q_{\text{annat}}^{\text{filter}}=8,727\cdot10^6$, $Q_{\text{annat}}^{\text{utan}}=1,565\cdot10^6$.}
-  \label{fig:C6.436}
-\end{figure}
-
-De flesta graferna från mätningarna på d-provet hade ett utseende som liknar det hos \figref{fig:d6.025}, alltså ett någorlunda oförändrat Q-värde under ett visst antal fotoner och en ökande förbättring efter det.
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-d_6.025_GHz.tikz}
-  \caption{AlSi-d\_6.025\_GHz Intern Q-faktor för resonator med och utan filter vid olika antal fotoner i resonatorn. Mätningarna är gjorda vid resonansfrekvensen \unit[6,025]{GHz}. Anpassning till \ref{ekv:TLSmodel} gav $Q_{\text{annat}}^{\text{filter}}=1,036\cdot10^7$, $Q_{\text{annat}}^{\text{utan}}=2,229\cdot10^7$.}
-  \label{fig:d6.025}
-\end{figure}
-\fi
 \end{document}
