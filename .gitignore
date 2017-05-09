@@ -7,3 +7,7 @@ main.log
 main.run.xml
 *.gz
 main.toc
+*.bcf
+*.log
+Resonatorer.pdf
+*.xml
