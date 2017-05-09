@@ -1,0 +1,60 @@
+% This file was created by matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.12527,0.32424,0.83027}%
+\definecolor{mycolor2}{rgb}{0.99904,0.76531,0.21641}%
+%
+\begin{tikzpicture}[%
+trim axis left, trim axis right
+]
+
+\begin{axis}[%
+width=0.96\figurewidth,
+height=\figureheight,
+at={(0\figurewidth,0\figureheight)},
+scale only axis,
+bar shift auto,
+xmin=0,
+xmax=7,
+xtick={1,2,3,4,5,6},
+xticklabels={{5.153},{5.366},{6.132},{6.436},{7.569},{7.844}},
+xlabel style={font=\color{white!15!black}},
+xlabel={Resonansfrekvens (\unit{GHz})},
+ymin=0,
+ymax=3e-07,
+ylabel style={font=\color{white!15!black}},
+ylabel={$1/Q_o$},
+axis background/.style={fill=white},
+title style={font=\bfseries},
+title={},
+legend style={legend cell align=left, align=left, draw=white!15!black,legend pos = north west}
+]
+\addplot[ybar, bar width=0.229, fill=mycolor1, draw=black, area legend] table[row sep=crcr] {%
+1	6.30549618735363e-08\\
+2	7.01023767596739e-08\\
+3	6.34400611286079e-08\\
+4	3.77130813762326e-08\\
+5	1.15668525313106e-07\\
+6	2.52305686010039e-07\\
+};
+\addplot[forget plot, color=white!15!black] table[row sep=crcr] {%
+0	0\\
+7	0\\
+};
+\addlegendentry{utan filter}
+
+\addplot[ybar, bar width=0.229, fill=mycolor2, draw=black, area legend] table[row sep=crcr] {%
+1	4.08124644535775e-08\\
+2	4.11019336724848e-08\\
+3	1.42139113974824e-08\\
+4	4.26629500372091e-08\\
+5	1.75105525406755e-07\\
+6	2.1613786228122e-07\\
+};
+\addplot[forget plot, color=white!15!black] table[row sep=crcr] {%
+0	0\\
+7	0\\
+};
+\addlegendentry{med filter}
+
+\end{axis}
+\end{tikzpicture}%

@@ -21,6 +21,7 @@ ylabel={$\text{$|$S}_{\text{21}}\text{$|$}$},
 axis background/.style={fill=white},
 xticklabel style={/pgf/number format/fixed,
                   /pgf/number format/precision=4},
+xtick distance={0.001},
 clip mode=individual,
 try min ticks=5
 ]
