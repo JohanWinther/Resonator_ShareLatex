@@ -8,17 +8,15 @@ trim axis left, trim axis right
 ]
 
 \begin{axis}[%
-width=0.953\figurewidth,
+width=\figurewidth,
 height=0.417\figureheight,
 at={(0\figurewidth,0.583\figureheight)},
 scale only axis,
 xmin=5.153,
 xmax=5.1545,
-xlabel style={font=\color{white!15!black}},
 ymin=0,
 ymax=1.5,
-ylabel style={font=\color{white!15!black}},
-ylabel={$\angle\text{ S}_{\text{21}}$},
+ymajorticks=false,
 axis background/.style={fill=white},
 clip mode=individual
 ]
@@ -1033,7 +1031,7 @@ clip mode=individual
 \end{axis}
 
 \begin{axis}[%
-width=0.953\figurewidth,
+width=\figurewidth,
 height=0.417\figureheight,
 at={(0\figurewidth,0\figureheight)},
 scale only axis,
@@ -1043,6 +1041,7 @@ xlabel style={font=\color{white!15!black}},
 xlabel={Frekvens (GHz)},
 ymin=-250,
 ymax=-100,
+ymajorticks=false,
 axis background/.style={fill=white}
 ]
 \addplot [color=mycolor1, draw=none, mark size=2.0pt, mark=o, mark options={solid, mycolor1}, forget plot]
