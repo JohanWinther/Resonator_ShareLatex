@@ -5,7 +5,7 @@
 
 \chapter{Resultat}
 \label{ch:results}
-I följande avsnitt presenteras först mätningarna av $S_{21}$ för ett antal resonatorer
+Relevant metatext som förklarar uplägget av resultat
 
 \section{Jämförelse av intern kvalitetsfaktor utan och med filter}
 %I \figref{fig:qi_pwr} visas $Q_i$ över antalet genomsnittliga fotoner i 
@@ -17,6 +17,79 @@ Samtliga figurer innehåller en kurvanpassning utifrån modellen \ref{ekv:TLSmod
 Mätningar på prov A visade blandade resultat. \Figref{fig:A4.953} visar exempel på en resonator där Q-värdet förändrades väldigt lite efter våra filter hade kopplats på. \Figref{fig:A5.006} och \figref{fig:A5.689} visar resonatorer vilkas Q-värde har förbättras respektive försämrats över hela effektintervallet. Samtliga av dessa mätningar från prov A passade väl med anpassningen till TLS-modellen \ref{ekv:TLSmodel}.
 
 
+\begin{figure}[H]
+  \centering
+  \setlength\figurewidth{0.75\textwidth}
+  \setlength\figureheight{12em}
+  \input{figure/matningar/AlSi-d_5.732_GHz.tikz}
+  \caption{$Q_i$ vid olika antal fotoner i resonator för prov med medellånga filter och resonansfrekvens \unit[5,732]{GHz}.}
+\end{figure}
+
+%AlSi-A
+\begin{table}[h]
+\centering
+\caption{Tabellen visar resonansfrekvenserna och $Q_i$ vid låg ($\langle n\rangle=1$) och hög effekt($\langle n\rangle=10^4$), med och utan filter för de olika resonatorerna på provet med korta filter. Den procentuella förändringen efter filter visas också i de två fallen.}
+\label{tab:Qi_A}
+\begin{tabular}{rrrrrrr}
+\toprule
+$f_r$ (\unit{GHz}) & $Q_i^{låg}$ & $Q_i^{låg}$ filter &  \% & $Q_i^{hög}$ & $Q_i^{hög}$ filter &  \% \\
+\midrule
+4,953 & 494541 & 503112 & +2 & 1639071 & 1636143 & +0 \\
+5,006 & 137541 & 150901 & +10 & 176774 & 183369 & +4 \\
+5,218 & 473506 & 446376 & -6 & 1225300 & 1111122 & -9 \\
+5,689 & 233851 & 185870 & -21 & 325123 & 249776 & -23 \\
+5,959 & 320237 & 323121 & +1 & 547830 & 557199 & +2 \\
+6,251 & 232915 & 237031 & +2 & 368657 & 330500 & -10 \\
+6,946 & 100658 & 88755 & -12 & 113367 & 102477 & -10 \\
+7,351 & 182866 & 206010 & +13 & 240389 & 267209 & +11 \\
+7,624 & 432986 & 494658 & +14 & 1193896 & 1410628 & +18\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% AlSi-C
+\begin{table}[h]
+\centering
+\caption{Tabellen visar resonansfrekvenserna och $Q_i$ vid låg ($\langle n\rangle=1$) och hög effekt($\langle n\rangle=10^4$), med och utan filter för de olika resonatorerna på provet med långa filter. Den procentuella förändringen efter filter visas också i de två fallen.}
+\label{fig:Qi_C}
+\begin{tabular}{rrrrrrr}
+\toprule
+$f_r$ (\unit{GHz}) & $Q_i^{låg}$ & $Q_i^{låg}$ filter &  \% & $Q_i^{hög}$ & $Q_i^{hög}$ filter & \% \\
+\midrule
+5,153 & 357991 & 365356 & +2 & 763255 & 781503 & +2 \\
+5,366 & 345178 & 349090 & +1 & 786969 & 793972 & +1 \\
+6,132 & 334621 & 329145 & -2 & 717688 & 719756 & +0 \\
+6,436 & 335975 & 377380 & +12 & 690086 & 760466 & +10 \\
+7,569 & 261340 & 274584 & +5 & 408291 & 437707 & +7 \\
+7,844 & 179143 & 207177 & +16 & 249860 & 295340 & +18\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% AlSi-d
+\begin{table}[h]
+\centering
+\caption{Tabellen visar resonansfrekvenserna och $Q_i$ vid låg ($\langle n\rangle=1$) och hög effekt($\langle n\rangle=10^4$), med och utan filter för de olika resonatorerna på provet med medellånga filter. Den procentuella förändringen efter filter visas också i de två fallen.}
+\label{tab:Qi_d}
+\begin{tabular}{rrrrrrr}
+\toprule
+$f_r$ (\unit{GHz}) & $Q_i^{låg}$ & $Q_i^{låg}$ filter & \% & $Q_i^{hög}$ & $Q_i^{hög}$ filter & \% \\
+\midrule
+4,822 & 366937 & 391124 & +7 & 1838027 & 2443362 & +33 \\
+5,012 & 346153 & 368569 & +6 & 1602518 & 2052125 & +28 \\
+5,732 & 310297 & 358703 & +16 & 1567717 & 2281294 & +46 \\
+6,025 & 331339 & 303028 & -9 & 1519837 & 1763726 & +16 \\
+7,082 & 361850 & 296749 & -18 & 1167356 & 1295680 & +11 \\
+7,322 & 274503 & 228240 & -17 & 972577 & 521539 & -46 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+
+
 
 \begin{figure}
     \begin{subfigure}{0.5\textwidth}
@@ -24,14 +97,14 @@ Mätningar på prov A visade blandade resultat. \Figref{fig:A4.953} visar exempe
     \setlength\figurewidth{0.8\linewidth}
     \setlength\figureheight{11em}
     \input{figure/matningar/Q_other_AlSi_C.tikz}
-    \caption{C}
+    \caption{C lång}
     \end{subfigure}
     \begin{subfigure}{0.5\textwidth}
     \centering
     \setlength\figurewidth{0.8\linewidth}
     \setlength\figureheight{11em}
     \input{figure/matningar/Q_other_AlSi_d.tikz}
-    \caption{d}
+    \caption{d medel}
     \end{subfigure}
     \begin{center}
     \begin{subfigure}{0.75\textwidth}
@@ -39,7 +112,7 @@ Mätningar på prov A visade blandade resultat. \Figref{fig:A4.953} visar exempe
     \setlength\figurewidth{0.8\linewidth}
     \setlength\figureheight{11em}
     \input{figure/matningar/Q_other_AlSi_A.tikz}
-    \caption{A}
+    \caption{A kort}
     \end{subfigure}
     \end{center}
     \caption{Caption}
