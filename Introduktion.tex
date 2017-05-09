@@ -10,19 +10,41 @@ Kvantdatorer är ett aktuellt ämne inom modern forskning, och framstegen har va
 
 Teknologin bakom kvantsimulering bygger på kvantbitar. Till skillnad från vanliga bitar som enbart kan vara i tillståndet ''0'' eller ''1'' kan en kvantbit befinna sig i en superposition av kvanttillstånden $\ket{0}$ och $\ket{1}$. Denna egenskap för kvantbitarna bidrar till att kvantsimuleringar kan vara exponentiellt mycket kraftfullare än klassiska simuleringar \cite{Eckstein2013}.
 
-Dessa kvantbitar kan realiseras i verkligheten på olika sätt, bland annat med hjälp av supraledande kretsar \cite{Oliver2013}. För att kvantbitarna ska vara användbara är det viktigaste att fokusera på koherenstiden, tiden då en kvantbit kan lagra information. För att kunna kunna utföra beräkningar måste koherenstiden vara tillräckligt hög för att informationen inte ska hinna försvinna innan beräkningarna är utförda\cite{Eckstein2013}. Sedan 1999 har koherenstiden ökat från ett fåtal nanosekunder till över hundra mikrosekunder \cite{Wendin2016}.
+Dessa kvantbitar kan realiseras i verkligheten på olika sätt, bland annat med hjälp av supraledande kretsar \cite{Oliver2013}. För att kvantbitarna ska vara användbara är det viktigaste att fokusera på koherenstiden, tiden då en kvantbit kan lagra information. För att kunna kunna utföra beräkningar måste koherenstiden vara tillräckligt hög för att informationen inte ska hinna försvinna innan beräkningarna är utförda\cite{Eckstein2013}. Sedan 1999 har koherenstiden ökat från ett fåtal nanosekunder till över hundra mikrosekunder \cite{Wendin2016}.Koherenstiden för resonatorer är relaterat till Q-värdet, ett mått på kvalitetsfaktorn för resonatorerna. En högre koherenstid ger ett högre Q-värde.
 
-Det stora problemet för utvecklingen är just att undersöka vilka faktorer som påverkar koherenstiden, och hur man går tillväga för att påverka dessa faktorer. Forskning har gjorts på resonatorernas geometriska faktorer \cite{Oliver2013}\cite{Chi} samt hur valet av material påverkar kvalitetsfaktorn \cite{Eckstein2013}.
+För att undersöka hur man kan förbättra koherenstiden för kvantbitar används av supraledande resonatorer. Dels för att dessa även är användbara för applikationer tillsammans med kvantbitar, till exempel för avläsning, koppling och filtrering \cite{wendin2016} och dels för att de är enklare att arbeta med samtidigt som störningarna som förändrar koherenstiden bör vara de samma\cite{Oliver2013}. 
 
+Det stora problemet för utvecklingen är just att undersöka vilka faktorer som påverkar koherenstiden, och hur man går tillväga för att påverka dessa faktorer. Forskning har gjorts på resonatorernas geometriska faktorer \cite{Oliver2013}\cite{Chiaro2016} samt hur valet av material påverkar kvalitetsfaktorn \cite{Eckstein2013}. Ett problem som ligger till grund för detta arbete är högfrekventa fotoner, med en frekvens över 88 GHz, som misstänks bryta sönder Cooperpar i ytskikten i de supraledande material som används och som sådeles bidrar till dekoherens.
 
-
-I en artikel utgiven 2016 skriver Chiaro et al om hur minskade magnetiska förluster till följd av flödesfångande hål i SCPW-resonatorers film (Superconducting Coplanar Waveguide) bidrar till ökade dielektriska ytförluster, här användes en experimentuppställen som var snarlik den som användes i denna rapport. Probem som kan uppkomma är förbättringar på resonatorernas geometriska design som leder till begränsande, dielektriska TLS-förluster. (Fyll på)
-
-
-För att undersöka hur man kan förbättra koherenstiden för kvantbitar använde vi oss av supraledande resonatorer. Dels för att dessa även är användbara för applikationer tillsammans med kvantbitar, till exempel för avläsning, koppling och filtrering \cite{placeholder} och dels för att de är enklare att arbeta med samtidigt som störningarna som förändrar koherenstiden bör vara de samma\cite{Oliver2013}. Koherenstiden för resonatorer är relaterat till Q-värdet, ett mått på kvalitetsfaktorn för resonatorerna. En högre koherenstid ger ett högre Q-värde.
+%fotoner över \unit[88]{GHz} bryter cooperparen i supraledande aluminium, kvasipartiklar som ger förluster.
+%det är det här vi är intresserade av att ''lösa''
 
 
-Målet med detta arbete är att undersöka möjligheter för att öka Q-värdet för supraledande mikrovågsresonatorer. Vår hypotes var att en del av förlusterna uppkommer till följd av att fotoner med frekvenser över \unit[100]{GHz} passerar genom de kommersiella lågpassfiltrena där de sedan slår sönder Cooperpar hos de supraledande resonatorerna. Genom att tillverka distribuerade lågpassfilter som inte släpper igenom dessa högfrekventa fotoner var målet att öka koherenstiden och således öka Q-värdet.
+
+
+\section{Problembeskrivning}
+
+Målet med detta arbete är att undersöka möjligheter för att öka Q-värdet för supraledande mikrovågsresonatorer. Vår hypotes var att en del av förlusterna uppkommer till följd av att fotoner med frekvenser över \unit[88]{GHz} passerar genom de kommersiella lågpassfiltrena där de sedan slår sönder Cooperpar hos de supraledande resonatorerna. Genom att tillverka distribuerade lågpassfilter som inte släpper igenom dessa högfrekventa fotoner var målet att öka koherenstiden och således öka Q-värdet.
+
+
+De fotoner som har en frekvens på över \unit[88]{GHz} kan bryta Cooperpar i supraledande aluminium och därmed generera ett överskott av kvasipartiklar. De supraledande mikrovågsresonatorerna kan inte uppvisa bättre Q-värde än vad försöksuppställningen tillåter och behöver isoleras effektivt. Därför görs mätningar på dem i en kryostat med flera olika temperatursteg för att minska mängden svartkroppsstrålning från övriga komponenter i stegen med högre temperatur. 
+
+
+De kommersiella filterna som finns idag funkar inte då dämpningen avtar för höga frekvenser. Även vid låga temperaturer uppvisar alla komponenter fortfarande en liten bakgrundsstrålning, från detta kommer de högfrekventa (över 88 GHz) fotonerna. Vår hypotes är att genom att tillverka filter som framgångsrikt filtrerar bort fotoner med frekvenser över 88 GHz så kommer dekoherens som uppstår från brutna Cooper par att försvinna och således kommer Q-värdet att öka.
+
+
+Om det finns en mängd fotoner med frekvens över 88 GHz går ej att bekräfta enbart med hjälp av en VNA i förhand, då de tillgängliga VNA:er (?) inte kan mäta högre än till 50 GHz.
+
+
+
+Ett möjlig lösning för att öka Q-värdet är att bygga lågpassfilter. 
+
+\section{Syfte}
+Syftet med rapporten är att redogöra för en möjligt utveckling av filter för mikrovågsresonatorer. Att ge läsaren en inblick i tillverkningsprocessen. Att presentera skillnaden i Q-värde när filter placerades före och efter resonatorer i en kryostat med temperatur på 10 mK. I rapporten presenteras data för Q-värden framtagna från resultat
+
+%I nästa kapitel behandlas det som berör resonatorerna, därefter förklaras filterkonstruktion och filterkarakteristik i kapitel \ref{ch:filter}. I kapitel \ref{ch:exp} förklaras de experiment som gav resultaten i \ref{ch:results}.
+
+
 
 
 
@@ -35,28 +57,10 @@ Målet med detta arbete är att undersöka möjligheter för att öka Q-värdet 
 
 
 %2010 publicerade Oliver och Welander en artikel angående materialbekymmer när det kommer till kvantbitar och således även mikrovågsresonatorer \cite{Oliver2013}. De problem som för tillfället har störst inverkan på koherenstiden kommer till störst del från två-nivåsystem, vilket diskuteras mer djupgående i Sektion \ref{sec:tlf}., men möjliga andra bekymmer kan vara kvasipartikel-tunnling och strömfluktuationer som uppkommer i materialen \cite{Oliver2013}.
-Ett ytterligare problem Kort introduktion av problemet
-fotoner över \unit[88]{GHz} bryter cooperparen i supraledande aluminium, kvasipartiklar som ger förluster.
-det är det här vi är intresserade av att ''lösa''
-
-\section{Problembeskrivning}
-De fotoner som har en frekvens på över \unit[88]{GHz} kan bryta Cooperpar i supraledande aluminium och därmed generera ett överskott av kvasipartiklar. De supraledande mikrovågsresonatorerna kan inte uppvisa bättre Q-värde än vad försöksuppställningen tillåter och behöver isoleras effektivt. Därför görs mätningar på dem i en kryostat med flera olika temperatursteg för att minska mängden svartkroppsstrålning från övriga komponenter i stegen med högre temperatur. 
-
-
-Kryostat, isolering, temperatursteg ska minska svartkroppstrålning Komponenter
-
-De kommersiella filterna som finns idag funkar inte då dämpningen avtar för höga frekvenser. Även vid låga temperaturer uppvisar alla komponenter fortfarande en liten bakgrundsstrålning, från detta kommer de högfrekventa (över 88 GHz) fotonerna. Vår hypotes är att genom att tillverka filter som framgångsrikt filtrerar bort fotoner med frekvenser över 88 GHz så kommer dekoherens som uppstår från brutna Cooper par att försvinna och således kommer Q-värdet att öka.
-
-
-Om det finns en mängd fotoner med frekvens över 88 GHz går ej att bekräfta enbart med hjälp av en VNA i förhand, då de tillgängliga VNA:er (?) inte kan mäta högre än till 50 GHz.
 
 
 
-Ett möjlig lösning för att öka Q-värdet är att bygga lågpassfilter. 
+%I en artikel utgiven 2016 skriver Chiaro et al om hur minskade magnetiska förluster till följd av flödesfångande hål i SCPW-resonatorers film (Superconducting Coplanar Waveguide) bidrar till ökade dielektriska ytförluster, här användes en experimentuppställen som var snarlik den som användes i denna rapport. Probem som kan uppkomma är förbättringar på resonatorernas geometriska design som leder till begränsande, dielektriska TLS-förluster. (Fyll på)
 
-\section{Syfte}
-Syftet med rapporten är att utveckla 
-
-%I nästa kapitel behandlas det som berör resonatorerna, därefter förklaras filterkonstruktion och filterkarakteristik i kapitel \ref{ch:filter}. I kapitel \ref{ch:exp} förklaras de experiment som gav resultaten i \ref{ch:results}.
 
 \end{document}
