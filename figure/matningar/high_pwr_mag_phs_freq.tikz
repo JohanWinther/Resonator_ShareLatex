@@ -12,13 +12,15 @@ width=\figurewidth,
 height=0.417\figureheight,
 at={(0\figurewidth,0.583\figureheight)},
 scale only axis,
-xmin=5.153,
-xmax=5.1545,
+xmin=5.152455168,
+xmax=5.15445504,
 ymin=0,
 ymax=1.5,
 ylabel style={font=\color{white!15!black}},
 ylabel={$\text{$|$S}_{\text{21}}\text{$|$}$},
 axis background/.style={fill=white},
+xticklabel style={/pgf/number format/fixed,
+                  /pgf/number format/precision=4},
 clip mode=individual
 ]
 \addplot [color=mycolor1, draw=none, mark size=2.0pt, mark=o, mark options={solid, mycolor1}, forget plot]
@@ -758,11 +760,13 @@ xmin=5.153,
 xmax=5.1545,
 xlabel style={font=\color{white!15!black}},
 xlabel={Frekvens (GHz)},
-ymin=-250,
+ymin=-240,
 ymax=-100,
 ylabel style={font=\color{white!15!black}},
 ylabel={$\angle\text{ S}_{\text{21}}$},
-axis background/.style={fill=white}
+axis background/.style={fill=white},
+xticklabel style={/pgf/number format/fixed,
+                  /pgf/number format/precision=4}
 ]
 \addplot [color=mycolor1, draw=none, mark size=2.0pt, mark=o, mark options={solid, mycolor1}, forget plot]
   table[row sep=crcr]{%
