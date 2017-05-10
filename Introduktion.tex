@@ -12,30 +12,43 @@ Teknologin bakom kvantsimulering bygger på kvantbitar (engelska qubit). Till sk
 
 Dessa kvantbitar kan realiseras i verkligheten på olika sätt \cite{Eckstein2013}, bland annat med supraledande kretsar \cite{Oliver2013}. För att dessa supraledande kvantbitar ska vara användbara behöver de uppfylla en rad kriterier \cite{Eckstein2013}, varav ett krav är att ha en tillräckligt hög koherenstid, tiden då en kvantbit är isolerad från externa störningar \cite{Oliver2013}. Sedan 1999 har koherenstiden ökats från ett fåtal nanosekunder till över 100 mikrosekunder \cite{wendin2016}.
 
-Det finns en konsensus inom forskningsområdet att en ökad förståelse för de faktorer som begränsar koherenstiden är det primära målet för att kunna skapa mer avancerade kvantkretsar och system \cite{Oliver2013}. Där har supraledande mikrovågsresonatorer varit betydande för att identifiera ett flertal källor till störningar och förlustmekanismer för supraledande kretsar. Anledning är för att de är lätta att tillverka och undersöka \cite{Oliver2013}. Dessutom är de användbara för applikationer tillsammans med kvantbitar, till exempel som avläsare av kvantbitarnas tillstånd \cite{wendin2016}.
+Det finns en konsensus inom forskningsområdet att en ökad förståelse för de faktorer som begränsar koherenstiden är väsentligt för att kunna skapa mer avancerade kvantkretsar och system \cite{Oliver2013}. Där har supraledande mikrovågsresonatorer varit betydande för att identifiera ett flertal källor till störningar och förlustmekanismer för supraledande kretsar. Anledning är för att de är lätta att tillverka och undersöka \cite{Oliver2013}. Dessutom är de kritiska för applikationer tillsammans med kvantbitar, till exempel som avläsare av kvantbitarnas tillstånd \cite{wendin2016}.
 
 Den förlustmekanism som dominerar är den som primärt begränsar resonatorerna, vilket förklaras i avsnitt \ref{sec:losses}. Därför är det avgörande att angripa alla orsaker till yttre störningar och förluster i resonatorerna. Förbättringar har gjorts genom bland annat val av design \cite{khalil2011,chiaro2016}, material \cite{Goetz2016} och tillverkningsprocess \cite{Bruno2015,Sanberg2012}.
 
-Resonatorerna kan inte heller prestera bättre än vad mät- och kontrolluppställningen tillåter. \citeauthor{Barends2011} et al påvisar att en kryostat med flerstegsskärmning runt de supraledande resonatorerna helt eliminerar de förluster som uppkommer på grund av termisk strålning i kryostaten \cite{Barends2011}. Även om en resonator skärmas enligt \cite{Barends2011}, täcker inte skärmningen in- eller utgångarna i resonatorkretsen. Därför används bandpassfilter för att dämpa den termiska strålningen i själva ledningen till resonatorerna.
+Resonatorerna kan inte heller prestera bättre än vad mät- och kontrolluppställningen tillåter. \citeauthor{Barends2011} påvisar att en kryostat med flerstegsskärmning runt de supraledande resonatorerna helt eliminerar de förluster som uppkommer på grund av termisk strålning i kryostaten \cite{Barends2011}. Även om en resonator skärmas enligt \cite{Barends2011}, täcker inte skärmningen in- eller utgångarna i resonatorkretsen. Därför används bandpassfilter för att dämpa den termiska strålningen i själva ledningen till resonatorerna.
 
 \section{Problembeskrivning}
-Vi har anledning att tro att den termiska strålningen kan passera genom dessa bandpassfilter eftersom de alltid har ett begränsat stoppband \cite{santavicca2008}.
+
+termisk strålning> bryter Cooperpar -> kvasipartiklar -> förluster
+
+för att kunna förklara
+
+svartkroppstrålning -> filter funkar inte -> skapa egna
+
+Vi har anledning att tro att den termiska strålningen kan passera genom dessa bandpassfilter eftersom sådana alltid har ett begränsat stoppband \cite{santavicca2008}. Detta är ett problem eftersom strålning med tillräckligt hög energi kan bryta Cooperpar i en supraledare \cite{Gao2008}, i vårt fall för aluminium fotoner med $f>\unit[88]{GHz}$ eftersom aluminium har ett supraledande bandgap $\Delta E=\unit[0.36]{meV}$.
+
+Strålningen kommer av alla övriga komponenter i kryostatens olika temperatursteg emitterar svartkroppsstrålning även vid temperaturer på bara några få milikelvin.
 
 
-i kryostat med flera temperatursteg för att minska mängden svartkroppsstrålning från övriga komponenter i stegen med högre temperatur. I den lägsta temperaturen \unit[10]{mK} innan 
+De fotoner som har en frekvens på över \unit[88]{GHz} kan bryta Cooperpar i supraledande aluminium och därmed generera ett överskott av kvasipartiklar. Kvasipartiklar orsakar förluster eftersom de till skillnad från Cooperparen upplever en resistivitet i ledaren.
+
+De högfrekventa fotonerna uppkommer inne i kyostaten, även efter att denna sköldats från omgivningen. Detta beror på att alla komponenter fortfarande uppvisar en liten bakgrundsstrålning, även vid låga temperaturer.
+
+... (Jonathan har förklarat problemet i detalj som vi kommer skriva här, där kommer all specifik kvantifiering att presenteras, bl.a. temperaturer, energier, frekvenser osv.)
+
+
+
 Vår hypotes var att en del av förlusterna uppkommer till följd av att fotoner med frekvenser över \unit[88]{GHz} passerar genom de kommersiella lågpassfiltrena där de sedan slår sönder Cooperpar hos de supraledande resonatorerna. Genom att tillverka distribuerade lågpassfilter som inte släpper igenom dessa högfrekventa fotoner var målet att öka koherenstiden och således öka Q-värdet.
 
-
-De fotoner som har en frekvens på över \unit[88]{GHz} kan bryta Cooperpar i supraledande aluminium och därmed generera ett överskott av kvasipartiklar. Kvasipartiklar orsakar förluster eftersom de till skillnad från Cooperparen upplever en resistivitet i ledaren. 
 
 De kommersiella filterna som finns idag funkar inte då dämpningen avtar för höga frekvenser, vilket är anledningen till att vi konstruerat egna filter. De högfrekventa fotonerna uppkommer inne i kyostaten, även efter att denna sköldats från omgivningen. Detta beror på att alla komponenter fortfarande uppvisar en liten bakgrundsstrålning, även vid låga temperaturer. Vår hypotes är att genom att tillverka filter som framgångsrikt filtrerar bort fotoner med frekvenser över 88 GHz så kommer dekoherens som uppstår från brutna Cooperpar att minksa och således kommer Q-värdet att öka.
 
 \section{Syfte}
-Syftet med rapporten är att redogöra för en möjligt utveckling av filter för mikrovågsresonatorer. Läsaren kommer att få en inblick i tillverkningsprocessen för lågpassfilter lämpade att användas i temperaturer kring 10 mK och som filtrerar bort fotoner med en frekvens över 88 GHz. Att presentera skillnaden i Q-värde när filter placerades före och efter resonatorer i en kryostat med temperatur på 10 mK. I rapporten presenteras data för Q-värden framtagna från resultat
+Syftet med rapporten är att redogöra för en utveckling av filter för mikrovågsresonatorer. Läsaren kommer att få en inblick i tillverkningsprocessen för lågpassfilter lämpade att användas i temperaturer kring 10 mK och som filtrerar bort fotoner med en frekvens över 88 GHz. Att presentera skillnaden i Q-värde när filter placerades före och efter resonatorer i en kryostat med temperatur på 10 mK. I rapporten presenteras data för Q-värden framtagna från resultat.
+
 
 %I nästa kapitel behandlas det som berör resonatorerna, därefter förklaras filterkonstruktion och filterkarakteristik i kapitel \ref{ch:filter}. I kapitel \ref{ch:exp} förklaras de experiment som gav resultaten i \ref{ch:results}.
-
-
 
 
 
