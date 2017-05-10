@@ -4,7 +4,7 @@
 \begin{document}
 \chapter{Experiment}
 \label{ch:exp}
-Följande avsnitt beskriver det experiment för att undersöka effektiviteten av filtrena. Vi beskriver först mätuppställningen, sedan utförda mätserier och till sist vilka parametrar som från modellanpassningen som jämförs och presenteras i resultatkapitlet.
+Följande avsnitt beskriver det experiment som utfördes för att undersöka effektiviteten av filtrena. Vi beskriver först mätuppställningen, sedan utförda mätserier och till sist vilka parametrar som från modellanpassningen som jämförs och presenteras i resultatkapitlet.
 
 
 
@@ -21,12 +21,11 @@ Mätuppställningen är baserad på \figref{fig:matuppstallning}, men med våra 
 \end{comment}
 
 
-\begin{comment}
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \begin{tikzpicture}
-        \node[anchor=south west,inner sep=0] (image) at (3,0) {\includegraphics[width=0.1\textwidth,angle=180,trim=400 500 400 225,clip,width=0.75\linewidth]{figure/Experiment/uppstt.jpg}};
+        \node[anchor=south west,inner sep=0] (image) at (3,0) {\includegraphics[width=0.1\textwidth,angle=180,trim=400 500 400 225,clip,width=0.6\linewidth]{figure/Experiment/uppstt.jpg}};
         \begin{scope}[x={(image.south east)},y={(image.north west)}]
         \node [anchor=west] at (0.3,0.4) {\Large\textbf 1};
         \node [anchor=west] at (0.34,0.4) {\Large\textbf 2};
@@ -39,44 +38,20 @@ Mätuppställningen är baserad på \figref{fig:matuppstallning}, men med våra 
         %\node [anchor=west] at (0.9,0.4) {\Large\textbf I};
         \end{scope}
     \end{tikzpicture}
-    \caption{I figuren visas provlådorna AlSi12-22C (1), AlSi12-11d (2), och AlSi12-A (3). Till provlåda AlSi12-A är filtren med 1,895 cm respektive 1,825 cm frilagd ledare placerade (4). Filtren är kopplade till plattan med en koppartråd (5).}
+    \caption{I figuren visas provlådorna AlSi12-22C (1), AlSi12-11d (2), och AlSi12-A (3). I figuren är filtren med 1,895 cm respektive 1,825 cm frilagd ledare kopplade till provlåda AlSi12-A  (4). Filtren är även kopplade till plattan med en koppartråd (5).}
     \label{fig:sifferupp}
 \end{figure}
 
 
-\end{comment}
 
-
-
-
-Nio filter användes i mätningen, tre stycken med en frilagd ledare med en ungefärlig längd kring 1,85 cm (1,825 cm, 1,895 cm och 1,880 cm), tre stycken med en frilagd ledare med ungefärlig längd kring 2,5 cm (2,520 cm, 2,480 cm och 2,470 cm), och tre stycken med en frilagd ledare med ungefärlig längd kring 3,15 cm (3,145cm, 3,155cm och 3,150cm). Till varje provlåda placerades två filter med ungefär lika lång frilagd ledare, ett filter innan och ett efter, se figur \ref{fig:sifferupp} där enbart en av provlådorna har ett filter placerat före och efter sig. I tabell \ref{tab:filtertillbox} redovisas vilka filter som hörde till vilken provlåda. En koppartråd fästes även från varje filter till plattan som provlådorna var fästa vid. Detta gjordes för att uppnå termisk jämvikt eftersom värmeledningen i koaxial-kablarna kunde vara otillräcklig. % Tre filter, alla av olika längd, placerades även vid egna ingångar, för att utnyttja dessa som referenser vid låg temperatur. 
-
-\begin{table}[h]
-    \centering
-        \caption{Provlåda med tillhörande filter. L$_i$ innebär längden på den frilagda ledaren i filtret placerat innan provlådan, L$_e$ innebär längden på dett}
-    \label{tab:filtertillbox}
-    \begin{tabular}{lccc}
-    \toprule
-        \textbf{Provlåda}  & Antal resonatorer & L$_i$ (cm) & L$_e$ (cm)\\
-        \midrule
-        AlSi12-A & 9 & 1.895 & 1.825\\
-        AlSi12-22C & 6 & 3.145 & 3.150\\
-        AlSi12-11d & 6 & 2.520 & 2.470\\
-        \bottomrule
-    \end{tabular}
-\end{table}
+I experimentet användes de filter som presenterats i tabell \ref{tab:filter_list}, till varje provlåda placerades två filter med ungefär lika lång frilagd ledare, ett filter innan och ett efter. En bild på uppställningen när bara två av filtren är placerade visas i Figur \ref{fig:sifferupp}, dessa filter är de korta och är kopplade till provlåda 3. Till provlåda 1 var de långa filtren kopplade, till provlåda 2 var de medellånga filtren kopplade och till provlåda 3 var de korta filtren kopplade. En koppartråd fästes även från varje filter till plattan som provlådorna var fästa vid. Detta gjordes för att uppnå termisk jämvikt eftersom värmeledningen i koaxial-kablarna kunde vara otillräcklig. % Tre filter, alla av olika längd, placerades även vid egna ingångar, för att utnyttja dessa som referenser vid låg temperatur. 
 
 
 \section{Mätserier}
 
-\begin{figure}[h]
-    \centering
-    \setlength\figurewidth{0.45\textwidth}
-    \setlength\figureheight{10em}
-    \input{figure/Experiment/medel_pwr.tikz}
-    \caption{Antal medelvärdesbildningar av VNA:n mot ineffekt}
-    \label{fig:medel}
-\end{figure}
+
+De olika provlådorna hade mellan 9 och 6 resonatorer var. Resonatorernas frekvenser hittades och en centerferekvens i närheten där man fick en bra överblick över karakteristiken, både över magnitupspekrumen och fasspektrumen 
+
 
 
 En VNA av model Agilent E8364b användes för att svepa över ett frekvensspann mellan 2 och 8 GHz, detta för att finna de olika frekvenserna för resonatorerna. I provlåda A fanns nio resonatorer och i provlådorna C och d fanns sex stycken. Signalen från ett intervall på \unit[3]{MHz} kring centerfrekvenserna analyserades sedan där värdet på ineffekten varierades.
@@ -88,9 +63,20 @@ Vid andra svepet lades en dämpning på \unit[30]{dBm} genom att placera en \uni
 
 Vid tredje svepet placerades en dämpning på totalt \unit[56]{dBm} (20+30+6), den gick alltså mellan \unit[-44]{dBm} och \unit[-83]{dBm}, i detta fall behövdes det många fler medelvärdesbildningar eftersom vi arbetade med en sådan låg ineffekt att bruset var väldigt stort i relation till signalen. Antal medelvärdesbildningar som behövdes vid varje effekt visas i en graf i \figref{fig:medel}.
 
-\subsection{Mätning 1, utan filter} 
-
 I tabell \ref{tab:utanfil} visas centerfrekvenserna som användes i mätningarna.
+
+
+
+
+\begin{figure}[h]
+    \centering
+    \setlength\figurewidth{0.45\textwidth}
+    \setlength\figureheight{10em}
+    \input{figure/Experiment/medel_pwr.tikz}
+    \caption{Antal medelvärdesbildningar av VNA:n mot ineffekt}
+    \label{fig:medel}
+\end{figure}
+
 
 \begin{table}[h]
     \centering
@@ -100,19 +86,21 @@ I tabell \ref{tab:utanfil} visas centerfrekvenserna som användes i mätningarna
     \toprule
         \textbf{Provlåda}  & \multicolumn{7}{c}{Centerfrekvenser (GHz)} \\
         \midrule
-        AlSi12-A & 4,9527 & 5,0059 & 5,2182 & 5,6892 & 5,9586 & 6,2507 & 6,9457 & 7,3506 & 7,6232\\
-        AlSi12-22C & 5,1535 & 5,3659 & 6,1322 & 6,4356 & 7,5693 & 7,8442 &\\
-        AlSi12-11d & 4,8211 & 5,0110 & 5,7307 & 6,0239 & 7,0805  &  7,3207 & \\
+
+        1 & 5,1535 & 5,3659 & 6,1322 & 6,4356 & 7,5693 & 7,8442 &\\
+        2 & 4,8211 & 5,0110 & 5,7307 & 6,0239 & 7,0805  &  7,3207 & \\
+        3 & 4,9527 & 5,0059 & 5,2182 & 5,6892 & 5,9586 & 6,2507 & 6,9457 & 7,3506 & 7,6232\\
         \bottomrule
     \end{tabular}
 \end{table}
 
 
-
-\subsection{Mätning 2, med filter}
-På samma sätt som för mätningarna utan filter hittades centerfrekvenserna, dessa redovisas i tabell \ref{tab:centfil}.
+\section{Parameteranpassningen}
 
 
+
+
+%%%%%%%%%%%% BORTKOMMENTERAD SKIT %%%%%%%%%%%%
 
 \begin{comment}
 \begin{table}[h]
@@ -126,25 +114,6 @@ På samma sätt som för mätningarna utan filter hittades centerfrekvenserna, d
      5 & & Long & (2) \\\hline
      6 & & Medium & (2) \\\hline
 \end{tabular}
-\end{table}
-
-\end{comment}
-
-
-\begin{comment}
-\begin{table}[h]
-    \centering
-        \caption{Caption}
-    \label{tab:centfil}
-    \begin{tabular}{lccccccccc}
-    \toprule
-        \textbf{Provlåda}  & \multicolumn{7}{l}{Centerfrekvenser (GHz)} \\
-        \midrule
-        1 & 5.1535 & 5.3655 & 6.1315 & 6.4357 & 7.5693 & 7.8443 &\\
-        2 & 4.8218 & 5.0115 & 5.7314 & 6.0243 & 7.0812 & 7.3219 & \\        
-        3 & 4.9526 & 5.0061 & 5.2176 & 5.6892 & 5.9585 & 6.2505 & 6.9463 & 7.3508 & 7.6232\\
-        \bottomrule
-    \end{tabular}
 \end{table}
 
 \end{comment}

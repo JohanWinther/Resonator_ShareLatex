@@ -20,33 +20,16 @@ Resonatorerna kan inte heller prestera bättre än vad mät- och kontrolluppstä
 
 \section{Problembeskrivning}
 
-termisk strålning> bryter Cooperpar -> kvasipartiklar -> förluster
+%termisk strålning> bryter Cooperpar -> kvasipartiklar -> förluster
 
-för att kunna förklara
-
-svartkroppstrålning -> filter funkar inte -> skapa egna
-
-Vi har anledning att tro att den termiska strålningen kan passera genom dessa bandpassfilter eftersom sådana alltid har ett begränsat stoppband \cite{santavicca2008}. Detta är ett problem eftersom strålning med tillräckligt hög energi kan bryta Cooperpar i en supraledare \cite{Gao2008}, i vårt fall för aluminium fotoner med $f>\unit[88]{GHz}$ eftersom aluminium har ett supraledande bandgap $\Delta E=\unit[0.36]{meV}$.
-
-Strålningen kommer av alla övriga komponenter i kryostatens olika temperatursteg emitterar svartkroppsstrålning även vid temperaturer på bara några få milikelvin.
-
-
-De fotoner som har en frekvens på över \unit[88]{GHz} kan bryta Cooperpar i supraledande aluminium och därmed generera ett överskott av kvasipartiklar. Kvasipartiklar orsakar förluster eftersom de till skillnad från Cooperparen upplever en resistivitet i ledaren.
-
-De högfrekventa fotonerna uppkommer inne i kyostaten, även efter att denna sköldats från omgivningen. Detta beror på att alla komponenter fortfarande uppvisar en liten bakgrundsstrålning, även vid låga temperaturer.
-
-... (Jonathan har förklarat problemet i detalj som vi kommer skriva här, där kommer all specifik kvantifiering att presenteras, bl.a. temperaturer, energier, frekvenser osv.)
-
-
-
-Vår hypotes var att en del av förlusterna uppkommer till följd av att fotoner med frekvenser över \unit[88]{GHz} passerar genom de kommersiella lågpassfiltrena där de sedan slår sönder Cooperpar hos de supraledande resonatorerna. Genom att tillverka distribuerade lågpassfilter som inte släpper igenom dessa högfrekventa fotoner var målet att öka koherenstiden och således öka Q-värdet.
-
-
-De kommersiella filterna som finns idag funkar inte då dämpningen avtar för höga frekvenser, vilket är anledningen till att vi konstruerat egna filter. De högfrekventa fotonerna uppkommer inne i kyostaten, även efter att denna sköldats från omgivningen. Detta beror på att alla komponenter fortfarande uppvisar en liten bakgrundsstrålning, även vid låga temperaturer. Vår hypotes är att genom att tillverka filter som framgångsrikt filtrerar bort fotoner med frekvenser över 88 GHz så kommer dekoherens som uppstår från brutna Cooperpar att minksa och således kommer Q-värdet att öka.
+%svartkroppstrålning -> filter funkar inte -> skapa egna
+Alla komponenter i varje temperatursteg i kryostaten emitterar svartkroppsstrålning. Det innebär att strålningen från högre temperatursteg kan propagera ner i ledaren och vidare in i resonatorn. Vi har anledning att tro att strålningen kan passera genom mätuppställningens kommersiella bandpassfilter eftersom sådana alltid har ett begränsat stoppband \cite{santavicca2008}. Detta är ett problem eftersom strålning med tillräckligt hög energi kan bryta Cooperpar i en supraledare \cite{Gao2008}. I vårt fall används aluminium vilket motsvarar fotoner med $f>\unit[88]{GHz}$. Detta motiveras i avsnitt \ref{sec:cooper} där det även förklaras varför brutna cooperpar i supraledarna ger upphov till förluster.
 
 \section{Syfte}
 Syftet med rapporten är att redogöra för en utveckling av filter för mikrovågsresonatorer. Läsaren kommer att få en inblick i tillverkningsprocessen för lågpassfilter lämpade att användas i temperaturer kring 10 mK och som filtrerar bort fotoner med en frekvens över 88 GHz. Att presentera skillnaden i Q-värde när filter placerades före och efter resonatorer i en kryostat med temperatur på 10 mK. I rapporten presenteras data för Q-värden framtagna från resultat.
 
+%ven efter att denna sköldats från omgivningen. Detta beror på att alla komponenter fortfarande uppvisar en liten bakgrundsstrålning, även vid låga temperaturer.
+%Vår hypotes var att en del av förlusterna uppkommer till följd av att fotoner med frekvenser över \unit[88]{GHz} passerar genom de kommersiella lågpassfiltrena där de sedan slår sönder Cooperpar hos de supraledande resonatorerna. Genom att tillverka distribuerade lågpassfilter som inte släpper igenom dessa högfrekventa fotoner var målet att öka koherenstiden och således öka Q-värdet.
 
 %I nästa kapitel behandlas det som berör resonatorerna, därefter förklaras filterkonstruktion och filterkarakteristik i kapitel \ref{ch:filter}. I kapitel \ref{ch:exp} förklaras de experiment som gav resultaten i \ref{ch:results}.
 

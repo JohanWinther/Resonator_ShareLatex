@@ -87,43 +87,39 @@ Det går att visualisera $S_{21}$ med en graf av magnituden och fasen över frek
 
 Det går även att visualisera $S_{21}$ i det komplexa planet där samma resonator representeras av en cirkel (se \figref{fig:ex_cmplx}). Här parametriserar frekvensen real- och imaginärdelen av $S_{21}$. Resonansfrekvensen motsvaras av punkten där cirkeln skär x-axeln och $f=\pm\infty$ motsvaras av punkten $(1,0i)$. Cirkelns diameter kommer att förhålla sig enligt $d=Q_l/|Q_c|$ och med hjälp av en anpassning till cirkeln kan resten av parametrarna även bestämmas. Att anpassa till cirkeln ger bättre noggrannhet för parametrarna i \ref{eq:S21_ideal} och fungerar bättre för lågt signal-brusförhållande \cite{Probst2015}.
 
-Det finns två arbetsområden för en resonator: där den är underkopplad ($Q_i<Q_c$) respektive överkopplad ($Q_i>Q_c$) \cite{Boehme2016}. Dessa två visas i graferna i figur \ref{fig:ex_magphs} och \ref{fig:ex_cmplx}. När $Q_i=Q_c$ är resonatorn kritisk kopplad och detta är gränsen mellan de två områdena. Underkoppling innebär att resonatorn har stora interna förluster och fältet eller fotonerna ''försvinner'' till dissipativa förluster innan de hinner lämna resonatorn genom den kapacitiva kopplingen. I motsats innebär överkoppling att fotonerna i större grad hinner lämna resonatorn innan de försvinner. Det önskvärda området vi vill jobba med är det överkopplade eftersom vi vill undersöka ett dominerande $Q_i$.
+Det finns två arbetsområden för en resonator: där den är underkopplad ($Q_i<Q_c$) respektive överkopplad ($Q_i>Q_c$) \cite{Boehme2016}. Dessa två visas i graferna i figur \ref{fig:ex_cmplx}. När $Q_i=Q_c$ är resonatorn kritisk kopplad och detta är gränsen mellan de två områdena. Underkoppling innebär att resonatorn har stora interna förluster och fältet eller fotonerna ''försvinner'' till dissipativa förluster innan de hinner lämna resonatorn genom den kapacitiva kopplingen. I motsats innebär överkoppling att fotonerna i större grad hinner lämna resonatorn innan de försvinner. Det önskvärda området vi vill jobba med är det överkopplade eftersom vi vill undersöka ett dominerande $Q_i$.
 
 
-\begin{minipage}{0.33\textwidth}
-%\begin{flushright}
+
+
 \begin{figure}[H]
-    \begin{subfigure}{\textwidth}
-  \centering
-  \setlength\figurewidth{0.75\textwidth}
-  \setlength\figureheight{\figurewidth}
-  \input{figure/grafer/ex_cmplx.tikz}
-  \end{subfigure}
-  \caption{$S_{21}$ manifesteras sig som en cirkel i det komplexa planet. Cirkelns diameter är proportionell mot förhållandet mellan $Q_i$ och $Q_c$. Figuren är baserad på \cite[fig. 2.4d]{Boehme2016}.}
-  \label{fig:ex_cmplx}
+    \begin{subfigure}[b]{0.329\textwidth}
+        \centering
+        \setlength\figurewidth{0.75\linewidth}
+        \setlength\figureheight{\figurewidth}
+        \input{figure/grafer/ex_mag.tikz}
+        \caption{}
+        \label{subfig:mag}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.329\textwidth}
+        \centering
+        \setlength\figurewidth{0.75\linewidth}
+        \setlength\figureheight{\figurewidth}
+        \input{figure/grafer/ex_phs.tikz}
+        \caption{}
+         \label{subfig:fas}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.329\textwidth}
+        \centering
+        \setlength\figurewidth{0.75\linewidth}
+        \setlength\figureheight{\figurewidth}
+        \input{figure/grafer/ex_cmplx.tikz}
+        \caption{}
+        \label{subfig:komp}
+    \end{subfigure}
+    \caption{Magnitud \subref{subfig:mag} och fas \subref{subfig:fas} över frekvens för de olika kopplingsområdena. Vid resonansfrekvensen sjunker magnituden och en fasvändning sker. Figurerna är baserade på \cite[fig. 2.4(a-c)]{Boehme2016}. $S_{21}$ manifesteras sig som en cirkel \subref{subfig:komp} i det komplexa planet. Cirkelns diameter är proportionell mot förhållandet mellan $Q_i$ och $Q_c$. Figuren är baserad på \cite[fig. 2.4d]{Boehme2016}.}
+    \label{fig:ex_cmplx}
 \end{figure}
-%\end{flushright}
-\end{minipage}
-\begin{minipage}{0.66\textwidth}
-%\begin{flushleft}
-\begin{figure}[H]
-     \begin{subfigure}[b]{0.49\textwidth}
-          \centering
-          \setlength\figurewidth{0.75\linewidth}
-          \setlength\figureheight{\figurewidth}
-          \input{figure/grafer/ex_mag.tikz}
-     \end{subfigure}
-     \begin{subfigure}[b]{0.49\textwidth}
-          \centering
-          \setlength\figurewidth{0.75\linewidth}
-          \setlength\figureheight{\figurewidth}
-          \input{figure/grafer/ex_phs.tikz}
-     \end{subfigure}
-   \caption{Magnitud och fas över frekvens för de olika kopplingsområdena. Vid resonansfrekvensen sjunker magnituden och en fasvändning sker. Figurerna är baserade på \cite[fig. 2.4(a-c)]{Boehme2016}.}
-    \label{fig:ex_magphs}
- \end{figure}
- %\end{flushleft}
-\end{minipage}
 
 
 \section{Andra anpassningsfaktorer för icke-ideala förhållanden}
@@ -176,13 +172,13 @@ Om vi jämför amplitud- och fasspektrumet med visualiseringen i det komplexa pl
     \begin{subfigure}[t]{0.5\textwidth}
         \centerfloat
         \setlength\figurewidth{0.9\linewidth}
-        \setlength\figureheight{20em}
+        \setlength\figureheight{12em}
         \input{figure/matningar/high_pwr_mag_phs_freq.tikz}
     \end{subfigure}
     \begin{subfigure}[t]{0.5\textwidth}
         \centerfloat
         \setlength\figurewidth{0.9\linewidth}
-        \setlength\figureheight{20em}
+        \setlength\figureheight{12em}
         \input{figure/matningar/low_pwr_mag_phs_freq.tikz}
     \end{subfigure}
     \caption{Mätning och anpassning av magnitud- och fasspektrum för en \unit[5.153]{GHz}-resonator vid en ineffekt på \unit[-40]{dBm} (vänster) respektive \unit[-70]{dBm} (höger). Notera att anpassningen även är robust vid lågt signal-brusförhållande.}
@@ -192,14 +188,14 @@ Om vi jämför amplitud- och fasspektrumet med visualiseringen i det komplexa pl
 \begin{figure}[H]
     \begin{subfigure}[t]{0.5\textwidth}
         \centerfloat
-        \setlength\figurewidth{0.9\linewidth}
-        \setlength\figureheight{13em}
+        \setlength\figurewidth{0.85\linewidth}
+        \setlength\figureheight{9em}
         \input{figure/matningar/low_pwr_complex.tikz}
     \end{subfigure}
     \begin{subfigure}[t]{0.5\textwidth}
         \centerfloat
-        \setlength\figurewidth{0.9\linewidth}
-        \setlength\figureheight{13em}
+        \setlength\figurewidth{0.85\linewidth}
+        \setlength\figureheight{9em}
         \input{figure/matningar/low_pwr_complex_norm.tikz}
     \end{subfigure}
     \caption{Mätdata och resonatorn i \figref{fig:ex_magphs_resonator} i det komplexa planet. Till höger visas den normerade mätdatan. Notera hur anpassningen även fungerar med få datapunkter nära resonansfrekvensen, vilket inte är uppenbart från \figref{fig:ex_magphs_resonator}. }
@@ -244,15 +240,16 @@ Effektberoendet kommer av att det krävs en viss energi för att excitera en vis
 Där $\delta_{TLS}^0$ är förlusterna vid ett fåtal milikelvin och bara enstaka fotoner, $F$ är en designparameter, $\omega_r$ är resonansvinkelfrekvensen, $N$ är antal fotoner som lagras i resonatorn och $N_c$ är det kritiska antal fotoner för vilket en TLS blir mättad. \eqref{ekv:TLS} är tagen från \cite{pappas2011two} med viss modifikation. $\beta$ används som en anpassningsparamter som grovt brukar anses ligga kring 0,2 \cite{faoro2012} för våra tillämpningar. Från \eqref{ekv:TLS} fås att det inte går att eliminera TLS-förluster helt ens vid godtyckligt låga temperaturer \cite{Boehme2016}.
 
 \subsection{Kvasipartiklar och sönderslagning av Cooperpar}
+\label{sec:cooper}
 Den förlustmekanism som vi avser minska i det här projektet är $\delta_{qp}$, förluster som uppekommer av kvasipartiklar. För att ha förståelse för hur $\delta_{qp}$ kan påverkas krävs viss kännedom om Cooperpar och supraledning.
 
 Cooperpar är ett par av elektroner, eller andra fermioner, som är sammanbundna vid låga temperaturer. Cooper visade att en godtyckligt liten attraktion mellan elektroner i en metall kan ge upphov till att ett sådant par kan ha lägre energi än fermienergin. Detta beror på elektron-fonon interaktion, vilket orsakar supraledning.
 
-I en klassisk beskrivning av Cooperpar i en metall så beter sig en elektron vanligtvis som en fri partikel. Eftersom elektroner alla har negativ laddning så repellerar de varandra men attraherar de positiva jonerna i metallens gitter. Jongittret blir då aningen skevt och jonerna blir aningen förflyttade mot elektronerna och densiteten av positiv laddning ökar för gittret. Detta överskott av positiv energi attraherar i sin tur fler elektroner. 
+I en klassisk beskrivning av Cooperpar i en metall så beter sig en elektron vanligtvis som en fri partikel. Eftersom elektroner alla har negativ laddning så repellerar de varandra men attraherar de positiva jonerna i metallens gitter. Jongittret blir då aningen skevt och jonerna blir aningen förflyttade mot elektronerna och densiteten av positiv laddning ökar för gittret. Detta överskott av positiv laddning attraherar i sin tur fler elektroner. 
 
-Vid långa avstånd (hur långa?) kan denna attraktion övervinna elektronernas bortstötning (som beror av  deras negativa laddning).
+De fotoner som har en frekvens på över \unit[88]{GHz} kan bryta Cooperpar i supraledande aluminium och därmed generera ett överskott av kvasipartiklar. Kvasipartiklar orsakar förluster eftersom de till skillnad från Cooperparen upplever en resistivitet i ledaren.
 
-Energin för bindningen är dock väldigt låg, på ungefär en ordning $10^{-3}$ eV.\cite{placeholder} Detta innebär att energi, så som termisk energi, lätt kan bryta upp paren. Vilket är anledningen till att Cooperpar (och således supraledning) enbart återfinns vid mycket låga temperaturer. Ett ämne som kan bli supraledande blir det först när det når en temperatur under sin \emph{kritiska temperatur}. För Aluminium är den kritiska temperaturen \unit[1,2]{K}. HÄR KANSKE VI VILL SKRIVA LITE OM BANDGAPET FÖR ALUMINIUM FÖR ATT KUNNA KOPPLA BÄTTRE TILL DELEN OM QUASIPARTIKELFÖRLUSTER:
+Energin för bindningen mellan Cooperpar i aluminium är \unit[0,39]{meV} \cite{placeholder}. Detta innebär att termisk energi lätt kan bryta upp paren. Vilket är anledningen till att Cooperpar (och således supraledning) enbart återfinns vid mycket låga temperaturer. Ett ämne som kan bli supraledande blir det först när det når en temperatur under sin \emph{kritiska temperatur}. För Aluminium är den kritiska temperaturen \unit[1,2]{K}.
 
 %För en komplett mängd av tillstånd för ett två-elektron system, som har periodiska randvillkor och befinner sig i en kub med enhetsvolym. Då tar vi produktfunktionen för planvågor 
 
@@ -270,7 +267,7 @@ Denna strålning orsakar ytterligare kvasipartikelrelaterade förluster när fot
 \label{ekv:qp}
     \frac{\delta N_{qp}}{\delta t}=\frac{P}{\Delta}+G-RN_{qp}^2
 \end{equation}
-där $\Delta$ är ledningsmaterialets bandgap, $P$ är absorberad effekt som uppfyller $P=hf>2\Delta$, $G$ är termen som korresponderar mot kvasipartikelproduktion till följd av termiska fononer och $R$ är en materialkonstant kopplad till återskapandet av Cooperpar \cite{Barends2011}. Aluminium, som ingår i resonatorerna som det här projektet berör, har en bandgapsfrekvens på \unit[88]{GHz} varpå \eqref{ekv:qp} ger att de fotoner med en frekvens på $f>$\unit[88]{GHz} kan öka mängden kvasipartiklar i resonatorn.
+där $\Delta$ är ledningsmaterialets bandgap, $P$ är absorberad effekt som uppfyller $P=hf>2\Delta$, $G$ är termen som korresponderar mot kvasipartikelproduktion till följd av termiska fononer och $R$ är en materialkonstant kopplad till återskapandet av Cooperpar \cite{Barends2011}. Aluminiums supraledande bandgap och även Cooperparens bindningsenergi motsvaras av en frekvens på \unit[88]{GHz} varpå \eqref{ekv:qp} ger att de fotoner med en frekvens på $f>$\unit[88]{GHz} kan öka mängden kvasipartiklar i resonatorn.
 De högfrekventa fotonerna kan bli ett problem även vid uppställningar med bra bandpassfilter eftersom dessa börjar släppa igenom allt mer signal vid frekvenser en bra bit över filtrets bandpass \cite{santavicca2008}. För ett \unit[4-8]{GHz} bandpassfilter börjar fotoner släppas igenom igen när de har frekvenser på över ca \unit[20]{GHz}.
 
 \subsection{Modell för förlustmekanismer}
