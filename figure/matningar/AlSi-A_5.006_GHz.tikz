@@ -23,7 +23,7 @@ ymax=190000,
 ylabel style={font=\color{white!15!black}},
 ylabel={Qi},
 axis background/.style={fill=white},
-legend style={legend cell align=left, align=left, draw=white!15!black}
+legend style={legend cell align=left, align=left, draw=white!15!blackfont,font=\tiny,legend pos = south east}
 ]
 \addplot [color=mycolor1, draw=none, mark=square, mark options={solid, mycolor1}]
   table[row sep=crcr]{%

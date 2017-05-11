@@ -18,7 +18,7 @@ xlabel={Ineffekt (dBm)},
 ymin=0,
 ymax=250,
 ylabel style={font=\color{white!15!black}},
-ylabel={\# medelvärdesbildningar},
+ylabel={Medelvärdesbildningar},
 axis background/.style={fill=white},
 axis x line*=bottom,
 axis y line*=left

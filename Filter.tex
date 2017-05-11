@@ -31,7 +31,7 @@ Om det här blir bra:
 
 \section{Filterdesign}
 \label{sec:filterdesign}
-För att undersöka egenskaperna hos en transmissionsledning kan man utgå från propagationskonstanten $\gamma =\sqrt{(R+j\omega L)+(G+j\omega C)} $ för en generell transmissionsledning, vilket visas i \ref{app:trans}.
+För att undersöka egenskaperna hos en transmissionsledning kan man utgå från propagationskonstanten $\gamma =\sqrt{(R+j\omega L)+(G+j\omega C)} $ för en generell transmissionsledning\autocite{cheng}. Där $R$ är resistans per längdenhet, $L$ induktans per längdenhet, $G$ konduktans per längdenhet och $C$ kapacitans per längdenhet.
 
 För en koaxial geometri som vårt distribuerade filter är baserad på ges $R, L, G$ och $C$ av
 \begin{equation*}
@@ -51,12 +51,12 @@ Genom att välja $a=\unit[0,64]{mm}$ och $b=\unit[2,03]{mm}$, vilket motsvarar d
         \centering
         \setlength\figurewidth{0.75\linewidth}
         \setlength\figureheight{12em}
-        \input{figure/grafer/Filters/attn_example_surf.tikz}
+        \input{figure/grafer/Filters/attn_example_surf2.tikz}
   \caption{Dämpning i \unit{dB} per centimeter som funkation av frekvens och förlusttangent $\delta_e$ hos koaxialkabel med $a=\unit[0,64]{mm}, b=\unit[2,03]{mm}, \mu=\mu_c=\mu_0, \epsilon=3\epsilon_0 \text{ och } \sigma_c=\unit[5,96\cdot10^7]{S/m}$.}
   \label{fig:attn_ex}
 \end{figure}
 
-Från \figref{fig:attn_ex} kan man se att en koaxialkabel med ett dielektrikum med förluster ger upphov till en frekvensberoende dämpning där höga frekvenser dämpas mer jämfört med låga frekvenser. Den frekvensberoende dämpningen blir också starkare med en större förlusttangent. Samtidigt som dämpningen vid frekvensen \unit[0-8]{GHz} är förhållandevis låg jämfört med dämpningen vid \unit[50]{GHz} även med en förlusttangent $\delta_e>0,02$.
+Från \figref{fig:attn_ex} kan man se att en koaxialkabel med ett dielektrikum med förluster ger upphov till en frekvensberoende dämpning där höga frekvenser dämpas mer jämfört med låga frekvenser. Den frekvensberoende dämpningen blir också starkare med en större förlusttangent. Samtidigt som dämpningen vid frekvensen \unit[0-8]{GHz} är förhållandevis låg jämfört med dämpningen vid \unit[100]{GHz} även med en förlusttangent $\delta_e>0,02$.
 
 I \figref{fig:attn_ex} visas dämpning per längdenhet och den totala dämpningen hos filtret beror således endast på längden hos den sträckan som ersatts med ett dielektrikum med förluster och dielektrikumets egenskaper. I detta projekt varierar vi endast längden på sträckan med ett dielektrikum med förluster för att erhålla olika dämpningsegenskaper hos filtret. Fortsättningsvis kommer vi att hänvisa till längden på denna sträcka som filtrets längd. 
 

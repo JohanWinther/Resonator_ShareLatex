@@ -1,7 +1,7 @@
 % This file was created by matlab2tikz.
 %
-\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
-\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor1}{rgb}{0.1253 0.3242 0.8303}%
+\definecolor{mycolor2}{rgb}{0.9990 0.7653 0.2164}%
 %
 \begin{tikzpicture}[%
 trim axis left, trim axis right
@@ -15,9 +15,11 @@ scale only axis,
 xmin=-0.2141616704412484,
 xmax=1.35951585668073,
 xlabel style={font=\color{white!15!black}},
-xlabel={Re(S$_21$)},
+xlabel={Re(S$_{21}$)},
 ymin=-0.586838764,
 ymax=0.586838764,
+ylabel style={font=\color{white!15!black}},
+ylabel={$\text{Im(S}_{\text{21}}\text{)}$},
 axis background/.style={fill=white},
 xmajorgrids,
 ymajorgrids,

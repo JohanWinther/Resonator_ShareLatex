@@ -4,24 +4,24 @@
 \begin{document}
 \chapter{Experiment}
 \label{ch:exp}
-Följande avsnitt beskriver det experiment som utfördes för att undersöka effektiviteten av filtrena. Vi beskriver först mätuppställningen, sedan utförda mätserier och till sist vilka parametrar som från modellanpassningen som jämförs och presenteras i resultatkapitlet.
+Följande avsnitt beskriver det experiment som utfördes för att undersöka filtrenas påverkan. Vi beskriver först mätuppställningen och sedan vilka mätserier som utförts.
 
 
 
 \section{Mätuppställning}
-Mätuppställningen är baserad på \figref{fig:matuppstallning}, men med våra filter på vardera sida om provlådan.
+Mätuppställningen är baserad på \figref{fig:matuppstallning}, där våra filter placerats på vardera sida om provlådan.
 
 \begin{comment}
 \begin{figure}
     \centering
     \includegraphics[scale=0.08,trim={35cm 8cm 20cm  20cm},clip]{figure/Experiment/siffroruppst.jpg}
-    \caption{I figuren visas provlådorna AlSi12-22C (1), AlSi12-11d (2), och AlSi12-A (3). Till provlåda AlSi12-A är filtren med 1,895 cm respektive 1,825 cm frilagd ledare placerade (4). Filtren är kopplade till plattan med en koppartråd (5).}
+    \caption{I figuren visas provlådorna 1,2 och 3. Till provlåda AlSi12-A är filtren med 1,895 cm respektive 1,825 cm frilagd ledare placerade (4). Filtren är kopplade till plattan med en koppartråd (5).}
     \label{fig:sifferupp}
 \end{figure}
 \end{comment}
 
 
-
+\begin{comment}
 \begin{figure}[h!]
     \centering
     \begin{tikzpicture}
@@ -41,42 +41,16 @@ Mätuppställningen är baserad på \figref{fig:matuppstallning}, men med våra 
     \caption{I figuren visas provlådorna AlSi12-22C (1), AlSi12-11d (2), och AlSi12-A (3). I figuren är filtren med 1,895 cm respektive 1,825 cm frilagd ledare kopplade till provlåda AlSi12-A  (4). Filtren är även kopplade till plattan med en koppartråd (5).}
     \label{fig:sifferupp}
 \end{figure}
+\end{comment}
 
 
-
-I experimentet användes de filter som presenterats i tabell \ref{tab:filter_list}, till varje provlåda placerades två filter med ungefär lika lång frilagd ledare, ett filter innan och ett efter. En bild på uppställningen när bara två av filtren är placerade visas i Figur \ref{fig:sifferupp}, dessa filter är de korta och är kopplade till provlåda 3. Till provlåda 1 var de långa filtren kopplade, till provlåda 2 var de medellånga filtren kopplade och till provlåda 3 var de korta filtren kopplade. En koppartråd fästes även från varje filter till plattan som provlådorna var fästa vid. Detta gjordes för att uppnå termisk jämvikt eftersom värmeledningen i koaxial-kablarna kunde vara otillräcklig. % Tre filter, alla av olika längd, placerades även vid egna ingångar, för att utnyttja dessa som referenser vid låg temperatur. 
+I experimentet användes de filter som presenterats i tabell \ref{tab:filter_list}, till varje provlåda placerades två filter med ungefär lika lång frilagd ledare, ett filter innan och ett efter. Till provlåda 1 var de långa filtren kopplade, till provlåda 2 var de medellånga filtren kopplade och till provlåda 3 var de korta filtren kopplade. En koppartråd fästes även från varje filter till den guldpläterade kopparplatta som provlådorna var fästa vid. Detta gjordes för att uppnå termisk jämvikt och för att försäkra oss om att filtren kyldes ned till \unit[10]{mK}, detta eftersom värmeledningen i koaxial-kablarna kunde vara otillräcklig. % Tre filter, alla av olika längd, placerades även vid egna ingångar, för att utnyttja dessa som referenser vid låg temperatur. 
 
 
 \section{Mätserier}
 
 
-De olika provlådorna hade mellan 9 och 6 resonatorer var. Resonatorernas frekvenser hittades och en centerferekvens i närheten där man fick en bra överblick över karakteristiken, både över magnitupspekrumen och fasspektrumen 
-
-
-
-En VNA av model Agilent E8364b användes för att svepa över ett frekvensspann mellan 2 och 8 GHz, detta för att finna de olika frekvenserna för resonatorerna. I provlåda A fanns nio resonatorer och i provlådorna C och d fanns sex stycken. Signalen från ett intervall på \unit[3]{MHz} kring centerfrekvenserna analyserades sedan där värdet på ineffekten varierades.
-
-
-VNA:n svepte mellan en effekt på \unit[8]{dBm} och \unit[-27]{dBm} med en steglängd på \unit[2,5]{dBm}. För att nå ner till lägre effekter lades en dämpning till på input-kabeln. Först gjordes en mätning utan någon tillagd dämpning, denna behövde väldigt få medelvärdesbildningar eftersom bruset i förhållande till signalen är mycket lägre vid hög effekt. 
-
-Vid andra svepet lades en dämpning på \unit[30]{dBm} genom att placera en \unit[20]{dBm} och en \unit[10]{dBm} dämpare på rad, då fick vi data för effekter mellan \unit[-22]{dBm} och \unit[-52]{dBm}. Här krävdes det fler medelvärdesbildningar än tidigare, vi använde oss av 32 stycken medelvärdesbildnignar. 
-
-Vid tredje svepet placerades en dämpning på totalt \unit[56]{dBm} (20+30+6), den gick alltså mellan \unit[-44]{dBm} och \unit[-83]{dBm}, i detta fall behövdes det många fler medelvärdesbildningar eftersom vi arbetade med en sådan låg ineffekt att bruset var väldigt stort i relation till signalen. Antal medelvärdesbildningar som behövdes vid varje effekt visas i en graf i \figref{fig:medel}.
-
-I tabell \ref{tab:utanfil} visas centerfrekvenserna som användes i mätningarna.
-
-
-
-
-\begin{figure}[h]
-    \centering
-    \setlength\figurewidth{0.45\textwidth}
-    \setlength\figureheight{10em}
-    \input{figure/Experiment/medel_pwr.tikz}
-    \caption{Antal medelvärdesbildningar av VNA:n mot ineffekt}
-    \label{fig:medel}
-\end{figure}
-
+De olika provlådorna hade mellan nio och sex resonatorer var. För mätningarna användes centerfrekvenser som låg nära resonatorernas resonansfrekvenser, där man med ett intervall på \unit[3]{MHz} kunde se hela karakteristiken för resonatorn. Centerfrekvenserna valdes så att man fick en bra överblick över karakteristiken, både över magnitudspekrumen och fasspektrumen. Centerfrekvenserna som användes för att analysera resonatorerna visas i tabell \ref{tab:utanfil}. 
 
 \begin{table}[h]
     \centering
@@ -86,17 +60,33 @@ I tabell \ref{tab:utanfil} visas centerfrekvenserna som användes i mätningarna
     \toprule
         \textbf{Provlåda}  & \multicolumn{7}{c}{Centerfrekvenser (GHz)} \\
         \midrule
-
-        1 & 5,1535 & 5,3659 & 6,1322 & 6,4356 & 7,5693 & 7,8442 &\\
-        2 & 4,8211 & 5,0110 & 5,7307 & 6,0239 & 7,0805  &  7,3207 & \\
-        3 & 4,9527 & 5,0059 & 5,2182 & 5,6892 & 5,9586 & 6,2507 & 6,9457 & 7,3506 & 7,6232\\
+        1 & 5,15 & 5,37 & 6,13 & 6,44 & 7,57 & 7,84 &\\
+        2 & 4,82 & 5,01 & 5,73 & 6,02 & 7,08  &  7,32 & \\
+        3 & 4,95 & 5,01 & 5,22 & 5,69 & 5,96 & 6,25 & 6,95 & 7,35 & 7,62\\
         \bottomrule
     \end{tabular}
 \end{table}
 
+%En VNA av model Agilent E8364b användes för att svepa över ett frekvensspann mellan 2 och 8 GHz, detta för att finna de olika frekvenserna för resonatorerna. I provlåda A fanns nio resonatorer och i provlådorna C och d fanns sex stycken. Signalen från ett intervall på \unit[3]{MHz} kring centerfrekvenserna analyserades sedan där värdet på ineffekten varierades.
 
-\section{Parameteranpassningen}
+\begin{wrapfigure}{r}{0.3\textwidth}
+    \centering
+    \setlength\figurewidth{0.45\linewidth}
+    \setlength\figureheight{7em}
+    \input{figure/Experiment/medel_pwr.tikz}
+    \caption{Antal medelvärdesbildningar av VNA:n mot ineffekt}
+    \label{fig:medel}
+\end{wrapfigure}
 
+Transmissionskoefficienterna för intervallet av frekvenser analyserades för ineffekter mellan \unit[8]{dBm} och \unit[-83]{dBm}. Eftersom VNA:n hade en övre och undre ineffekt på \unit[8]{dBm} respektive \unit[-27]{dBm} genomfördes mätningarna i 3 omgångar, där en dämpning lades till på input-kapel mellan varje omgång. Mätningarna genomfördes med en steglängd på \unit[2,5]{dBm} och varierande medelvärdesbildnignar. 
+
+Den första mätningen gjordes utan någon dämpning i intervallet \unit[8]{dBm} till \unit[-27]{dBm}. Mätningen krävde enbart 5 medelvärdesbildningar eftersom bruset i förhållande till signalen är mycket lägre vid hög effekt.
+
+Vid andra mätningen lades en dämpning på \unit[30]{dBm} till genom att seriekoppla en dämpare med \unit[20]{dBm} dämpning och en dämpare med \unit[10]{dBm} dämpning. Denna mätning gav data för effekter mellan \unit[-22]{dBm} och \unit[-52]{dBm}. Här krävdes det fler medelvärdesbildningar än tidigare på grund av den lägre signalen, vi använde oss av 32 stycken medelvärdesbildnignar. 
+
+Vid tredje mätningen placerades en dämpning på totalt \unit[56]{dBm} genom att seriekoppla dämpare med dämpningar på 30,20 och \unit[6]{dBm}. Detta gav data för effekter mellan \unit[-44]{dBm} och \unit[-83]{dBm}. För denna mätning krävdes många fler medelvärdesbildningar eftersom signalen var väldigt låg i relation till  bruset. Antal medelvärdesbildningar som behövdes vid varje effekt visas i en graf i \figref{fig:medel}.
+
+Från mätningarna ovan extrahetades datan för $S_{21}$ Med hjälp av anpassningen i avsnitt \ref{sec:anpass} kunde $Q_i$ beräknas.
 
 
 
@@ -120,27 +110,5 @@ I tabell \ref{tab:utanfil} visas centerfrekvenserna som användes i mätningarna
 
 %\section{Parametrar från modellanpassningen}
 
-
-\begin{comment}
-\begin{figure}
-    \begin{tikzpicture}
-        \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.75\textwidth,angle=-90,trim=1000 350 1700 0,clip,width=0.975\linewidth]{figure/Experiment/exp_ups.jpg}};
-        \begin{scope}[x={(image.south east)},y={(image.north west)}]
-        \node [anchor=west] at (0.5,0.5) {\Large\textbf A};
-        \node [anchor=west] at (0.5,0.4) {\Large\textbf B};
-        %\node [anchor=west] at (0.5,0.3) {\Large\textbf C};
-        %\node [anchor=west] at (0,0.2) {\Large\textbf D};
-        %\node [anchor=west] at (0.3,0.6) {\Large\textbf E};
-        %\node [anchor=west] at (0.3,0.7) {\Large\textbf F};
-        %\node [anchor=west] at (0.6,0.8) {\Large\textbf G};
-        %\node [anchor=west] at (0.7,0.6) {\Large\textbf H};
-        %\node [anchor=west] at (0.9,0.4) {\Large\textbf I};
-        \end{scope}
-    \end{tikzpicture}
-    \caption{Temp caption}
-    \label{}
-\end{figure}
-
-\end{comment}
 
 \end{document}

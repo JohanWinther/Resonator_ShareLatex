@@ -1,8 +1,8 @@
 % This file was created by matlab2tikz.
 %
-\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
-\definecolor{mycolor2}{rgb}{0.92900,0.69400,0.12500}%
-\definecolor{mycolor3}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor1}{rgb}{0.1253 0.3242 0.8303}%
+\definecolor{mycolor2}{rgb}{0.9990 0.7653 0.2164}%
+\definecolor{mycolor3}{rgb}{0.1801 0.7177 0.6424}%
 %
 \begin{tikzpicture}[%
 trim axis left, trim axis right
@@ -28,7 +28,7 @@ axis x line*=bottom,
 axis y line*=left,
 xmajorgrids,
 ymajorgrids,
-legend style={legend cell align=left, align=left, draw=white!15!black,legend pos= south west}
+legend style={legend cell align=left, align=left, draw=white!15!black,legend pos= south west,font=\footnotesize}
 ]
 \addplot [color=mycolor1]
   table[row sep=crcr]{%
@@ -269,7 +269,7 @@ legend style={legend cell align=left, align=left, draw=white!15!black,legend pos
 49.5997657775879	-8.44327926635742\\
 49.8039665222168	-6.95102310180664\\
 };
-\addlegendentry{Reference}
+\addlegendentry{Referens}
 
 \addplot [color=mycolor2]
   table[row sep=crcr]{%
@@ -510,7 +510,7 @@ legend style={legend cell align=left, align=left, draw=white!15!black,legend pos
 49.5997657775879	-10.9925575256348\\
 49.8039665222168	-9.29485321044922\\
 };
-\addlegendentry{Without dielectric}
+\addlegendentry{Utan Stycast}
 
 \addplot [color=mycolor3]
   table[row sep=crcr]{%
@@ -747,7 +747,7 @@ legend style={legend cell align=left, align=left, draw=white!15!black,legend pos
 49.5997657775879	-23.6395797729492\\
 49.8039665222168	-21.8377075195313\\
 };
-\addlegendentry{With dielectric}
+\addlegendentry{Med Stycast}
 
 \end{axis}
 \end{tikzpicture}%

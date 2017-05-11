@@ -1,8 +1,8 @@
 % This file was created by matlab2tikz.
 %
-\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
-\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
-\definecolor{mycolor3}{rgb}{0.92900,0.69400,0.12500}%
+\definecolor{mycolor1}{rgb}{0.1253 0.3242 0.8303}%
+\definecolor{mycolor2}{rgb}{0.1801 0.7177 0.6424}%
+\definecolor{mycolor3}{rgb}{0.9990 0.7653 0.2164}%
 %
 \begin{tikzpicture}[%
 trim axis left, trim axis right
@@ -166,7 +166,7 @@ legend style={at={(0.3,0.03)}, anchor=south west, legend cell align=left, align=
 101.977197719772	0.482548380701459\\
 102	0.47705624883173\\
 };
-\addlegendentry{$\text{Q}_\text{i}\text{\textless{}Q}_\text{c}$}
+\addlegendentry{$\textit{Q}_\textit{i}\text{\textless{}}\textit{Q}_\textit{c}$}
 
 \addplot [color=mycolor2, dashed, line width=2.0pt]
   table[row sep=crcr]{%
@@ -319,7 +319,7 @@ legend style={at={(0.3,0.03)}, anchor=south west, legend cell align=left, align=
 101.952795279528	1.46477942997639\\
 102	1.4303090419471\\
 };
-\addlegendentry{$\text{Q}_\text{i}\text{=Q}_\text{c}$}
+\addlegendentry{$\textit{Q}_\textit{i}\text{=}\textit{Q}_\textit{c}$}
 
 \addplot [color=mycolor3, dashdotted, line width=2.0pt]
   table[row sep=crcr]{%
@@ -473,7 +473,7 @@ legend style={at={(0.3,0.03)}, anchor=south west, legend cell align=left, align=
 101.991599159916	4.29638656668648\\
 102	4.27849695333499\\
 };
-\addlegendentry{$\text{Q}_\text{i}\text{\textgreater{}Q}_\text{c}$}
+\addlegendentry{$\textit{Q}_\textit{i}\text{\textgreater{}}\textit{Q}_\textit{c}$}
 
 \end{axis}
 \end{tikzpicture}%

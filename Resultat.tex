@@ -7,36 +7,81 @@
 \label{sec:results}
 I det här avsnittet presenteras resultaten från experimenten som beskrevs i kapitel \ref{ch:exp}. 
 
-I tabell \ref{tab:Q_iA} presenteras $Q_i$ och procentuella förändringen av $Q_i$ för våra prover vid $\expval{n}=1$  och $\expval{n}=10^4$, före och efter våra filter monterades. Här är $\expval{n}$ det genomsnittliga antalet fotoner i resonatorn vid resonans. \figref{fig:Q_in} visar mätresultatet för en resonator där filtrena åstadkom en förbättring vid höga effekter. 
-
-I \figref{fig:Q_in} syns även den kurvanspassning till modellen \eqref{ekv:TLSmodel} som gjordes för samtliga mätningar. Vid en bra anpassning ger anpassningsparametern $\frac{1}{Q_o}$ information om förluster som inte är TLS-relaterade, det vill säga bland annat de förluster relaterade till brutna Cooperpar. Hur de övriga förlusterna förändrades efter implementering av våra filter presenteras i \figref{fig:Q_other_C}, \figref{fig:Q_other_d} och \figref{fig:Q_other_A}. Eftersom $\frac{1}{Q_o}$ betecknar övriga förluster är en minskning med filter ett positivt resultat. 
-
-%\section{Jämförelse av intern kvalitetsfaktor utan och med filter}
-%I \figref{fig:qi_pwr} visas $Q_i$ över antalet genomsnittliga fotoner i 
-%\tikzfig{matningar/AlSi-C_5.732_GHz_Qi_photons}{resonator $f_r = \unit[5.732]{GHz} $. Legend saknas}{fig:qi_pwr}{\textwidth}{20em}
-%Jämförelse av $Q_i$ med och utan filter görs genom att plotta $Q_i$ mot genomsnittliga antalet fotoner i resonatorn. I det här avsnittet presenteras ett urval sådana figurer. Övriga mätningar finns i appendix \ref{app:data}.
-
-%Samtliga figurer innehåller en kurvanpassning utifrån modellen \ref{ekv:TLSmodel} och värdet på parametrarna är presenterade i figurtexterna.
-
-
-%Mätningar på prov A visade blandade resultat. \Figref{fig:A4.953} visar exempel på en resonator där Q-värdet förändrades väldigt lite efter våra filter hade kopplats på. \Figref{fig:A5.006} och \figref{fig:A5.689} visar resonatorer vilkas Q-värde har förbättras respektive försämrats över hela effektintervallet. Samtliga av dessa mätningar från prov A passade väl med anpassningen till TLS-modellen \ref{ekv:TLSmodel}.
-
+%\section{Uppmätt $Q_i$ mot $\expval{n}$ i resonator}
+ 
+I \figref{fig:Qi_n} visas den uppmätta $Q_i$ mot $\expval{n}$, det genomsnittliga antalet fotoner i resonatorn, för en resonator med \unit[$f_r=5,732$]{GHz} från prov 2 som exempel. I figuren syns även den kurvanpassning till modellen \eqref{ekv:TLSmodel} som gjordes för samtliga mätningar. För motsvarande figurer för resterande resonatorer se \ref{}.% reffa appendix
 
 \begin{figure}[H]
   \centering
-  \setlength\figurewidth{0.75\textwidth}
-  \setlength\figureheight{12em}
+  \setlength\figurewidth{0.7\textwidth}
+  \setlength\figureheight{9em}
   \input{figure/matningar/AlSi-d_5.732_GHz.tikz}
   \caption{$Q_i$ mot genomsnittligt antal fotoner i resonatorn $(f_r=\unit[5,732]{GHz})$ för prov 2. Figuren visar mätningar med och utan det medellånga filtret. Mätdatan är anpassad till TLS-modellen \eqref{ekv:TLSmodel}. Vid $\expval{n}<10^1$ uppvisar resonatorn samma $Q_i$ med och utan filter. För $\expval{n}>10^3$ finns en tydlig förbättring av $Q_i$ med filtret, som även ökar för större $\expval{n}$.}
   \label{fig:Qi_n}
 \end{figure}
 
-I tabell \ref{tab:Qi_A} presenteras $Q_i$ vid $\expval{n}=1$ och $\expval{n}=10^4$ för alla resonatorer, med och utan filter. Vi kan
+%Resultaten för en resonator kan ses i \figref{fig:Qi_n}. Här visas $Q_i$ för olika $\expval{n}$, det genomsnittliga antalet fotoner i resonatorn vid resonans, före och efter våra filter monterades. 
+
+Till resonatorn i \figref{fig:Qi_n} användes två av de medellånga filtren, $L\approx \unit[2,5]{cm}$ och de åstadkom en förbättring av $Q_i$ med upp till \unit[46]{\%} för $\expval{n}=10^4$ men ingen förändring för $\expval{n}<10^1$. För vissa resonatorer gav istället filter upphov till en försämring av $Q_i$. En sammanställning av $Q_i$ vid låg effekt ($\expval{n}=1$) och hög effekt ($\expval{n}=10^4$) med samt utan filter för samtliga resonatorer hänvisar vi till tabell \ref{tab:Qi}. I tabellen finns också den procentuella förändringen av $Q_i$ vid låg och hög effekt efter att filter användes.
+
+
+Vid en anpassning till modellen \eqref{ekv:TLSmodell} ger anpassningsparametern $1/Q_o$ information om förluster som inte är TLS-relaterade, det vill säga bland annat de förluster relaterade kvasipartiklar som ett resultat av brutna Cooperpar. I \figref{fig:Q_other} presenteras förlusttermen $1/Q_o$ för samtliga resonatorer med och utan filter.
+
+
+\begin{figure}[H]
+    \centerfloat
+    \begin{minipage}{0.85\paperwidth}
+    \centerfloat
+    \begin{subfigure}{0.33\textwidth}
+    \centering
+    \setlength\figurewidth{0.8\linewidth}
+    \setlength\figureheight{8em}
+    \input{figure/matningar/Q_other_AlSi_C.tikz}
+    \caption{Prov 1}
+    \label{fig:Q_other_1}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+    \centering
+    \setlength\figurewidth{0.8\linewidth}
+    \setlength\figureheight{8em}
+    \input{figure/matningar/Q_other_AlSi_d.tikz}
+    \caption{Prov 2}
+    \label{fig:Q_other_2}
+    \end{subfigure}
+    %\begin{center}
+    \hspace{-1em}
+    \begin{subfigure}{0.4\paperwidth}
+    \centering
+    \setlength\figurewidth{0.8\linewidth}
+    \setlength\figureheight{8em}
+    \input{figure/matningar/Q_other_AlSi_A.tikz}
+    \caption{Prov 3}
+    \label{fig:Q_other_3}
+    \end{subfigure}
+    \end{minipage}
+    %\end{center}
+    \caption{Anpassningsparameter $1/Q_o$ i TLS-modell \eqref{ekv:TLSmodel} anpassad till $Q_i$ mot $\expval{n}$ (exempel se \figref{fig:Qi_n}) för samtliga resonatorer på prov 1 \subref{fig:Q_other_1}, prov 2 \subref{fig:Q_other_2} och prov 3 \subref{fig:Q_other_3}. Till prov 1 användes det långa filtret, prov 2 det medellånga och prov 3 det korta. I prov 1 ser vi en minskning av förlusttermen $1/Q_o$ för fyra av sex resonatorer när filter användes, en resonator (\unit[$f_r=6,436$]{GHz}) var relativt oförändrad medan en resonator(\unit[$f_r=7,569$]{GHz}) uppvisade en ökning i $1/Q_o$ när filter användes. För prov 2 minskade $1/Q_o$ för fem av sex resonatorer med filter, dock uppvisade en resonator en kraftig ökning av $1/Q_o$. För prov 3 var filtrets effekt mer blandad. För samtliga resonatorer var förändringar i $1/Q_o$ relativt små. Bland resonatorerna på prov 3 syns inga större förbättringar samt försämringar när filter användes.}
+    \label{fig:Q_other}
+\end{figure}
+
+Från \figref{fig:Q_other} kan vi se att för prov 1 och prov 2 verkar filter minska de förluster som inte är kopplade till TLS då förlusttermen $1/Q_o$ minskade för majoriteten av resonatorerna på prov 1 och 2. Resonatorerna uppvisade inge större förändringar i $1/Q_o$, men de små förändringar som fanns var av blandad karaktär.
+
+% skriv och förklara det som syns i figuren ovan dvs typ samma som figurtext
+
+%Hur de övriga förlusterna förändrades efter implementering av våra filter för prov 1 och prov 3 presenteras i \figref{fig:Q_other_1} respektive \figref{fig:Q_other_3}. Eftersom $1/Q_o$ betecknar övriga förluster är en minskning med filter ett positivt resultat.
+
+%förändringen av $1/Q_o$ för prov 2.
+
+%Från figuren kan det, genom att betrakta staplarna vid \unit[$f_r=5,732$]{GHz}, läsas av att av dessa övriga förluster minskade för det här exemplet.
+
+
+
+I tabell \ref{tab:Qi} presenteras $Q_i$ och procentuella förändringen av $Q_i$ för våra prover vid $\expval{n}=1$ och $\expval{n}=10^4$. De största procentuella förbättringarna av $Q_i$ återfinns hos prov 2, med medellånga filter vid höga effekter, där förbättringarna ligger mellan \unit[11-46]{\%}. Här finns dock även den största procentuella försämringen på \unit[-46]{\%}. För prov 1 åstadkom de långa filtrena förbättringar för fem av sex resonatorer vid både låg och hög effekt. Bland resonatorerna på prov 3 syns inga större förbättringar eller försämringar när filter användes.
 
 \begin{table}[h]
 \centering
 \caption{$Q_i$ vid låg ($\expval{n}=1$) och hög effekt ($\expval{n}=10^4$) för alla resonatorer, med och utan filter. Notera att majoriteten av resonatorerna i prov 1 och 2 har en positiv förbättring vid hög effekt, där alla förbättringar i prov 2 är över $10 \%$.}
-\label{tab:Qi_A}
+\label{tab:Qi}
 
 
 \begin{tabular}{crrrrrrr}
@@ -75,39 +120,5 @@ I tabell \ref{tab:Qi_A} presenteras $Q_i$ vid $\expval{n}=1$ och $\expval{n}=10^
 \bottomrule
 \end{tabular}
 \end{table}
-
-
-\begin{figure}[h]
-    \begin{subfigure}{0.5\textwidth}
-    \centering
-    \setlength\figurewidth{0.8\linewidth}
-    \setlength\figureheight{11em}
-    \input{figure/matningar/Q_other_AlSi_C.tikz}
-    \caption{Prov 1}
-    \label{fig:Q_other_C}
-    \end{subfigure}
-    \begin{subfigure}{0.5\textwidth}
-    \centering
-    \setlength\figurewidth{0.8\linewidth}
-    \setlength\figureheight{11em}
-    \input{figure/matningar/Q_other_AlSi_d.tikz}
-    \caption{Prov 2}
-    \label{fig:Q_other_d}
-    \end{subfigure}
-    \begin{center}
-    \begin{subfigure}{0.75\textwidth}
-    \centering
-    \setlength\figurewidth{0.8\linewidth}
-    \setlength\figureheight{11em}
-    \input{figure/matningar/Q_other_AlSi_A.tikz}
-    \caption{Prov 3}
-    \label{fig:Q_other_A}
-    \end{subfigure}
-    \end{center}
-    \caption{Anpassningsparameter $\frac{1}{Q_o}$ i TLS-modell \eqref{ekv:TLSmodel} anpassad till $Q_i$ mot $\expval{n}$ (exempel se \figref{fig:Qi_n}) för samtliga resonatorer på prov 1 \subref{fig:Q_other_C}, prov 2 \subref{fig:Q_other_d} och prov 3 \subref{fig:Q_other_A}. Till prov 1 användes det långa filtret, prov 2 det medellånga och prov 3 det korta. I prov 1 ser vi en minskning av förlusttermen $\frac{1}{Q_o}$ för fyra av sex resonatorer när filter användes, en resonator (\unit[$f_r=6,436$]{GHz}) var relativt oförändrad medan en resonator(\unit[$f_r=7,569$]{GHz}) uppvisade en ökning i $\frac{1}{Q_o}$ när filter användes. För prov 2 minskade $\frac{1}{Q_o}$ för fem av sex resonatorer med filter, dock uppvisade en resonator en kraftig ökning av $\frac{1}{Q_o}$. För prov 3 var filtrets effekt mer blandad. För samtliga resonatorer var förändringar i $\frac{1}{Q_o}$ relativt små. Bland resonatorerna på prov 3 syns inga större förbättringar samt försämringar när filter användes.}
-    \label{fig:my_label}
-\end{figure}
-
-
 
 \end{document}

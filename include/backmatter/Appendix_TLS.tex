@@ -1,194 +1,180 @@
 % CREATED BY DAVID FRISK, 2016
 \documentclass[../../main.tex]{subfiles}
 \begin{document}
-\chapter{Mätdata}
+\chapter{$Q_i$ mot $\expval{n}$}
 \label{app:data}
 
-\section{$Q_i$ som funktion av <n>}
+\section{$Q_i$ som funktion av <n> för prov }
 
 
 %\iffalse
 
-\iffalse
+%\begin{minipage}{0.875\paperwidth}
 \begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-A_4.953_GHz.tikz}
-  \caption{AlSi-A\_4.953\_GHz x}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-A_4.953_GHz.tikz}
+        \caption{AlSi-A\_4.953\_GHz x}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-A_5.006_GHz.tikz}
+        \caption{AlSi-A\_5.006\_GHz x}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-A_5.218_GHz.tikz}
+        \caption{AlSi-A\_5.218\_GHz}
+    \end{subfigure}
+
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-A_5.689_GHz.tikz}
+        \caption{AlSi-A\_5.689\_GHz x}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-A_5.959_GHz.tikz}
+        \caption{AlSi-A\_5.959\_GHz}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-A_6.251_GHz.tikz}
+        \caption{AlSi-A\_6.251\_GHz}
+    \end{subfigure}
+
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-A_6.946_GHz.tikz}
+        \caption{AlSi-A\_6.946\_GHz}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-A_7.351_GHz.tikz}
+        \caption{AlSi-A\_7.351\_GHz}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-A_7.624_GHz.tikz}
+        \caption{AlSi-A\_7.624\_GHz}
+    \end{subfigure}
 \end{figure}
+%\end{minipage}
 
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-A_5.006_GHz.tikz}
-  \caption{AlSi-A\_5.006\_GHz x}
-\end{figure}
-
-\fi
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-A_5.218_GHz.tikz}
-  \caption{AlSi-A\_5.218\_GHz}
-\end{figure}
-
-
-\iffalse
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-A_5.689_GHz.tikz}
-  \caption{AlSi-A\_5.689\_GHz x}
-\end{figure}
-\fi
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-A_5.959_GHz.tikz}
-  \caption{AlSi-A\_5.959\_GHz}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-A_6.251_GHz.tikz}
-  \caption{AlSi-A\_6.251\_GHz}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-A_6.946_GHz.tikz}
-  \caption{AlSi-A\_6.946\_GHz}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-A_7.351_GHz.tikz}
-  \caption{AlSi-A\_7.351\_GHz}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-A_7.624_GHz.tikz}
-  \caption{AlSi-A\_7.624\_GHz}
-\end{figure}
-
+\section{$Q_i$ som funktion av <n> för prov }
 %%%%%%%%%%%%%%%%% c samples
 \begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-C_5.153_GHz.tikz}
-  \caption{AlSi-C\_5.153\_GHz}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-C_5.153_GHz.tikz}
+        \caption{AlSi-C\_5.153\_GHz}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-C_5.366_GHz.tikz}
+        \caption{AlSi-C\_5.366\_GHz}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-C_6.132_GHz.tikz}
+        \caption{AlSi-C\_6.132\_GHz}
+    \end{subfigure}
+    
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-C_6.436_GHz.tikz}
+        \caption{AlSi-C\_6.436\_GHz x}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-C_7.569_GHz.tikz}
+        \caption{AlSi-C\_7.569\_GHz}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-C_7.844_GHz.tikz}
+        \caption{AlSi-C\_7.844\_GHz}
+    \end{subfigure}
 \end{figure}
 
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-C_5.366_GHz.tikz}
-  \caption{AlSi-C\_5.366\_GHz}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-C_6.132_GHz.tikz}
-  \caption{AlSi-C\_6.132\_GHz}
-\end{figure}
-
-\iffalse
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-C_6.436_GHz.tikz}
-  \caption{AlSi-C\_6.436\_GHz x}
-\end{figure}
-
-\fi
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-C_7.569_GHz.tikz}
-  \caption{AlSi-C\_7.569\_GHz}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-C_7.844_GHz.tikz}
-  \caption{AlSi-C\_7.844\_GHz}
-\end{figure}
 
 %%%%%%%%%%%%%% d samples
+\section{$Q_i$ som funktion av <n> för prov }
 
 \begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-d_4.822_GHz.tikz}
-  \caption{AlSi-d\_4.822\_GHz}
-\end{figure}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-d_4.822_GHz.tikz}
+        \caption{AlSi-d\_4.822\_GHz}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-d_5.012_GHz.tikz}
+        \caption{AlSi-d\_5.012\_GHz}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-d_5.732_GHz.tikz}
+        \caption{AlSi-d\_5.732\_GHz}
+    \end{subfigure}
 
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-d_5.012_GHz.tikz}
-  \caption{AlSi-d\_5.012\_GHz}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-d_5.732_GHz.tikz}
-  \caption{AlSi-d\_5.732\_GHz}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-d_6.025_GHz.tikz}
-  \caption{AlSi-d\_6.025\_GHz x}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-d_7.082_GHz.tikz}
-  \caption{AlSi-d\_7.082\_GHz}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \setlength\figurewidth{0.8\textwidth}
-  \setlength\figureheight{15em}
-  \input{figure/matningar/AlSi-d_7.322_GHz.tikz}
-  \caption{AlSi-d\_7.322\_GHz}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-d_6.025_GHz.tikz}
+        \caption{AlSi-d\_6.025\_GHz x}
+    \end{subfigure}
+        \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-d_7.082_GHz.tikz}
+        \caption{AlSi-d\_7.082\_GHz}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \setlength\figurewidth{0.8\textwidth}
+        \setlength\figureheight{10em}
+        \input{figure/matningar/AlSi-d_7.322_GHz.tikz}
+        \caption{AlSi-d\_7.322\_GHz}
+    \end{subfigure}
 \end{figure}
 
 %\fi
