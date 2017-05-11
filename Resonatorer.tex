@@ -78,7 +78,7 @@ En resonatorer definieras av dess resonansfrekvens $f_r$ och kvalitetsfaktor $Q$
 \begin{equation}
 \frac{1}{Q_l}=\frac{1}{Q_i}+\text{Re}\qty(\frac{1}{Q_c}).
 \end{equation}
-Detta förklaras mer ingående i avsnitt \ref{sec:losses}.
+$Q$ beror på förlusterna i resonatorn och det förklaras mer ingående i avsnitt \ref{sec:losses}.
 
 För att erhålla en modell för resonatorerna utifrån sagda parametrar krävs en ekvivalent kretsmodell. Eftersom resonatorerna är vågledare kan de modelleras med induktanser, kapacitanser och resistanser \cite[s. 437]{cheng}. Vi betraktar den ekvivalenta kretsmodellen för en hängande resonator \cite{Boehme2016} i \figref{fig:ekviv_krets}. Anledningen att resonatorerna är hängande är för att en reflektionsmätning behöver göras för att kunna bestämma interna kvalitetsfaktorn \cite{Probst2015}. När resonatorerna är hängande mäter vi reflektionen av resonatorn genom att mäta transmissionen mellan port 1 och port 2 (i \figref{fig:ekviv_krets}). Denna geometri gör även att flera resonatorer kan hängas från samma matarledning och mätas individuellt.
 
@@ -250,17 +250,15 @@ $\delta_{TLS}$ kan modelleras som
     \delta_{TLS}=\frac{F\delta_{TLS}^0\tanh{(\hbar\omega_r/2k_BT)}}{(1+(N/N_c)^2)^\beta}
     \label{ekv:TLS}
 \end{equation}
-Där $\delta_{TLS}^0$ är förlusterna vid ett fåtal milikelvin och bara enstaka fotoner, $F$ är en designparameter, $\omega_r$ är resonansvinkelfrekvensen, $N$ är antal fotoner som lagras i resonatorn och $N_c$ är det kritiska antal fotoner för vilket en TLS blir mättad. \eqref{ekv:TLS} är tagen från \cite{pappas2011two} med viss modifikation. $\beta$ används som en anpassningsparamter som grovt brukar anses ligga kring 0,2 \cite{faoro2012} för våra tillämpningar. Från \eqref{ekv:TLS} fås att det inte går att eliminera TLS-förluster helt ens vid godtyckligt låga temperaturer \cite{Boehme2016}.
+Där $\delta_{TLS}^0$ är förlusterna vid ett fåtal milikelvin och bara enstaka fotoner, $F$ är en designparameter, $\omega_r$ är resonansvinkelfrekvensen, $N$ är antal fotoner som lagras i resonatorn och $N_c$ är det kritiska antal fotoner för vilket en TLS blir mättad. \eqref{ekv:TLS} är tagen från \cite{pappas2011two} med viss modifikation. $\beta$ används som en anpassningsparamter som grovt brukar anses ligga kring 0,2 \cite{faoro2012} för våra tillämpningar. Det är värt att notera rån \eqref{ekv:TLS} att det inte fullständigt går att eliminera TLS-förluster ens vid godtyckligt låga temperaturer \cite{Boehme2016}.
 
 \subsection{Kvasipartiklar och sönderslagning av Cooperpar}
 \label{sec:cooper}
-Den förlustmekanism som vi avser minska i det här projektet är $\delta_{qp}$, förluster som uppekommer av kvasipartiklar. För att ha förståelse för hur $\delta_{qp}$ kan påverkas krävs viss kännedom om Cooperpar och supraledning.
+Den förlustmekanism som vi avser minska i det här projektet är $\delta_{qp}$, förluster som uppekommer av kvasipartiklar. För att ha förståelse för hur $\delta_{qp}$ kan påverkas krävs viss kännedom om Cooperpar och supraledning. Cooperpar är ett par av fermioner, som är sammanbundna vid låga temperaturer. Cooper visade att en godtyckligt liten attraktion mellan elektroner i en metall kan ge upphov till att ett sådant par kan ha lägre energi än fermienergin \cite{Kittel2005}. Detta beror på elektron-fonon interaktion som orsakar supraledning \cite{Kittel2005}.
 
-Cooperpar är ett par av fermioner, som är sammanbundna vid låga temperaturer. Cooper visade att en godtyckligt liten attraktion mellan elektroner i en metall kan ge upphov till att ett sådant par kan ha lägre energi än fermienergin \cite{Kittel2005}. Detta beror på elektron-fonon interaktion, vilket orsakar supraledning.
+I en klassisk beskrivning av Cooperpar i en metall så beter sig en elektron vanligtvis som en fri partikel. Elektroners negativ laddning orsakar repellering mellan varandra och attraktion till de positiva jonerna i metallens gitter. Jongittret blir då aningen skevt och jonerna blir aningen förflyttade mot elektronerna vilket bidrar till en ökad densitet av positiv laddning för gittret. Detta överskott av positiv laddning attraherar i sin tur fler elektroner. De fotoner som har en frekvens på över \unit[88]{GHz} kan bryta Cooperpar i supraledande aluminium och därmed generera ett överskott av kvasipartiklar. Kvasipartiklar orsakar förluster eftersom de till skillnad från Cooperparen upplever en resistivitet i ledaren.
 
-I en klassisk beskrivning av Cooperpar i en metall så beter sig en elektron vanligtvis som en fri partikel. Elektroners negativ laddning orsakar repellering mellan varandra och attraktion till de positiva jonerna i metallens gitter. Jongittret blir då aningen skevt och jonerna blir aningen förflyttade mot elektronerna och densiteten av positiv laddning ökar för gittret. Detta överskott av positiv laddning attraherar i sin tur fler elektroner. De fotoner som har en frekvens på över \unit[88]{GHz} kan bryta Cooperpar i supraledande aluminium och därmed generera ett överskott av kvasipartiklar. Kvasipartiklar orsakar förluster eftersom de till skillnad från Cooperparen upplever en resistivitet i ledaren.
-
-Energin för bindningen mellan Cooperpar i aluminium är \unit[0,39]{meV} \cite{Kittel2005}. Detta innebär att termisk energi lätt kan bryta upp paren. Vilket är anledningen till att Cooperpar (och således supraledning) enbart återfinns vid mycket låga temperaturer. Ett ämne som kan bli supraledande blir det först när det når en temperatur under sin \emph{kritiska temperatur}. För Aluminium är den kritiska temperaturen \unit[1,2]{K}.
+Energin för bindningen mellan Cooperpar i aluminium är \unit[0,39]{meV} \cite{Kittel2005}. Detta innebär att termisk energi lätt kan bryta upp paren, vilket är anledningen till att Cooperpar (och således supraledning) enbart återfinns vid mycket låga temperaturer. Ett ämne som kan bli supraledande blir det först när det når en temperatur under sin \emph{kritiska temperatur}. För Aluminium är den kritiska temperaturen \unit[1,2]{K}.
 
 %För en komplett mängd av tillstånd för ett två-elektron system, som har periodiska randvillkor och befinner sig i en kub med enhetsvolym. Då tar vi produktfunktionen för planvågor 
 
@@ -271,9 +269,8 @@ Energin för bindningen mellan Cooperpar i aluminium är \unit[0,39]{meV} \cite{
 %\fastaboken
 %\cite{calvo2008}
 
-Även när de supraledande resonatorerna är nedkylda till en temperatur under den kritiska temperaturen för ledaren finns det kvar kvasipartiklar i systemet som upplever resistans vilket leder till att förlusttermen $\delta_{qp}$ ökar och således till att $Q$-värdet minskar. Mängden kvasipartiklar minskar sedan när temperaturen minskar ytterligare, till en viss gräns är nådd \cite{Barends2011}. Detta är anledningen till varför resonatorerna ofta kyls ner till tiotals millikelvin. Vid dessa temperaturer har ljus och infraröd strålning från omgivningen stor påverkan på $Q$-värdet hos resonatorn \cite{Barends2011}.
+Även när de supraledande resonatorerna är nedkylda till en temperatur under den kritiska temperaturen för ledaren finns det kvar kvasipartiklar i systemet som upplever resistans vilket leder till att förlusttermen $\delta_{qp}$ ökar och således till att $Q$-värdet minskar. Mängden kvasipartiklar minskar sedan när temperaturen minskar ytterligare, till en viss gräns är nådd \cite{Barends2011}. Detta är anledningen till varför resonatorerna ofta kyls ner till tiotals millikelvin. Vid dessa temperaturer har ljus och infraröd strålning från omgivningen stor påverkan på $Q$-värdet hos resonatorn \cite{Barends2011}. Denna strålning orsakar ytterligare kvasipartikelrelaterade förluster när fotoner slår sönder Cooperpar som då delar upp sig i individuella kvasipartiklar. Vilka frekvenser som krävs för detta fås från följande ekvation som beskriver mängden kvasipartiklar, $N_{qp}$.
 
-Denna strålning orsakar ytterligare kvasipartikelrelaterade förluster när fotoner slår sönder Cooperpar som då delar upp sig i individuella kvasipartiklar. Vilka frekvenser som krävs för detta fås från följande ekvation som beskriver mängden kvasipartiklar, $N_{qp}$.
 \begin{equation}
 \label{ekv:qp}
     \frac{\delta N_{qp}}{\delta t}=\frac{P}{\Delta}+G-RN_{qp}^2

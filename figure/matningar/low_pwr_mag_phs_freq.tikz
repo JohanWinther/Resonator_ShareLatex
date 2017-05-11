@@ -1050,6 +1050,7 @@ axis background/.style={fill=white},
 xticklabel style={/pgf/number format/fixed,
                   /pgf/number format/precision=4},
 xtick distance={0.0005},
+clip mode individual
 ]
 \addplot [color=mycolor1, draw=none, mark size=2.0pt, mark=o, mark options={solid, mycolor1}, forget plot]
   table[row sep=crcr]{%

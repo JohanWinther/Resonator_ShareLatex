@@ -9,7 +9,7 @@ I följande kapitel presenteras teori, konstruktion och karakteristik hos de dis
 
 
 \section{Distribuerade lågpassfilter}
-Distribuerade filter skiljer sig ifrån vanliga elektriska filter bestående av olika diskreta kretselement främst genom att de distribuerade filternas egenskaper som kapacitans, induktans och resistans inte är samlade i en enda komponent. Istället är är dessa egenskaper distribuerade över transmissionsledningen som den elektromagnetiska vågen propagerar i. Genom att designa sin transmissionsledning med olika geometrier och material med olika elektriska egenskaper kan flera olika egenskaper erhållas\autocite{cheng}. 
+Distribuerade filter skiljer sig ifrån vanliga elektriska filter bestående av olika diskreta kretselement främst genom att de distribuerade filternas egenskaper som kapacitans, induktans och resistans inte är samlade i en enda komponent. Istället är är dessa egenskaper distribuerade över transmissionsledningen som den elektromagnetiska vågen propagerar i. Genom att designa sin transmissionsledning med olika geometrier och material med olika elektriska egenskaper kan flera olika egenskaper erhållas\cite{cheng}. 
 
 \begin{wrapfigure}{r}{0.25\textwidth}
     \centering
@@ -17,7 +17,7 @@ Distribuerade filter skiljer sig ifrån vanliga elektriska filter bestående av 
     \caption{Maskinarbetat kopparblock för att konstruera att distribuerat lågpassfilter.}
     \label{fig:filterbox}
 \end{wrapfigure}
-I detta projekt har vi konstruerat ett distribuerat lågpassfilter genom att i en koaxial geometri ersätta en del av det isolerande dielektrikum mellan centerledare och hölje med ett dielektrikum med frekvensberoende förluster för att på så sätt effektivt dämpa höga frekvenser.  
+I detta projekt har vi konstruerat distribuerade lågpassfilter genom att i en koaxial geometri ersätta en del av det isolerande dielektrikum mellan centerledare och hölje med ett dielektrikum med frekvensberoende förluster för att på så sätt effektivt dämpa höga frekvenser.  
 
 De distribuerade lågpassfilter som konstruerats i detta projekt består i huvudsak av tre olika delar: två cylindriska SMA kontakter med en delvis isolerad centerledare, Emerson \& Cuming Stycast 1266 och ett rektangulärt block av maskinarbetad koppar som visas i figur \ref{fig:filterbox}. Från kopparblockets kortsida har ett hål borrats genom hela blocket för att ge plats åt de två SMA kontakterna som ska föras in i kopparblockat från var sin sida och agera som filtrets centerledare. På de båda kortsidorna finns också två skruvhål borrade för att kunna fästa SMA kontakten vid kopparblocket. Från kopparblockets ovansida har ett titthål borrats för att kunna löda ihop de två SMA kontakterna samt för att kunna fylla hålrummet mellan den oisolerade centerledaren och kopparblocket med Stycast som är ett dielektrikum med förluster för att ge filtret en frekvensberoende dämpning som diskuteras i avsnitt \ref{sec:filterdesign}.
 
@@ -31,7 +31,7 @@ Om det här blir bra:
 
 \section{Filterdesign}
 \label{sec:filterdesign}
-För att undersöka egenskaperna hos en transmissionsledning kan man utgå från propagationskonstanten $\gamma =\sqrt{(R+j\omega L)+(G+j\omega C)} $ för en generell transmissionsledning\autocite{cheng}. Där $R$ är resistans per längdenhet, $L$ induktans per längdenhet, $G$ konduktans per längdenhet och $C$ kapacitans per längdenhet.
+För att undersöka egenskaperna hos en transmissionsledning kan man utgå från propagationskonstanten $\gamma =\sqrt{(R+j\omega L)+(G+j\omega C)} $ för en generell transmissionsledning\cite{cheng}. Där $R$ är resistans per längdenhet, $L$ induktans per längdenhet, $G$ konduktans per längdenhet och $C$ kapacitans per längdenhet.
 
 För en koaxial geometri som vårt distribuerade filter är baserad på ges $R, L, G$ och $C$ av
 \begin{equation*}
@@ -40,11 +40,11 @@ För en koaxial geometri som vårt distribuerade filter är baserad på ges $R, 
 Där $a$ och $b$ är inner- respektive ytterradie, $\mu_c=\mu_r\mu_0$ är ledarens permeabilitet, $\sigma_c$ ledarens konduktivitet, $\sigma$ är dielektrikumets konduktivitet och $\epsilon =\epsilon_r\epsilon_0$ är dielektrikumets permittivitet. 
  
 
-Genom att välja $a=\unit[0,64]{mm}$ och $b=\unit[2,03]{mm}$, vilket motsvarar dimensionerna på vårt filter som konstruerats i detta projekt. Vidare antar vi att ledaren består av koppar vilket ger $\mu_c=\mu_0$ och $\sigma_c=\unit[5,96\cdot 10^7]{S/m}$. Om vi också antar att vårt dielektrikum har $\epsilon=3\epsilon_0$ och en dielektrisk förlusttangent $\delta_e$ som kan relateras till dielektrikumets konduktivitet genom
+Dimensionerna för våra filter ger värdena $a=\unit[0,64]{mm}$ och $b=\unit[2,03]{mm}$. Vidare antar vi att ledaren består av koppar vilket ger $\mu_c=\mu_0$ och $\sigma_c=\unit[5,96\cdot 10^7]{S/m}$. Om vi också antar att vårt dielektrikum har $\epsilon=3\epsilon_0$ och en dielektrisk förlusttangent $\delta_e$ som kan relateras \cite{cheng} till dielektrikumets konduktivitet genom
 \begin{equation*}
-    \tan\delta_e=\frac{\epsilon^{''}}{\epsilon'}\approx\frac{\sigma}{\omega\epsilon}
+    \tan\delta_e=\frac{\epsilon^{''}}{\epsilon'}\approx\frac{\sigma}{\omega\epsilon}.
 \end{equation*}
-\autocite{cheng}. Så kan dämpningen som funktion av frekvens och förlusttangent beräknas, vilket visas i \figref{fig:attn_ex}.
+Så kan dämpningen som funktion av frekvens och förlusttangent beräknas, vilket visas i \figref{fig:attn_ex}.
 
 \begin{figure}[H]
     
@@ -206,7 +206,7 @@ I detta projekt har vi konstruerat filter av tre olika längder i tre uppsättni
 
 För att karakterisera samtliga filter användes en Agilent E8364B VNA. Filter anslöts direkt till VNA:n med två SMA M-M adapter och därefter mättes $S_{21}$ i frekvensintervallet \unit[1-50]{GHz}. Mätningen utfördes även innan filtrerna fylldes med Stycast. En mätning av $S_{21}$ utan filter togs också för att använda som referens. Denna referens motsvarar således kablarnas och adapternas påverkan på $S_{21}$, vilket gör det möjligt att särskilja filtrets dämpning från andra dämpande effekter i uppkopplingen.% som skinneffekt och reflektioner på grund av impedansmissmatcher. 
 
-I \figref{fig:filter_kar} visas den uppmätta $|S_{21}|$ för ett filter, innan och efter det fylldes med Stycast, från varje kategori samt en referens. För resterande filter se appendix \ref{}.
+I \figref{fig:filter_kar} visas den uppmätta $|S_{21}|$ för ett filter, innan och efter det fylldes med Stycast, från varje kategori samt en referens. För resterande filter se appendix \ref{app:filterkar}.
 
 \begin{figure}[H]
     \centerfloat

@@ -19,36 +19,38 @@ Slusatser om filters funktion...
 - 
 - När funkar det eller inte + varför
 
-Det finns skäl till att tro att våra långa och medellånga filter reducerar mängden fotoner över \unit[88]{GHz} i resonatorerna. För det första visar \figref{fig:filter_kar} på en dämpning som ökar med ökad frekvens upp till \unit[50]{GHz} och det är också rimligt att anta att dämpningen fortsätter att öka för ännu högre frekvenser. För det andra minskar förlusttermen $\frac{1}{Q_o}$ för majoriteten av resonatorerna i prov 1 och prov 2.
+Det finns skäl till att tro att våra långa och medellånga filter reducerar mängden fotoner över \unit[88]{GHz} i resonatorerna. För det första visar \figref{fig:filter_kar} en dämpning som ökar med ökad frekvens upp till \unit[50]{GHz} och det är ett rimligt antagande att dämpningen fortsätter att öka för ännu högre frekvenser. För det andra minskar förlusttermen $1/Q_o$ för majoriteten av resonatorerna i prov 1 och prov 2.
 
-Att resultaten varierar så mycket mellan de olika resonatorerna kan förklaras med att de begränsas av olika förlustmekanismer. Om exempelvis $\delta_{TLS}$ är dominerande kan de finnas risk att de förluster som lågpassfiltren reducerar inte gör någon skillnad.
-De försämringar som uppkommit kan bero på andra faktorer än filtrena. Till exempel på att resonatorerna kan ändra egenskaper då de kyls ner och hettas upp.    
-
+Faktumet att resultaten varierar så mycket mellan de olika resonatorerna kan förklaras med att de begränsas av olika förlustmekanismer. Om exempelvis $\delta_{TLS}$ är dominerande kan de finnas risk att de förluster som lågpassfiltren reducerar inte gör någon skillnad.
+De försämringar som uppkommit kan bero på andra faktorer än filtren. Till exempel kan resonatorerna försämras då de kyls ner och hettas upp vid installation i kryostaten.
 
 \section{Felkällor}
-För samtliga mätningar har vi tagit hänsyn till en uppskattad dämpning hos våra filter. Det finns dock en viss osäkerhet när det kommer till filterdämpningens påverkan eftersom filtrena är karakteriserade i rumstemperatur och inte vid \unit[10]{mK} som mätningarna på resonatorerna är utförda vid.
 
+\subsection{Uppskattning av dämpning i passbandet}
+För samtliga beräkningar av $Q_i$ har vi tagit hänsyn till en uppskattad dämpning från våra filter vid resonansfrekvensen. Det finns dock en viss osäkerhet när det kommer till filterdämpningens påverkan eftersom filtrena är karakteriserade i rumstemperatur och inte vid \unit[10]{mK} som mätningarna på resonatorerna är utförda vid. Dock ger en överskattning av dämpningen större förbättring eftersom mätpunkterna i en graf med $Q_i$ mot $\expval{n}$ flyttas åt vänster. Det innebär att våra resultat är en lägsta uppskattning av förbättringarna, men vi bedömer att dämpningen inte överstiger \unit[-2]{dBm}.
 
+\subsection{Dataanpassning}
+Anpassningsskriptet uppskattade parametrar på varje mätning, även för de individuella mätningarna för olika effekter. 
 \section{Modellanpassning}
 När passar TLS-modellen? 
 
 
 \section{Vidareutveckling}
-Vi presenterar våra förslag för fortsatt utveckling av filtrena som vi förmodar kommer att ge tydligare trender i resultatet.
+Vi presenterar våra förslag för fortsatt utveckling som vi förmodar kommer att ge tydligare trender i resultatet.
 
 \subsection{Eccosorb som dielektrikum istället för Stycast}
 Eccosorb är till skillnad från Stycast ämnat för mikrovågs . Den ursprungliga planen var att använda Eccosorb som dielektrikum i filtrena. Det var dock inte möjligt att få tag på i tid för det här projektet. Förutom de rent dissipativa förlusterna som Stycast gav upphov till i våra filter, ger Eccosorb även upphov till magnetiska förluster som ett resultat av att det är laddat med metallpartiklar \cite{Eccosorb}. Det är rimligt att ,utifrån vad som står i databladet för Eccosorb, anta att dessa frekvensberoende förluster skulle ge oss en skarpare dämpning vid frekvenser på \unit[8-50]{GHz} än vad som syns i figur \ref{fig:batch2_long}. Exempelvis gäller för den vanliga Eccosorb-typen CR-116 att den ger en dämpning på ca \unit[57]{dB/cm} vid \unit[18]{GHz} \cite{Eccosorb} vilket för våra långa filter blir en dämpning på cirka \unit[150]{dB} jämfört med en dämpning på cirka \unit[10]{dB} vid samma frekvens för Stycast. Detta skulle troligtvis påverkar $Q$-faktorn positivt för effekter då hypotesen om sönderslagna Cooperpar verkar stämma.
+
 \subsection{Mätning av flera }
 På grund av tidsbrist hann vi inte mäta med olika filter på samma provlådor. Därför är resultaten svåra att tolka eftersom den stora variationen kan bero på den inbördes skillnaden mellan provlådorna med resonatorerna. Idealt bör minst 10 filterlängder mätas på samma provlåda med förväntan om en genomgående och tydlig trend.
+
 \subsection{Ytterliga filtermätningar}
 Om filtren hade karakteriserats vid \unit[10]{mK} är det möjligt att en mer korrekt dämpning i \unit[4-8]{GHz}-intervallet hade kunnat tas fram vilket skulle leda till ett mer tillförlitliga beräkningar av $Q_i$.
 
 Vidare skulle upprepade nedkylningar och upvärmningar av filtrena kunna ge kunskap om deras hållbarhet.
 
-Karakterisea i kallt
-
-Undersöka hållbarhe
-
+\subsection{Tillverkning}
+Tillverkningen hade kunnat förbättras och förenklats genom att bättre anpassa kopparlådorna till att skapa filter, till exempel genom att ge fyllningshålen koniska kanter så att Stycasten lätt kan rinna ner i lådan och på så sätt minimera risken för luftbubblor.  
 
 \section{Slutsats}
 Sammanfattningsvis drar vi slutsatsen att distribuerade lågpassfilter kan bidra till ökad prestanda för supraledande mikrovågsresonatorer men att ytterligare experiment och vidareutveckling är nödvändigt för att förstå när och varför de uppfyller sitt syfte.
@@ -58,9 +60,12 @@ Sammanfattningsvis drar vi slutsatsen att distribuerade lågpassfilter kan bidra
 
 % Sammandrag
 % Abstract
-% Korrläsa - Lina 
-% Korrläsa - Phi
-% Korrläsa - 
-% Korrläsa - 
-%
-%
+% Diskussion
+% Bidragsrapport
+% Korrläsa - Lina (Lite osöker på 2.8.3) 
+% Korrläsa - Philip
+% Korrläsa - Johan
+% Korrläsa - Mattias 
+% Fixa referenser
+% Nana kudde
+

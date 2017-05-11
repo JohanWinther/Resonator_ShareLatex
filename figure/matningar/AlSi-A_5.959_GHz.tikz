@@ -1,7 +1,7 @@
 % This file was created by matlab2tikz.
 %
-\definecolor{mycolor1}{rgb}{0.85000,0.32500,0.09800}%
-\definecolor{mycolor2}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor1}{rgb}{0.9990 0.7653 0.2164}%
+\definecolor{mycolor2}{rgb}{0.1253 0.3242 0.8303}%
 %
 \begin{tikzpicture}[%
 trim axis left, trim axis right
@@ -61,7 +61,7 @@ legend style={legend cell align=left, align=left, draw=white!15!black,font=\tiny
 186973.906385832	604840.576935\\
 326319.182878005	607900.122708\\
 };
-\addlegendentry{with filter}
+%\addlegendentry{with filter}
 
 \addplot [color=mycolor1]
   table[row sep=crcr]{%
@@ -94,7 +94,7 @@ legend style={legend cell align=left, align=left, draw=white!15!black,font=\tiny
 186973.906385832	601857.783226552\\
 326319.182878005	607767.905689746\\
 };
-\addlegendentry{fit with filter}
+%\addlegendentry{fit with filter}
 
 \addplot [color=mycolor2, draw=none, mark=square, mark options={solid, mycolor2}]
   table[row sep=crcr]{%
@@ -130,7 +130,7 @@ legend style={legend cell align=left, align=left, draw=white!15!black,font=\tiny
 163411.288449806	577637.808352\\
 287560.132872987	577775.425361\\
 };
-\addlegendentry{no filter}
+%\addlegendentry{no filter}
 
 \addplot [color=mycolor2]
   table[row sep=crcr]{%
@@ -166,7 +166,7 @@ legend style={legend cell align=left, align=left, draw=white!15!black,font=\tiny
 163411.288449806	569487.301099499\\
 287560.132872987	572513.052458176\\
 };
-\addlegendentry{ fit no filter}
+%\addlegendentry{ fit no filter}
 
 \end{axis}
 \end{tikzpicture}%

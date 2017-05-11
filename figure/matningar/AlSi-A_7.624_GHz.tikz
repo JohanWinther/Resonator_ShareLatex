@@ -1,7 +1,7 @@
 % This file was created by matlab2tikz.
 %
-\definecolor{mycolor1}{rgb}{0.85000,0.32500,0.09800}%
-\definecolor{mycolor2}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor1}{rgb}{0.9990 0.7653 0.2164}%
+\definecolor{mycolor2}{rgb}{0.1253 0.3242 0.8303}%
 %
 \begin{tikzpicture}[%
 trim axis left, trim axis right
@@ -23,7 +23,7 @@ ymax=1800000,
 ylabel style={font=\color{white!15!black}},
 ylabel={Qi},
 axis background/.style={fill=white},
-legend style={legend cell align=left, align=left, draw=white!15!black}
+legend style={legend cell align=left, align=left, draw=white!15!black,font=\tiny,legend pos = north west}
 ]
 \addplot [color=mycolor1, draw=none, mark=square, mark options={solid, mycolor1}]
   table[row sep=crcr]{%
@@ -64,7 +64,7 @@ legend style={legend cell align=left, align=left, draw=white!15!black}
 105997.651572286	1719800.54914\\
 181318.441287618	1776397.96823\\
 };
-\addlegendentry{with filter}
+%\addlegendentry{with filter}
 
 \addplot [color=mycolor1]
   table[row sep=crcr]{%
@@ -101,7 +101,7 @@ legend style={legend cell align=left, align=left, draw=white!15!black}
 105997.651572286	1713494.89720512\\
 181318.441287618	1780716.17094913\\
 };
-\addlegendentry{fit with filter}
+%\addlegendentry{fit with filter}
 
 \addplot [color=mycolor2, draw=none, mark=square, mark options={solid, mycolor2}]
   table[row sep=crcr]{%
@@ -137,7 +137,7 @@ legend style={legend cell align=left, align=left, draw=white!15!black}
 0.0166729516400164	315702.179915\\
 0.00990534933913898	290507.656458\\
 };
-\addlegendentry{no filter}
+%\addlegendentry{no filter}
 
 \addplot [color=mycolor2]
   table[row sep=crcr]{%
@@ -170,7 +170,7 @@ legend style={legend cell align=left, align=left, draw=white!15!black}
 0.0166729516400164	330639.730739835\\
 0.00990534933913898	329378.651329658\\
 };
-\addlegendentry{ fit no filter}
+%\addlegendentry{ fit no filter}
 
 \end{axis}
 \end{tikzpicture}%

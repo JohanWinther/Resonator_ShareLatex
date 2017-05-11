@@ -23,7 +23,7 @@ ymax=1600000,
 ylabel style={font=\color{white!15!black}},
 ylabel={Qi},
 axis background/.style={fill=white},
-legend style={legend cell align=left, align=left, draw=white!15!black,font=\tiny,legend pos = south east}
+legend style={legend cell align=left, align=left, draw=white!15!black,font=\tiny,legend pos = north west}
 ]
 \addplot [color=mycolor1, draw=none, mark=square, mark options={solid, mycolor1}]
   table[row sep=crcr]{%
@@ -62,7 +62,7 @@ legend style={legend cell align=left, align=left, draw=white!15!black,font=\tiny
 202110.095897656	1272412.33293\\
 357054.492203693	1286410.60662\\
 };
-\addlegendentry{with filter}
+%\addlegendentry{with filter}
 
 \addplot [color=mycolor1]
   table[row sep=crcr]{%
@@ -96,7 +96,7 @@ legend style={legend cell align=left, align=left, draw=white!15!black,font=\tiny
 202110.095897656	1259140.56917745\\
 357054.492203693	1278392.69854096\\
 };
-\addlegendentry{fit with filter}
+%\addlegendentry{fit with filter}
 
 \addplot [color=mycolor2, draw=none, mark=square, mark options={solid, mycolor2}]
   table[row sep=crcr]{%
@@ -133,7 +133,7 @@ legend style={legend cell align=left, align=left, draw=white!15!black,font=\tiny
 291074.489093318	1411114.34645\\
 510140.06522531	1425471.12038\\
 };
-\addlegendentry{no filter}
+%\addlegendentry{no filter}
 
 \addplot [color=mycolor2]
   table[row sep=crcr]{%
@@ -168,7 +168,7 @@ legend style={legend cell align=left, align=left, draw=white!15!black,font=\tiny
 291074.489093318	1404449.68936198\\
 510140.06522531	1425349.42909822\\
 };
-\addlegendentry{ fit no filter}
+%\addlegendentry{ fit no filter}
 
 \end{axis}
 \end{tikzpicture}%
