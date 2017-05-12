@@ -30,6 +30,8 @@ En eventuell förklaring till de försämringar som kunde uppmätas både i $Q_i
 
 
 \section{Felkällor}
+Den klart största felkällan för mätningar med supraledande resonatorer är att det är svårt att kontrollera alla möjliga variabler i en mätning. Detta exemplifieras av att resonatorer som befinner sig på samma chipp, är gjorda med samma tillverkningsmetod och har samma designparametrar förutom $f_r$ har stor spridning i $Q_i$. Detta gör att man i princip inte kan dra specifika slutsatser utan bara se generella trender.
+
 En stor felkälla som kan ge upphov till tvetydliga resultat är att anpassningsskriptet uppskattade parametrar på varje mätning, även för de individuella mätningarna för olika effekter. Vid närmre undersökning upptäckte vi att många parametrar som inte är effektberoende ändrade sig till en viss grad mellan dessa mätningar, vilket inte borde ske. En mer korrekt utförd anpassningsrutin bör ske på följande sätt:
 En anpassning utförs vid en hög effekt innan duffing sker och sedan används dessa parametrar som startvärde för nästa lägre effektnivå. Detta fortsätter tills alla mätningar är anpassade. På så sätt är det bara $Q_i$ som ändrar sig mellan olika effekter, vilket minskar felet i modellanpassningen.
 
@@ -43,7 +45,7 @@ En till felkälla, dock med mindre relevans, är att vi för samtliga beräkning
 %När passar TLS-modellen? 
 
 \section{Vidareutveckling}
-Vi presenterar våra förslag för fortsatt utveckling som vi förmodar kommer att ge tydligare trender i resultatet.
+Vi presenterar våra förslag för fortsatt utveckling som vi förmodar kommer att ge tydligare trender i resultatet och effektivisera arbetet.
 
 \subsection{Eccosorb som dielektrikum istället för Stycast}
 Eccosorb är till skillnad från Stycast ämnat för mikrovågsabsorption. Förutom de rent dissipativa förlusterna som Stycast gav upphov till i våra filter, ger Eccosorb även upphov till magnetiska förluster som ett resultat av att det är laddat med metallpartiklar \cite{Eccosorb}. Det är rimligt att, utifrån vad som står i databladet för Eccosorb, anta att dessa frekvensberoende förluster skulle ge oss en skarpare dämpning vid frekvenser på \unit[8-50]{GHz} än vad som syns i figur \ref{fig:batch2_long}. Exempelvis gäller för den vanliga Eccosorb-typen CR-116 att den ger en dämpning på ca \unit[57]{dB/cm} vid \unit[18]{GHz} \cite{Eccosorb} vilket för våra långa filter skulle innebära en dämpning omkring \unit[150]{dB}. Detta kan jämföras med den uppmätta dämpningen i rumstemjämfört med en dämpning på cirka \unit[10]{dB} vid samma frekvens för Stycast. \citeauthor{santavicca2008} tillverkade liknande filter med Eccosorb och uppnådde dämpningar på runt \unit[80]{dB} redan vid \unit[10]{GHz}, dessutom uppvisade dämpningen ett mycket större frekvensberoende \cite{santavicca2008}. Även dessa resultat tyder på att Eccosorb hade givit bättre dämpning vid höga frekvenser. Detta skulle troligtvis påverka $Q$-faktorn positivt för effekter då hypotesen om sönderslagna Cooperpar verkar stämma.
