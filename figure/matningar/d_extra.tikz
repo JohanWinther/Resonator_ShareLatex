@@ -58,7 +58,7 @@ legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align
 9693.50293091667	2276666.51368\\
 18875.5039603376	2415307.25845\\
 };
-\addlegendentry{med filter}
+%\addlegendentry{med filter}
 
 \addplot [color=mycolor1]
   table[row sep=crcr]{%
@@ -92,7 +92,7 @@ legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align
 9693.50293091667	2292112.27431043\\
 18875.5039603376	2438311.85977707\\
 };
-\addlegendentry{anpassad med filter}
+%\addlegendentry{anpassad med filter}
 
 \addplot [color=mycolor2, draw=none, mark=square, mark options={solid, mycolor2}]
   table[row sep=crcr]{%
@@ -130,7 +130,7 @@ legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align
 39479.9387136244	1692493.48931\\
 59351.028865955	1725884.04431\\
 };
-\addlegendentry{utan filter}
+%\addlegendentry{utan filter}
 
 \addplot [color=mycolor2]
   table[row sep=crcr]{%
@@ -167,7 +167,7 @@ legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align
 39479.9387136244	1671554.65275685\\
 59351.028865955	1692904.30728776\\
 };
-\addlegendentry{anpassad utan filter}
+%\addlegendentry{anpassad utan filter}
 
 \end{axis}
 \end{tikzpicture}%
