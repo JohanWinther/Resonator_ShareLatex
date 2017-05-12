@@ -7,7 +7,10 @@
 \begin{document} 
 
 % COVER PAGE, TITLE PAGE AND IMPRINT PAGE
-\pagenumbering{roman}			% Roman numbering (starting with i (one)) until first main chapter
+%\pagenumbering{roman}			% Roman numbering (starting with i (one)) until first main chapter
+\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+\clearpage
+\thispagestyle{empty}
 \subfile{include/frontmatter/Titlepage}
 
 % ABSTRACT
