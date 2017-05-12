@@ -163,13 +163,13 @@ För att löda ihop SMA kontakterna användes en lödkolv med en mejsel-spets f�
         \label{fig:post_solder}
     \end{subfigure}
     
- \caption{I bilden visas de olika stadierna för att löda ihop ett distribuerat lågpassfilter. I \protect\subref{fig:prep_SMA} har en liten mängd lödpasta applicerats på den vänstra SMA-kontakten. Efter att SMA-kontakterna förts in i koppparlådan så bör lödpastan omsluta båda ledaran som i \subref{fig:before_solder}. I \subref{fig:post_solder} visas den färdiga lödningen.}
+ \caption{I bilden visas de olika stadierna för att löda ihop ett distribuerat lågpassfilter. I \protect\subref{fig:prep_SMA} har en liten mängd lödpasta applicerats på den vänstra SMA-kontakten. Efter att SMA-kontakterna förts in i koppparlådan så bör lödpastan omsluta båda ledarna som i \subref{fig:before_solder}. I \subref{fig:post_solder} visas den färdiga lödningen.}
  \label{fig:filter_soldering}
 \end{figure}
 
 
 % Måste få in i texten någonstans att förhållandet mellan de olika delarna ska vara A 100:28 B
-Efter att lött ihop SMA-kontakterna placerades filtret på en värmeplatta vid \unit[40]{$^\circ$C} för att underlätta när filtret senare ska fyllas med Stycast genom att sänka dess viskositet. Därefter blandades \unit[12,8]{g} Stycast genom att först väga upp \unit[10]{g} Stycast del A och \unit[2,8]{g} Stycast del B och sedan blanda ihop dessa till en homogen vätska i en metallform med hjälp av en plastsked. 
+Efter att SMA-kontakterna lödats ihop placerades filtret på en värmeplatta vid \unit[40]{$^\circ$C} för att underlätta när filtret senare skulle fyllas med Stycast genom att sänka dess viskositet. Därefter blandades \unit[12,8]{g} Stycast genom att först väga upp \unit[10]{g} Stycast del A och \unit[2,8]{g} Stycast del B och sedan blanda ihop dessa till en homogen vätska i en metallform med hjälp av en plastsked. 
 
 \begin{wrapfigure}{r}{0.25\textwidth}
     \centering
@@ -197,9 +197,9 @@ I detta projekt har vi konstruerat filter av tre olika längder i tre uppsättni
     \begin{tabular}{llll}\toprule
         Namn & \multicolumn{3}{c}{Filterlängd (\unit{cm})} \\
         \midrule
-        Kort & 1,895 & 1,88 & 1,825 \\
-        Medel & 2,52 & 2,48 & 2,47 \\
-        Lång & 3,145 & 3,155 & 3,15\\
+        Kort & 1,895 & 1,880 & 1,825 \\
+        Medel & 2,520 & 2,480 & 2,470 \\
+        Lång & 3,145 & 3,155 & 3,150\\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -228,7 +228,7 @@ I \figref{fig:filter_kar} visas den uppmätta $|S_{21}|$ för ett filter, innan 
         \setlength\figureheight{11em}
         \input{figure/grafer/Filters/Batch2_long.tikz}
     \end{subfigure}
-    \caption{Visar den uppmätta $|S_{21}|$ för tre olika filterlängder: ett kort, medel och långt. I figurerna finns $|S_{21}|$ plottat mot frekvens för filter innan de fylldes med Stycast och efter. I figurerna finns och en referens som är en mätning av $|S_{21}|$ utan filter.}
+    \caption{Visar den uppmätta $|S_{21}|$ för tre olika filterlängder: ett kort, medel och långt. I figurerna finns $|S_{21}|$ plottat mot frekvens för filter innan de fylldes med Stycast och efter. I figurerna finns också en referens som är en mätning av $|S_{21}|$ utan filter.}
     \label{fig:filter_kar}
 \end{figure}
 
@@ -236,9 +236,8 @@ Samtliga filter i \figref{fig:filter_kar} uppvisade en högre dämpning efter at
 
 
 Från \figref{fig:filter_kar} kan man inte definitivt avgöra att dämpningen ökar med längden hos filtret vilket bör vara fallet enligt den teori som diskuterades i avsnitt \ref{sec:filterdesign}. En tänkbar förklaring till detta kan vara att förlusttangenten $\delta_e$ inte är tillräckligt stor för att den frekvensberoende dämpningen ska bli tillräckligt tydlig för att synas över de fluktuationer som finns i $|S_{21}|$.% Särskilt för det korta och medellånga filtret i \figref{fig:filter_kar}.
-BVAJSB JABSJABSA BJAJSJB JAB AJB BAJS
 Dämpningen under \unit[10]{GHz} överstiger inte \unit[3]{dB} jämfört med referens Detta är viktigt då filter kommer att monteras på både in och utgång på provlådorna med resonatorer och en större dämpning på utgången kommer innebära ett sämre förhållande mellan signal och brus. I detta område är också $|S_{21}|$ relativt plan och jämn. Vår nollte ordningens approxiamation av bakgrundsamplituden blir därför inte orimlig på grund av filtrets inverkan.
 
-Från \figref{fig:filter_kar} kan vi se att både det korta och medellånga filtret uppvisar kraftiga spikar i $|S_{21}|$ efter \unit[$\approx 25$]{GHz} och även de långa filtret efter \unit[$\approx 40$]{GHz}. Detta beteendet är särskilt tydligt i $|S_{21}|$ för filter innan de fylldes med Stycast. Efter att filter fyllts med Stycast är detta beteende kraftigt reducerat. Dessa spikar är inte nödvändigtvis orsakade av impedansmissmatcher i våra filter på grund av lödning eller andra konstruktionsfel. Utan detta är snara ett resultat av de SMA M-M adapters som användes vid mätning av $|S_{21}|$ och SMA-kontakterna som användes i filtret bara att designade för upp till \unit[18]{GHz}. Detta är dock inte ett problem eftersom vi bara kräver en jämn dämpning i intervallet \unit[4-8]{GHz} där våra resonatorers resonansfrekvenser ligger.
+Från \figref{fig:filter_kar} kan vi se att både det korta och medellånga filtret uppvisar kraftiga spikar i $|S_{21}|$ efter \unit[$\approx 25$]{GHz} och även de långa filtret efter \unit[$\approx 40$]{GHz}. Detta beteendet är särskilt tydligt i $|S_{21}|$ för filter innan de fylldes med Stycast. Efter att filter fyllts med Stycast är detta beteende kraftigt reducerat. Dessa spikar är inte nödvändigtvis orsakade av impedansmissmatcher i våra filter på grund av lödning eller andra konstruktionsfel. Utan detta är snarare ett resultat av att de SMA M-M adapters som användes vid mätning av $|S_{21}|$ och SMA-kontakterna som användes i filtret bara att designade för upp till \unit[18]{GHz}. Detta är dock inte ett problem eftersom vi bara kräver en jämn dämpning i intervallet \unit[4-8]{GHz} där våra resonatorers resonansfrekvenser ligger.
 
 \end{document}
