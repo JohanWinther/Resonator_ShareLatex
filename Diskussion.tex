@@ -8,44 +8,65 @@
 I följande avsnitt kommer diskussion om våra resultat att presenteras. 
 
 \section{Längre filter visar en tendens till förbättring}
-Filtrena förbättrade vissa resonatorer
-Slusatser om filters funktion...
+%Filtrena förbättrade vissa resonatorer
+%Slusatser om filters funktion...
 
 
+Det finns skäl till att tro att våra långa och medellånga filter reducerar mängden fotoner över \unit[88]{GHz} i resonatorerna. För det första visar \figref{fig:filter_kar} en dämpning som ökar med ökad frekvens upp till \unit[50]{GHz}. Eftersom denna uppmätta dämpningen uppvisar en avtagande trend samt baserat på den teorin som diskuterades i avsnitt \ref{sec:filterdesign} är det rimligt att anta att dämpningen fortsätter att öka för ännu högre frekvenser. Samtidigt minskar förlusttermen $1/Q_o$ för majoriteten av resonatorerna i prov 1 och prov 2, vilket visas i \figref{fig:Q_other}. Denna minskning av förlusttermen $1/Q_O$ som innefattar kvasipartikelrelaterade förluster orskade av fotoner över \unit[88]{GHz}, tillsammans med en förmodad ökad dämpning hos våra filter vid frekvenser över \unit[50]{GHz} gör det rimligt att dra slutsatsen att de långa och medellånga filter som tillverkats i detta projekt reducerar mängden fotoner över \unit[88]{GHz} i resonatorn.
+
+Från prov 3 ser vi inga klara trender hur våra filter påverkade $Q_i$ vid $\expval{n}=1$ eller $\expval{n}=10^4$ fotoner i resonatorn, vilket visas i tabell \ref{tab:Qi}. Vi ser heller inte några uppenbara trender i förlusttermen $1/Q_o$ med och utan filter i \figref{fig:Q_other3}. Detta skulle kunna vara ett resultat av att våra korta filter, som är kopplade till detta prov, inte tillräckligt effektivt dämpar fotoner med en frekvens över \unit[88]{GHz}. Detta skulle i så fall innebära att även om fotonerna är reducerade i resonatorn så är detta inte tillräckligt för att reducera antalet kvasipartiklar till en sådan nivå att vi kan se en definitiv trend i $Q_i$ eller $1/Q_o$.
+
+En annan möjlig förklaring till varför prov 3 inte uppvisar samma trender av förändring i $Q_i$ eller $1/Q_o$ som prov 1 och 2 kan vara att majoriteten av resonatorer på prov 3 inte är begränsade av kvasipartikelrelaterade förluster utan begränsas av andra förluster. Även sådana av liknande storleksordning till kvasipartikelrelaterade förluster. Detta skulle då innebära att även om vårt filter reducerar fotonerna i resonatorn som kan ge upphov till kvasipartiklar i resonatorn så är resonatorn fortfarande begränsad av andra förlustmekanismer.
+
+Ytterligare en intressant observation är att betrakta storleken av $1/Q_o$ mellan de olika proven i \figref{fig:Q_other}. Vi kan här se att förlusttermen $1/Q_o$ för prov 3 är något större jämfört med prov 1 \& 2 för majoriteten av resonatorerna. Detta skulle kunna tyda på att resonatorer med en förlustterm $1/Q_o$ i denna storleksordning i mindre utsträckning är begränsade av kvasipartikelrelaterade förluster och på så sätt förklara varför majoriteten av resonatorerna på prov 3 inte uppvisade några större förändringar i $1/Q_O$ när filter användes.
+
+En eventuell förklaring till de försämringar som kunde uppmätas både i $Q_i$ och $1/Q_o$ på samtliga prov skulle kunna vara ett resultat av mekaniska förändringar i resonatorn på chippet. Sådana förändringar kan vara orsakade av mekanisk stress i substratet eller det ledande aluminiumet som uppkommit vid de två nedkylningscykler som utfördes under projektets gång. Den suprladedande kretsen kan också degraderats genom oönskad oxidation av ledaren vid kontakt med luft mellan nedkylningar. Båda dessa effekter skulle kunna ge upphov till de försämringar i $Q_i$ och $1/Q_o$ som upmättes för vissa resonatorer.
 
 
+%De försämringar som uppkommit kan bero på andra faktorer än filtren. Till exempel kan resonatorerna försämras då de kyls ner och hettas upp vid installation i kryostaten.
 
 
-Det finns skäl till att tro att våra långa och medellånga filter reducerar mängden fotoner över \unit[88]{GHz} i resonatorerna. För det första visar \figref{fig:filter_kar} en dämpning som ökar med ökad frekvens upp till \unit[50]{GHz} och det är ett rimligt antagande att dämpningen fortsätter att öka för ännu högre frekvenser. För det andra minskar förlusttermen $1/Q_o$ för majoriteten av resonatorerna i prov 1 och prov 2.
+%Faktumet att resultaten varierar så mycket mellan de olika resonatorerna kan förklaras med att de begränsas av olika förlustmekanismer. Om exempelvis $\delta_{TLS}$ är dominerande kan de finnas risk att de förluster som lågpassfilter reducerar inte gör %någon skillnad.
 
-Faktumet att resultaten varierar så mycket mellan de olika resonatorerna kan förklaras med att de begränsas av olika förlustmekanismer. Om exempelvis $\delta_{TLS}$ är dominerande kan de finnas risk att de förluster som lågpassfiltren reducerar inte gör någon skillnad.
-De försämringar som uppkommit kan bero på andra faktorer än filtren. Till exempel kan resonatorerna försämras då de kyls ner och hettas upp vid installation i kryostaten.
 
 \section{Felkällor}
-För samtliga beräkningar av $Q_i$ har vi tagit hänsyn till en uppskattad dämpning från våra filter vid resonansfrekvensen. Det finns dock en viss osäkerhet när det kommer till filterdämpningens påverkan eftersom filtrena är karakteriserade i rumstemperatur och inte vid \unit[10]{mK} som mätningarna på resonatorerna är utförda vid. Dock ger en överskattning av dämpningen större förbättring eftersom mätpunkterna i en graf med $Q_i$ mot $\expval{n}$ flyttas åt vänster. Det innebär att våra resultat är en lägsta uppskattning av förbättringarna, men vi bedömer att dämpningen inte överstiger \unit[-2]{dBm}.
+En stor felkälla som kan ge upphov till tvetydliga resultat är att anpassningsskriptet uppskattade parametrar på varje mätning, även för de individuella mätningarna för olika effekter. Vid närmre undersökning upptäckte vi att många parametrar som inte är effektberoende ändrade sig till en viss grad mellan dessa mätningar, vilket inte borde ske. En mer korrekt utförd anpassningsrutin bör ske på följande sätt:
+En anpassning utförs vid en hög effekt innan duffing sker och sedan används dessa parametrar som startvärde för nästa lägre effektnivå. Detta fortsätter tills alla mätningar är anpassade. På så sätt är det bara $Q_i$ som ändrar sig mellan olika effekter, vilket minskar felet i modellanpassningen.
 
-\subsection{Dataanpassning}
-Anpassningsskriptet uppskattade parametrar på varje mätning, även för de individuella mätningarna för olika effekter. En 
-\section{Modellanpassning}
-När passar TLS-modellen? 
+Vi bedömer att trenderna överlag i våra mätningar inte har påverkats av denna felkälla, men att de absoluta och relativa värdena på $Q_i$ garanterat har påverkats. Av just den anledningen har vi fokuserat på slutsatser om filtrens generalla påverkan snarare än kvantitativa resultat. 
 
+En till felkälla, dock med mindre relevans, är att vi för samtliga beräkningar av $Q_i$ har tagit hänsyn till en uppskattad dämpning från våra filter vid resonansfrekvensen. Det finns dock en viss osäkerhet när det kommer till filterdämpningens påverkan eftersom filtrena är karakteriserade i rumstemperatur och inte vid \unit[10]{mK} som mätningarna på resonatorerna är utförda vid. Dock ger en överskattning av dämpningen större förbättring eftersom mätpunkterna i en graf med $Q_i$ mot $\expval{n}$ flyttas åt vänster. Med störst sannolikhet är filtren oförändrade vid låga temperaturer eller upplever en relativt liten försämring, med hänvisning till egenskaperna för Stycast.
+
+
+% Kanske inte supernödvändigt att prata om
+%\section{Modellanpassning}
+%När passar TLS-modellen? 
 
 \section{Vidareutveckling}
 Vi presenterar våra förslag för fortsatt utveckling som vi förmodar kommer att ge tydligare trender i resultatet.
 
 \subsection{Eccosorb som dielektrikum istället för Stycast}
-Eccosorb är till skillnad från Stycast ämnat för mikrovågsabsorption . Den ursprungliga planen var att använda Eccosorb som dielektrikum i filtren. Det var dock inte möjligt att få tag på i tid för det här projektet. Förutom de rent dissipativa förlusterna som Stycast gav upphov till i våra filter, ger Eccosorb även upphov till magnetiska förluster som ett resultat av att det är laddat med metallpartiklar \cite{Eccosorb}. Det är rimligt att ,utifrån vad som står i databladet för Eccosorb, anta att dessa frekvensberoende förluster skulle ge oss en skarpare dämpning vid frekvenser på \unit[8-50]{GHz} än vad som syns i figur \ref{fig:batch2_long}. Exempelvis gäller för den vanliga Eccosorb-typen CR-116 att den ger en dämpning på ca \unit[57]{dB/cm} vid \unit[18]{GHz} \cite{Eccosorb} vilket för våra långa filter blir en dämpning på cirka \unit[150]{dB} jämfört med en dämpning på cirka \unit[10]{dB} vid samma frekvens för Stycast. \citeauthor{santavicca2008} tillverkade liknande filter med Eccosorb och uppnådde dämpningar på runt \unit[80]{dB} redan vid \unit[10]{GHz}, dessutom uppvisade dämpningen ett mycket större frekvensberoende \cite{santavicca2008}. Även dessa resultat tyder på att Eccosorb hade givit bättre dämpning vid höga frekvenser. Detta skulle troligtvis påverkar $Q$-faktorn positivt för effekter då hypotesen om sönderslagna Cooperpar verkar stämma.
+Eccosorb är till skillnad från Stycast ämnat för mikrovågsabsorption. Förutom de rent dissipativa förlusterna som Stycast gav upphov till i våra filter, ger Eccosorb även upphov till magnetiska förluster som ett resultat av att det är laddat med metallpartiklar \cite{Eccosorb}. Det är rimligt att, utifrån vad som står i databladet för Eccosorb, anta att dessa frekvensberoende förluster skulle ge oss en skarpare dämpning vid frekvenser på \unit[8-50]{GHz} än vad som syns i figur \ref{fig:batch2_long}. Exempelvis gäller för den vanliga Eccosorb-typen CR-116 att den ger en dämpning på ca \unit[57]{dB/cm} vid \unit[18]{GHz} \cite{Eccosorb} vilket för våra långa filter skulle innebära en dämpning omkring \unit[150]{dB}. Detta kan jämföras med den uppmätta dämpningen i rumstemjämfört med en dämpning på cirka \unit[10]{dB} vid samma frekvens för Stycast. \citeauthor{santavicca2008} tillverkade liknande filter med Eccosorb och uppnådde dämpningar på runt \unit[80]{dB} redan vid \unit[10]{GHz}, dessutom uppvisade dämpningen ett mycket större frekvensberoende \cite{santavicca2008}. Även dessa resultat tyder på att Eccosorb hade givit bättre dämpning vid höga frekvenser. Detta skulle troligtvis påverka $Q$-faktorn positivt för effekter då hypotesen om sönderslagna Cooperpar verkar stämma.
 
-\subsection{Mätning av flera }
-På grund av tidsbrist hann vi inte mäta med olika filter på samma provlådor. Därför är resultaten svåra att tolka eftersom den stora variationen kan bero på den inbördes skillnaden mellan provlådorna med resonatorerna. Idealt bör minst 10 filterlängder mätas på samma provlåda med förväntan om en genomgående och tydlig trend.
+
+En annan möjlighet hade varit att blanda in metallpulver i den stycast som användes för att efterlikna egenskaperna som eccosorb uppvisar. 
 
 \subsection{Ytterliga filtermätningar}
-Om filtren hade karakteriserats vid \unit[10]{mK} är det möjligt att en mer korrekt dämpning i \unit[4-8]{GHz}-intervallet hade kunnat tas fram vilket skulle leda till ett mer tillförlitliga beräkningar av $Q_i$.
+Om filtren hade karakteriserats vid \unit[10]{mK} är det möjligt att en mer korrekt dämpning i \unit[4-8]{GHz}-intervallet hade kunnat tas fram vilket skulle leda till mer tillförlitliga beräkningar av $Q_i$.
+
+När komponenter genomgår termisk cykling, upprepade nedkylningar och upphettningar, kan dess egenskaper förändras. Detta kan ha påverkat både våra filter och våra resonatorer, mätningen av resonatorerna tillsammans med filter skedde efter mätningen av enbart resonatorer. Mellan dessa mätningar värmdes kryostaten först upp från \unit[10]{mK} till rumstemperatur, filtren placerades och allt kyldes ned till \unit[10]{mK}. Om vi tittar på förändringen i Q-värde i \ref{tab:Qi} kan man till exempel se att för $Q_i$ för de höga effekterna på prov 2 har en stor förbättring i $Q_i$, mellan 11\% och 26\%, förutom för resonatorn med resonatorfrekvensen \unit[7,322]{GHz}. En möjlig anledning till detta är att resonatorn har tagit skada under uppvärmingen och nedkylningen, detta går dock inte att bekräfta med den data vi har, utav vidare undersökningar av resonatorerna hade krävts.   
+
+
 
 Vidare skulle upprepade nedkylningar och upvärmningar av filtrena kunna ge kunskap om deras hållbarhet.
 
+\subsection{Mätning av olika filter på samma resonatorprov}
+På grund av tidsbrist mättes olika filter på olika provlådor i hopp om att ändå upptäcka en tydlig trend beroende av filterlängd. Därför är det svårt att dra definitiva slutsatser om filtrens förbättringar. Den stora variationen mellan mätningar kan bero på den inbördes skillnaden mellan provlådorna med resonatorerna. Därför rekommenderar vi att utföra en mätning av minst 10 filterlängder på samma provlåda. I ett sådant experiment är det dock viktigt att inte utföra en mätning med ett filter och sedan värma upp kryostaten för att byta till nästa filter. En bättre uppställning, som inte utsätter resonatorerna för termisk cykling, är en koppling som tillåter fjärrbyte av filter för samma provlåda.
+
+
+
 \subsection{Tillverkning}
-Tillverkningen hade kunnat förbättras och förenklats genom att bättre anpassa kopparlådorna till att skapa filter, till exempel genom att ge fyllningshålen koniska kanter så att Stycasten lätt kan rinna ner i lådan och på så sätt minimera risken för luftbubblor.  
+Tillverkningen hade kunnat förbättras och förenklats genom att bättre anpassa kopparlådorna till att skapa filter, till exempel genom att ge fyllningshålen koniska kanter så att Stycasten lätt kan rinna ner i lådan och på så sätt minimera risken för luftbubblor. Ytterligare skulle fyllning av filter med Stycast kunna underlättas genom att använda en mindre pipett för att göra det lättare att applicera mindre mängder Stycast åt gången. Risken för luftbubblor i filtret skulle således minskas.
 
 \section{Slutsats}
 Sammanfattningsvis drar vi slutsatsen att distribuerade lågpassfilter kan bidra till ökad prestanda för supraledande mikrovågsresonatorer men att ytterligare experiment och vidareutveckling är nödvändigt för att förstå när och varför de uppfyller sitt syfte. 

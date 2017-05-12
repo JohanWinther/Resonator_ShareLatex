@@ -64,7 +64,7 @@ Mätdatan består av amplitud- och fasdata över frekvens och anpassas till en t
     \centering
     \includegraphics[width=0.45\textwidth]{figure/kretsar/cryo.pdf}
     \caption{Allmänt kretsschema för en transmissionsmätning på ett resonatorchipp.
-    En mätsignal från en VNA dämpas vid varje temperatursteg och filtreras innan den når provlådan (botten). Innehållet i provlådan som byts ut med switchar beroende på vilket chipp som ska mätas. Sedan förstärks signalen på väg tillbaka till analysatorn. Figuren är från \cite[fig. 3.7]{Boehme2016} (\copyright Thijs Boehme, med tillåtelse).}
+    En mätsignal från en VNA dämpas vid varje temperatursteg och filtreras innan den når provlådan (botten). Innehållet i provlådan byts ut med switchar beroende på vilket chipp som ska mätas. Sedan förstärks signalen på väg tillbaka till analysatorn. Figuren är från \cite[fig. 3.7]{Boehme2016} (\copyright Thijs Boehme, med tillåtelse).}
     \label{fig:matuppstallning}
 \end{figure}
 
@@ -74,7 +74,7 @@ Mätdatan består av amplitud- och fasdata över frekvens och anpassas till en t
 \label{sec:res_teori}
 
 
-En resonatorer definieras av dess resonansfrekvens $f_r$ och kvalitetsfaktor $Q$ \cite[s. 3]{Boehme2016} så vi är naturligt intresserade av att mäta dessa för att kunna evaluera eventuella förbättringar i resonatorerna. Kvalitetsfaktorn (eller $Q$-värde) är ett mått på resonatorns förmåga att lagra energi per cykel och den totala kvalitetsfaktorn $Q_l$ brukar delas upp i två delar \cite{Probst2015}: intern kvalitetsfaktor $Q_i$ och kopplad kvalitetsfaktor $Q_c$ och förhåller sig enligt 
+En resonator definieras av sin resonansfrekvens $f_r$ och kvalitetsfaktor $Q$ \cite[s. 3]{Boehme2016} så vi är naturligt intresserade av att mäta dessa för att kunna evaluera eventuella förbättringar i resonatorerna. Kvalitetsfaktorn (eller $Q$-värde) är ett mått på resonatorns förmåga att lagra energi per cykel och den totala kvalitetsfaktorn $Q_l$ brukar delas upp i två delar \cite{Probst2015}: intern kvalitetsfaktor $Q_i$ och kopplad kvalitetsfaktor $Q_c$ och förhåller sig enligt 
 \begin{equation}
 \frac{1}{Q_l}=\frac{1}{Q_i}+\text{Re}\qty(\frac{1}{Q_c}).
 \end{equation}
@@ -250,13 +250,13 @@ $\delta_{TLS}$ kan modelleras som
     \delta_{TLS}=\frac{F\delta_{TLS}^0\tanh{(\hbar\omega_r/2k_BT)}}{(1+(N/N_c)^2)^\beta}
     \label{ekv:TLS}
 \end{equation}
-Där $\delta_{TLS}^0$ är förlusterna vid ett fåtal milikelvin och bara enstaka fotoner, $F$ är en designparameter, $\omega_r$ är resonansvinkelfrekvensen, $N$ är antal fotoner som lagras i resonatorn och $N_c$ är det kritiska antal fotoner för vilket en TLS blir mättad. \eqref{ekv:TLS} är tagen från \cite{pappas2011two} med viss modifikation. $\beta$ används som en anpassningsparamter som grovt brukar anses ligga kring 0,2 \cite{faoro2012} för våra tillämpningar. Det är värt att notera rån \eqref{ekv:TLS} att det inte fullständigt går att eliminera TLS-förluster ens vid godtyckligt låga temperaturer \cite{Boehme2016}.
+Där $\delta_{TLS}^0$ är förlusterna vid ett fåtal milikelvin och bara enstaka fotoner, $F$ är en designparameter, $\omega_r$ är resonansvinkelfrekvensen, $N$ är antal fotoner som lagras i resonatorn och $N_c$ är det kritiska antal fotoner för vilket en TLS blir mättad. \eqref{ekv:TLS} är tagen från \cite{pappas2011two} med viss modifikation. $\beta$ används som en anpassningsparamter som grovt brukar anses ligga kring 0,2 \cite{faoro2012} för våra tillämpningar. Det är värt att notera från \eqref{ekv:TLS} att det inte fullständigt går att eliminera TLS-förluster ens vid godtyckligt låga temperaturer \cite{Boehme2016}.
 
 \subsection{Kvasipartiklar och sönderslagning av Cooperpar}
 \label{sec:cooper}
 Den förlustmekanism som vi avser minska i det här projektet är $\delta_{qp}$, förluster som uppekommer av kvasipartiklar. För att ha förståelse för hur $\delta_{qp}$ kan påverkas krävs viss kännedom om Cooperpar och supraledning. Cooperpar är ett par av fermioner, som är sammanbundna vid låga temperaturer. Cooper visade att en godtyckligt liten attraktion mellan elektroner i en metall kan ge upphov till att ett sådant par kan ha lägre energi än fermienergin \cite{Kittel2005}. Detta beror på elektron-fonon interaktion som orsakar supraledning \cite{Kittel2005}.
 
-I en klassisk beskrivning av Cooperpar i en metall så beter sig en elektron vanligtvis som en fri partikel. Elektroners negativ laddning orsakar repellering mellan varandra och attraktion till de positiva jonerna i metallens gitter. Jongittret blir då aningen skevt och jonerna blir aningen förflyttade mot elektronerna vilket bidrar till en ökad densitet av positiv laddning för gittret. Detta överskott av positiv laddning attraherar i sin tur fler elektroner. De fotoner som har en frekvens på över \unit[88]{GHz} kan bryta Cooperpar i supraledande aluminium och därmed generera ett överskott av kvasipartiklar. Kvasipartiklar orsakar förluster eftersom de till skillnad från Cooperparen upplever en resistivitet i ledaren.
+I en klassisk beskrivning av Cooperpar i en metall så beter sig en elektron vanligtvis som en fri partikel. Elektroners negativ laddning orsakar repellering mellan varandra och attraktion till de positiva jonerna i metallens gitter. Jongittret blir då aningen skevt och jonerna blir aningen förflyttade mot elektronerna vilket bidrar till en ökad densitet av positiv laddning för gittret. Detta överskott av positiv laddning attraherar i sin tur fler elektroner. 
 
 Energin för bindningen mellan Cooperpar i aluminium är \unit[0,39]{meV} \cite{Kittel2005}. Detta innebär att termisk energi lätt kan bryta upp paren, vilket är anledningen till att Cooperpar (och således supraledning) enbart återfinns vid mycket låga temperaturer. Ett ämne som kan bli supraledande blir det först när det når en temperatur under sin \emph{kritiska temperatur}. För Aluminium är den kritiska temperaturen \unit[1,2]{K}.
 
@@ -275,7 +275,7 @@ Energin för bindningen mellan Cooperpar i aluminium är \unit[0,39]{meV} \cite{
 \label{ekv:qp}
     \frac{\delta N_{qp}}{\delta t}=\frac{P}{\Delta}+G-RN_{qp}^2
 \end{equation}
-där $\Delta$ är ledningsmaterialets bandgap, $P$ är absorberad effekt som uppfyller $P=hf>2\Delta$, $G$ är termen som korresponderar mot kvasipartikelproduktion till följd av termiska fononer och $R$ är en materialkonstant kopplad till återskapandet av Cooperpar \cite{Barends2011}. Aluminiums supraledande bandgap och även Cooperparens bindningsenergi motsvaras av en frekvens på \unit[88]{GHz} varpå \eqref{ekv:qp} ger att de fotoner med en frekvens på $f>$\unit[88]{GHz} kan öka mängden kvasipartiklar i resonatorn.
+där $\Delta$ är ledningsmaterialets bandgap, $P$ är absorberad effekt som uppfyller $P=hf>2\Delta$, $G$ är termen som korresponderar mot kvasipartikelproduktion till följd av termiska fononer och $R$ är en materialkonstant kopplad till återskapandet av Cooperpar \cite{Barends2011}. Aluminiums supraledande bandgap och även Cooperparens bindningsenergi motsvaras av en frekvens på \unit[88]{GHz} varpå \eqref{ekv:qp} ger att de fotoner som har en frekvens på över \unit[88]{GHz} kan bryta Cooperpar i supraledande aluminium och därmed generera ett överskott av kvasipartiklar i resonatorn.
 De högfrekventa fotonerna kan bli ett problem även vid uppställningar med bra bandpassfilter eftersom dessa börjar släppa igenom allt mer signal vid frekvenser en bra bit över filtrets bandpass \cite{santavicca2008}. För ett \unit[4-8]{GHz} bandpassfilter börjar fotoner släppas igenom igen när de har frekvenser på över ca \unit[20]{GHz}.
 
 \subsection{Modell för förlustmekanismer}
